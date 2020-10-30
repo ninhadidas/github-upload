@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3B30BCA-99C3-4973-ADEE-D2E2AF5BA6EF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PAPVN.My.MyApplication</StartupObject>
+    <RootNamespace>PAPVN</RootNamespace>
+    <AssemblyName>PAPVN</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PAPVN.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PAPVN.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Employee icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>25D9AE5B327DCA56DE024EEF167274D6E56180EF</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PAPVN_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="ChangePwMng.Designer.vb">
+      <DependentUpon>ChangePwMng.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePwMng.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePwStaff.Designer.vb">
+      <DependentUpon>ChangePwStaff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePwStaff.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataGridUser.Designer.vb">
+      <DependentUpon>DataGridUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeMasterForm.Designer.vb">
+      <DependentUpon>EmployeeMasterForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeMasterForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportDataFrm.Designer.vb">
+      <DependentUpon>ExportDataFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDataFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forgot Password Mng.Designer.vb">
+      <DependentUpon>Forgot Password Mng.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forgot Password Mng.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forgot Password.Designer.vb">
+      <DependentUpon>Forgot Password.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forgot Password.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HR Approve Result.Designer.vb">
+      <DependentUpon>HR Approve Result.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HR Approve Result.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRFunctionsFrm.Designer.vb">
+      <DependentUpon>HRFunctionsFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRFunctionsFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HrMainFrm.Designer.vb">
+      <DependentUpon>HrMainFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HrMainFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputTargetFrm.Designer.vb">
+      <DependentUpon>InputTargetFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InputTargetFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerViewFrm.Designer.vb">
+      <DependentUpon>ManagerViewFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerViewFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PmsHRLoginFrm.Designer.vb">
+      <DependentUpon>PmsHRLoginFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PmsHRLoginFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PmsMainFrm.Designer.vb">
+      <DependentUpon>PmsMainFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PmsMainFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PmsMngLoginFrm.Designer.vb">
+      <DependentUpon>PmsMngLoginFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PmsMngLoginFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PmsStaffLoginFrm.Designer.vb">
+      <DependentUpon>PmsStaffLoginFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PmsStaffLoginFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReleaseStatusFrm.Designer.vb">
+      <DependentUpon>ReleaseStatusFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReleaseStatusFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelfAssessFrm.Designer.vb">
+      <DependentUpon>SelfAssessFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelfAssessFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatusFrm.Designer.vb">
+      <DependentUpon>StatusFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StatusFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatusProgressFrm.Designer.vb">
+      <DependentUpon>StatusProgressFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StatusProgressFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeMngFrm.Designer.vb">
+      <DependentUpon>WelcomeMngFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomeMngFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeStaffFrm.Designer.vb">
+      <DependentUpon>WelcomeStaffFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomeStaffFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChangePwMng.resx">
+      <DependentUpon>ChangePwMng.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePwStaff.resx">
+      <DependentUpon>ChangePwStaff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridUser.resx">
+      <DependentUpon>DataGridUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeMasterForm.resx">
+      <DependentUpon>EmployeeMasterForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportDataFrm.resx">
+      <DependentUpon>ExportDataFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forgot Password.resx">
+      <DependentUpon>Forgot Password.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HR Approve Result.resx">
+      <DependentUpon>HR Approve Result.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRFunctionsFrm.resx">
+      <DependentUpon>HRFunctionsFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HrMainFrm.resx">
+      <DependentUpon>HrMainFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputTargetFrm.resx">
+      <DependentUpon>InputTargetFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerViewFrm.resx">
+      <DependentUpon>ManagerViewFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PmsHRLoginFrm.resx">
+      <DependentUpon>PmsHRLoginFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PmsMainFrm.resx">
+      <DependentUpon>PmsMainFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PmsMngLoginFrm.resx">
+      <DependentUpon>PmsMngLoginFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PmsStaffLoginFrm.resx">
+      <DependentUpon>PmsStaffLoginFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReleaseStatusFrm.resx">
+      <DependentUpon>ReleaseStatusFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelfAssessFrm.resx">
+      <DependentUpon>SelfAssessFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusFrm.resx">
+      <DependentUpon>StatusFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusProgressFrm.resx">
+      <DependentUpon>StatusProgressFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeMngFrm.resx">
+      <DependentUpon>WelcomeMngFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeStaffFrm.resx">
+      <DependentUpon>WelcomeStaffFrm.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="PAPVN_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Employee icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Outlook">
+      <Guid>{00062FFF-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
