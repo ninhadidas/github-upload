@@ -78,7 +78,7 @@ Public Class SBMS_GAView
 
     End Sub
 
-    Private Sub DistanceTbx_Leave(sender As Object, e As EventArgs) Handles DistanceTbx.Leave
+    Private Sub DistanceTbx_Leave(sender As Object, e As EventArgs) Handles DistanceTbx.Leave 'allow number only
         If Not Regex.Match(DistanceTbx.Text, "^\d+$", RegexOptions.IgnoreCase).Success Then
             MessageBox.Show("Please enter number only.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             DistanceTbx.Focus()
