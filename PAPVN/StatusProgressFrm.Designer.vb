@@ -46,6 +46,7 @@ Partial Class StatusProgressFrm
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.app1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,12 +81,12 @@ Partial Class StatusProgressFrm
         Me.Status2.Enabled = False
         Me.Status2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Status2.ForeColor = System.Drawing.Color.Black
-        Me.Status2.Location = New System.Drawing.Point(247, 29)
+        Me.Status2.Location = New System.Drawing.Point(245, 31)
         Me.Status2.Name = "Status2"
         Me.Status2.Size = New System.Drawing.Size(165, 65)
         Me.Status2.TabIndex = 1
         Me.Status2.TabStop = True
-        Me.Status2.Text = "Submitted Target" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "to 1st Approver " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Pending Lv1 Approval)"
+        Me.Status2.Text = "Submitted Target" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "to 1st Approver" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Pending Lv1 Approval)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Status2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Status2.UseVisualStyleBackColor = False
         '
@@ -195,7 +196,7 @@ Partial Class StatusProgressFrm
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(103, 31)
+        Me.PictureBox1.Location = New System.Drawing.Point(101, 32)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(219, 12)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -356,12 +357,25 @@ Partial Class StatusProgressFrm
         Me.Label8.Text = "8"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'app1
+        '
+        Me.app1.AutoSize = True
+        Me.app1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.app1.Location = New System.Drawing.Point(151, 90)
+        Me.app1.Name = "app1"
+        Me.app1.Size = New System.Drawing.Size(50, 16)
+        Me.app1.TabIndex = 23
+        Me.app1.Text = "Label9"
+        Me.app1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.app1.Visible = False
+        '
         'StatusProgressFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(990, 230)
+        Me.Controls.Add(Me.app1)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
@@ -423,4 +437,5 @@ Partial Class StatusProgressFrm
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
+    Friend WithEvents app1 As Label
 End Class

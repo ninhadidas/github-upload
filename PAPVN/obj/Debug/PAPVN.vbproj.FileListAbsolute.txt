@@ -17,7 +17,6 @@ C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.PmsMngLoginFrm.resources
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.PmsStaffLoginFrm.resources
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.ReleaseStatusFrm.resources
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.SelfAssessFrm.resources
-C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.StatusForm.resources
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.WelcomeMngFrm.resources
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.WelcomeStaffFrm.resources
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.vbproj.GenerateResource.cache
@@ -50,4 +49,18 @@ C:\Users\Admin\source\repos\PAPVN\PAPVN\bin\Debug\PAPVN.application
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.TrustInfo.xml
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.exe.manifest
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.application
-C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.StatusProgressFrm.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.ScheduleFrm.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.OldPeriodViewFrm.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.BusRequestFrm.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.SBMSStaffLoginFrm.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.SBMS_WCStaffFrm.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.SBMS_MngView.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.ReviewGridMng.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.SBMS_MngLoginFrm.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.Competency.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.HRMasterViewFrm.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.MasterGridUser.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.Form2.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.ForgotPwMngFrm.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.SBMS_GAView.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.SBMS_BusSelect.resources

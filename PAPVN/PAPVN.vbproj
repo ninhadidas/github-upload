@@ -64,7 +64,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Employee icon.ico</ApplicationIcon>
+    <ApplicationIcon>PMS\Employee icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
@@ -92,6 +92,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -113,76 +114,106 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="ChangePwMng.Designer.vb">
+    <Compile Include="PMS\Competency.Designer.vb">
+      <DependentUpon>Competency.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PMS\Competency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PMS\HRMasterViewFrm.Designer.vb">
+      <DependentUpon>HRMasterViewFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PMS\HRMasterViewFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PMS\MasterGridUser.Designer.vb">
+      <DependentUpon>MasterGridUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PMS\MasterGridUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMBS\BusRequestFrm.Designer.vb">
+      <DependentUpon>BusRequestFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SMBS\BusRequestFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PMS\ChangePwMng.Designer.vb">
       <DependentUpon>ChangePwMng.vb</DependentUpon>
     </Compile>
-    <Compile Include="ChangePwMng.vb">
+    <Compile Include="PMS\ChangePwMng.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangePwStaff.Designer.vb">
+    <Compile Include="PMS\ChangePwStaff.Designer.vb">
       <DependentUpon>ChangePwStaff.vb</DependentUpon>
     </Compile>
-    <Compile Include="ChangePwStaff.vb">
+    <Compile Include="PMS\ChangePwStaff.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataGridUser.Designer.vb">
+    <Compile Include="PMS\DataGridUser.Designer.vb">
       <DependentUpon>DataGridUser.vb</DependentUpon>
     </Compile>
-    <Compile Include="DataGridUser.vb">
+    <Compile Include="PMS\DataGridUser.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeMasterForm.Designer.vb">
+    <Compile Include="PMS\EmployeeMasterForm.Designer.vb">
       <DependentUpon>EmployeeMasterForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeMasterForm.vb">
+    <Compile Include="PMS\EmployeeMasterForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ExportDataFrm.Designer.vb">
+    <Compile Include="PMS\ExportDataFrm.Designer.vb">
       <DependentUpon>ExportDataFrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="ExportDataFrm.vb">
+    <Compile Include="PMS\ExportDataFrm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forgot Password Mng.Designer.vb">
+    <Compile Include="PMS\Forgot Password Mng.Designer.vb">
       <DependentUpon>Forgot Password Mng.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forgot Password Mng.vb">
+    <Compile Include="PMS\Forgot Password Mng.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forgot Password.Designer.vb">
+    <Compile Include="PMS\Forgot Password.Designer.vb">
       <DependentUpon>Forgot Password.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forgot Password.vb">
+    <Compile Include="PMS\Forgot Password.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HR Approve Result.Designer.vb">
+    <Compile Include="PMS\HR Approve Result.Designer.vb">
       <DependentUpon>HR Approve Result.vb</DependentUpon>
     </Compile>
-    <Compile Include="HR Approve Result.vb">
+    <Compile Include="PMS\HR Approve Result.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HRFunctionsFrm.Designer.vb">
+    <Compile Include="PMS\HRFunctionsFrm.Designer.vb">
       <DependentUpon>HRFunctionsFrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="HRFunctionsFrm.vb">
+    <Compile Include="PMS\HRFunctionsFrm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HrMainFrm.Designer.vb">
+    <Compile Include="PMS\HrMainFrm.Designer.vb">
       <DependentUpon>HrMainFrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="HrMainFrm.vb">
+    <Compile Include="PMS\HrMainFrm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InputTargetFrm.Designer.vb">
+    <Compile Include="PMS\InputTargetFrm.Designer.vb">
       <DependentUpon>InputTargetFrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="InputTargetFrm.vb">
+    <Compile Include="PMS\InputTargetFrm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerViewFrm.Designer.vb">
+    <Compile Include="PMS\ManagerViewFrm.Designer.vb">
       <DependentUpon>ManagerViewFrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="ManagerViewFrm.vb">
+    <Compile Include="PMS\ManagerViewFrm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -201,99 +232,159 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="PmsHRLoginFrm.Designer.vb">
+    <Compile Include="PMS\OldPeriodViewFrm.Designer.vb">
+      <DependentUpon>OldPeriodViewFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PMS\OldPeriodViewFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PMS\PmsHRLoginFrm.Designer.vb">
       <DependentUpon>PmsHRLoginFrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="PmsHRLoginFrm.vb">
+    <Compile Include="PMS\PmsHRLoginFrm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PmsMainFrm.Designer.vb">
+    <Compile Include="PMS\PmsMainFrm.Designer.vb">
       <DependentUpon>PmsMainFrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="PmsMainFrm.vb">
+    <Compile Include="PMS\PmsMainFrm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PmsMngLoginFrm.Designer.vb">
+    <Compile Include="PMS\PmsMngLoginFrm.Designer.vb">
       <DependentUpon>PmsMngLoginFrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="PmsMngLoginFrm.vb">
+    <Compile Include="PMS\PmsMngLoginFrm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PmsStaffLoginFrm.Designer.vb">
+    <Compile Include="PMS\PmsStaffLoginFrm.Designer.vb">
       <DependentUpon>PmsStaffLoginFrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="PmsStaffLoginFrm.vb">
+    <Compile Include="PMS\PmsStaffLoginFrm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReleaseStatusFrm.Designer.vb">
+    <Compile Include="PMS\ReleaseStatusFrm.Designer.vb">
       <DependentUpon>ReleaseStatusFrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="ReleaseStatusFrm.vb">
+    <Compile Include="PMS\ReleaseStatusFrm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelfAssessFrm.Designer.vb">
+    <Compile Include="SMBS\ReviewGridMng.Designer.vb">
+      <DependentUpon>ReviewGridMng.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SMBS\ReviewGridMng.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMBS\SBMSStaffLoginFrm.Designer.vb">
+      <DependentUpon>SBMSStaffLoginFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SMBS\SBMSStaffLoginFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMBS\SBMS_BusSelect.Designer.vb">
+      <DependentUpon>SBMS_BusSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SMBS\SBMS_BusSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMBS\SBMS_GAView.Designer.vb">
+      <DependentUpon>SBMS_GAView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SMBS\SBMS_GAView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMBS\SBMS_MngLoginFrm.Designer.vb">
+      <DependentUpon>SBMS_MngLoginFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SMBS\SBMS_MngLoginFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMBS\SBMS_MngView.Designer.vb">
+      <DependentUpon>SBMS_MngView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SMBS\SBMS_MngView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMBS\SBMS_WCStaffFrm.Designer.vb">
+      <DependentUpon>SBMS_WCStaffFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SMBS\SBMS_WCStaffFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMBS\ScheduleFrm.Designer.vb">
+      <DependentUpon>ScheduleFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SMBS\ScheduleFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PMS\SelfAssessFrm.Designer.vb">
       <DependentUpon>SelfAssessFrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="SelfAssessFrm.vb">
+    <Compile Include="PMS\SelfAssessFrm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StatusFrm.Designer.vb">
-      <DependentUpon>StatusFrm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="StatusFrm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StatusProgressFrm.Designer.vb">
-      <DependentUpon>StatusProgressFrm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="StatusProgressFrm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WelcomeMngFrm.Designer.vb">
+    <Compile Include="PMS\WelcomeMngFrm.Designer.vb">
       <DependentUpon>WelcomeMngFrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="WelcomeMngFrm.vb">
+    <Compile Include="PMS\WelcomeMngFrm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WelcomeStaffFrm.Designer.vb">
+    <Compile Include="PMS\WelcomeStaffFrm.Designer.vb">
       <DependentUpon>WelcomeStaffFrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="WelcomeStaffFrm.vb">
+    <Compile Include="PMS\WelcomeStaffFrm.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ChangePwMng.resx">
+    <EmbeddedResource Include="PMS\Competency.resx">
+      <DependentUpon>Competency.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PMS\Forgot Password Mng.resx">
+      <DependentUpon>Forgot Password Mng.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PMS\HRMasterViewFrm.resx">
+      <DependentUpon>HRMasterViewFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PMS\MasterGridUser.resx">
+      <DependentUpon>MasterGridUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMBS\BusRequestFrm.resx">
+      <DependentUpon>BusRequestFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PMS\ChangePwMng.resx">
       <DependentUpon>ChangePwMng.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChangePwStaff.resx">
+    <EmbeddedResource Include="PMS\ChangePwStaff.resx">
       <DependentUpon>ChangePwStaff.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataGridUser.resx">
+    <EmbeddedResource Include="PMS\DataGridUser.resx">
       <DependentUpon>DataGridUser.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeMasterForm.resx">
+    <EmbeddedResource Include="PMS\EmployeeMasterForm.resx">
       <DependentUpon>EmployeeMasterForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExportDataFrm.resx">
+    <EmbeddedResource Include="PMS\ExportDataFrm.resx">
       <DependentUpon>ExportDataFrm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forgot Password.resx">
+    <EmbeddedResource Include="PMS\Forgot Password.resx">
       <DependentUpon>Forgot Password.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HR Approve Result.resx">
+    <EmbeddedResource Include="PMS\HR Approve Result.resx">
       <DependentUpon>HR Approve Result.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRFunctionsFrm.resx">
+    <EmbeddedResource Include="PMS\HRFunctionsFrm.resx">
       <DependentUpon>HRFunctionsFrm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HrMainFrm.resx">
+    <EmbeddedResource Include="PMS\HrMainFrm.resx">
       <DependentUpon>HrMainFrm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InputTargetFrm.resx">
+    <EmbeddedResource Include="PMS\InputTargetFrm.resx">
       <DependentUpon>InputTargetFrm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerViewFrm.resx">
+    <EmbeddedResource Include="PMS\ManagerViewFrm.resx">
       <DependentUpon>ManagerViewFrm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -302,34 +393,55 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="PmsHRLoginFrm.resx">
+    <EmbeddedResource Include="PMS\OldPeriodViewFrm.resx">
+      <DependentUpon>OldPeriodViewFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PMS\PmsHRLoginFrm.resx">
       <DependentUpon>PmsHRLoginFrm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PmsMainFrm.resx">
+    <EmbeddedResource Include="PMS\PmsMainFrm.resx">
       <DependentUpon>PmsMainFrm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PmsMngLoginFrm.resx">
+    <EmbeddedResource Include="PMS\PmsMngLoginFrm.resx">
       <DependentUpon>PmsMngLoginFrm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PmsStaffLoginFrm.resx">
+    <EmbeddedResource Include="PMS\PmsStaffLoginFrm.resx">
       <DependentUpon>PmsStaffLoginFrm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReleaseStatusFrm.resx">
+    <EmbeddedResource Include="PMS\ReleaseStatusFrm.resx">
       <DependentUpon>ReleaseStatusFrm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelfAssessFrm.resx">
+    <EmbeddedResource Include="SMBS\ReviewGridMng.resx">
+      <DependentUpon>ReviewGridMng.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMBS\SBMSStaffLoginFrm.resx">
+      <DependentUpon>SBMSStaffLoginFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMBS\SBMS_BusSelect.resx">
+      <DependentUpon>SBMS_BusSelect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMBS\SBMS_GAView.resx">
+      <DependentUpon>SBMS_GAView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMBS\SBMS_MngLoginFrm.resx">
+      <DependentUpon>SBMS_MngLoginFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMBS\SBMS_MngView.resx">
+      <DependentUpon>SBMS_MngView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMBS\SBMS_WCStaffFrm.resx">
+      <DependentUpon>SBMS_WCStaffFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMBS\ScheduleFrm.resx">
+      <DependentUpon>ScheduleFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PMS\SelfAssessFrm.resx">
       <DependentUpon>SelfAssessFrm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StatusFrm.resx">
-      <DependentUpon>StatusFrm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StatusProgressFrm.resx">
-      <DependentUpon>StatusProgressFrm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WelcomeMngFrm.resx">
+    <EmbeddedResource Include="PMS\WelcomeMngFrm.resx">
       <DependentUpon>WelcomeMngFrm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WelcomeStaffFrm.resx">
+    <EmbeddedResource Include="PMS\WelcomeStaffFrm.resx">
       <DependentUpon>WelcomeStaffFrm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -348,7 +460,9 @@
     <None Include="PAPVN_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Employee icon.ico" />
+    <Content Include="PMS\Employee icon.ico" />
+    <None Include="Resources\depositphotos_75121503-stock-photo-background-pier-dock.jpg" />
+    <None Include="Resources\030-performance.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

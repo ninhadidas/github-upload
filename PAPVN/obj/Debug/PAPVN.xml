@@ -22,5 +22,15 @@ PAPVN
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:PAPVN.My.Resources.Resources._030_performance">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PAPVN.My.Resources.Resources.depositphotos_75121503_stock_photo_background_pier_dock">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>

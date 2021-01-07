@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Label38.Text" xml:space="preserve">
+    <value>-Forecast mid-term/long-term future and take necessary actions proactively
+-Lead changes of the company promptly and be a model as an early adopter
+-Make decisions timely even under uncertain and changing circumstances</value>
+  </data>
+  <data name="Label40.Text" xml:space="preserve">
+    <value>-Create business plan or functional strategy for continuous growth and secure necessary resources to achieve them
+-Develop operating processes &amp; systems which enable the company to proceed with minimum support
+-Develop employees beyond own organization and foster self-reliant culture within company</value>
+  </data>
+  <data name="Label48.Text" xml:space="preserve">
+    <value>-Overcome difficulties and make it opportunity to grow
+-Maximize output even with limited resources
+-Streamline related information/factors and make decision for long-sighted future
+-Identify successors of the organization and develop them in time</value>
+  </data>
+  <data name="Label52.Text" xml:space="preserve">
+    <value>-Collaborate to achieve company vision/ mission
+-Can maintain and strengthen effective partnerships with stakeholders
+-Exert inspiration and influence on others to commit to achieve common goals
+-Strong power to involve and work with others to achieve business success
+-Effectively promote team morale &amp; productivity</value>
+  </data>
+  <data name="Label54.Text" xml:space="preserve">
+    <value>-Lead changes of the team
+-Figure out underlying customer needs
+-Forecast trends and give new perspectives for the company
+-Anticipate prior opportunities/ threats/ risks to have timely actions to promote or prevent
+-Quick and effective decision-making 
+-Provide feedback and take action timely to improve performance of both organization and individuals</value>
+  </data>
+  <data name="Label56.Text" xml:space="preserve">
+    <value>-Persistently striving to achieve goals and business success
+-Empower and deligate responsibility to each individual within team
+-Self-thinking exhaustively and forecast about potential opportunities/ threats/ risks to seize or prevent
+-Self-decide what necessary to do
+-Coach team members so that they can achieve their goals</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>-Can work with others who has either shared or opposite interests
+-Recognize impact and context of own function within company
+-Collect information internally/externally to support own decisions
+-Deliver company vision/mission to team members by understandable and practical way</value>
+  </data>
+  <data name="Label8.Text" xml:space="preserve">
+    <value>-Actively change current practices to improve
+-Proactively reach customers and market to collect insights
+-Always pursue efficiency
+-Not hesitate to move into new direction
+-Provide subordinate with effective feedback timely</value>
+  </data>
+  <data name="Label11.Text" xml:space="preserve">
+    <value>-Try to collect ideas and wisdom from others
+-Promote cross functions/ Depts. Collaboration
+-Seek affiliation with others
+-Willing to share and exchange knowledge/ experience/ best practices/ know-how
+-Promote team motivation and development</value>
+  </data>
+  <data name="Label13.Text" xml:space="preserve">
+    <value>-Set own goals/ objectives to achieve common goals/ objectives
+-Actively put forward varied solutions
+-Proactively propose own improvement ideas
+-Always try to understand &amp; Self-solve problems-Dig deeply into &amp; go beyond routine questions
+-Flexibly adapt to and can make changes</value>
+  </data>
+  <data name="Label15.Text" xml:space="preserve">
+    <value>-Desire to and can work closely with others
+-Willing to assist and work together with others to gain the best results
+-Believe in the power of teamwork and collaboration
+-Open to take positive and negative feedback from others</value>
+  </data>
+  <data name="Label16.Text" xml:space="preserve">
+    <value>-Can make good planning
+-Take timely action and make timely report
+-Pay attention to and commit to meet deadlines
+-Always try to finish job sooner or by deadlines
+-Fast learning ability and adaptability</value>
+  </data>
+  <data name="Label17.Text" xml:space="preserve">
+    <value>-Work independently
+-Always try to understand requirements and make resilient effort to get job done
+-Be performance- and result-oriented
+-Show curiosity and continuous learning spirit
+-Self-equipped with necessary knowledge/ skills</value>
+  </data>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>
