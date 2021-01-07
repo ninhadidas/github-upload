@@ -115,14 +115,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PAPVN.exe" size="3945944">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PAPVN.exe" size="3944408">
       <assemblyIdentity name="PAPVN" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Bs1gYB23uTO5Qh5XZ4j/N1XuZZv/tW3SYbPJOCFuzqI=</dsig:DigestValue>
+        <dsig:DigestValue>8OICu1rLJQHklDI91qvBZ1Cp4RHQWeDGOlw1IHVvU/M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

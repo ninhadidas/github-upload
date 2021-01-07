@@ -78,15 +78,26 @@ Public Class SBMS_GAView
 
     End Sub
 
-    Private Sub DistanceTbx_Leave(sender As Object, e As EventArgs) Handles DistanceTbx.Leave 'allow number only
+    Private Sub CompanyBusBtn_Click(sender As Object, e As EventArgs) Handles CompanyBusBtn.Click
+        SBMS_BusSelect.Show()
+    End Sub
+
+    Private Sub TaxiCardBtn_CheckedChanged(sender As Object, e As EventArgs) Handles TaxiCardBtn.CheckedChanged
+        If TaxiCardBtn.Checked = True Then
+            BusNameTbx.Text = Nothing
+            DriverMobileTbx.Text = Nothing
+            DriverNameTbx.Text = Nothing
+            PlateNoTbx.Text = Nothing
+            KmRemainTbx.Text = Nothing
+            DistanceTbx.ReadOnly = True
+        End If
+    End Sub
+
+    Private Sub DistanceTbx_TextChanged(sender As Object, e As EventArgs) Handles DistanceTbx.TextChanged
         If Not Regex.Match(DistanceTbx.Text, "^\d+$", RegexOptions.IgnoreCase).Success Then
             MessageBox.Show("Please enter number only.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             DistanceTbx.Focus()
             DistanceTbx.Clear()
         End If
-    End Sub
-
-    Private Sub CompanyBusBtn_CheckedChanged(sender As Object, e As EventArgs) Handles CompanyBusBtn.CheckedChanged
-        SBMS_BusSelect.Show()
     End Sub
 End Class
