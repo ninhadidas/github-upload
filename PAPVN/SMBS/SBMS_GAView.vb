@@ -8,15 +8,16 @@ Public Class SBMS_GAView
     Private Sub SubmitBtn_Click(sender As Object, e As EventArgs) Handles ApproveBtn.Click
         Dim order_id As String
         Dim reader As MySqlDataReader
+        Dim bus As String = busID.Text
         conn = New MySqlConnection With {
                 .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
             }
         order_id = Id_Label.Text
         Dim result As DialogResult = MessageBox.Show("Are you sure to submit this request?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If result = DialogResult.Yes Then
+        If result = DialogResult.Yes And BusNameTbx.Text <> "" And DistanceTbx.Text <> "" Then
             Try
                 conn.Open()
-                Dim query As String = "UPDATE tbl_order SET status_id='2' WHERE order_id='" & order_id & "';"
+                Dim query As String = "UPDATE tbl_order SET status_id='3', bus_id='" & bus & "' WHERE order_id='" & order_id & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 reader.Close()
@@ -30,9 +31,9 @@ Public Class SBMS_GAView
             End Try
             Me.Close()
         End If
-        ReviewGridMng.Controls.Clear() 'removes all the controls on the form
-        ReviewGridMng.InitializeComponent() 'load all the controls again
-        ReviewGridMng.ReviewGridMng_Load(e, e) 'Load everything in your form, load event again
+        'ReviewGridMng.Controls.Clear() 'removes all the controls on the form
+        'ReviewGridMng.InitializeComponent() 'load all the controls again
+        'ReviewGridMng.ReviewGridMng_Load(e, e) 'Load everything in your form, load event again
     End Sub
 
     Private Sub EmployeeIDTbx_TextChanged(sender As Object, e As EventArgs) Handles EmployeeIDTbx.TextChanged
@@ -90,6 +91,8 @@ Public Class SBMS_GAView
             PlateNoTbx.Text = Nothing
             KmRemainTbx.Text = Nothing
             DistanceTbx.ReadOnly = True
+        Else
+            DistanceTbx.ReadOnly = False
         End If
     End Sub
 
@@ -99,5 +102,48 @@ Public Class SBMS_GAView
             DistanceTbx.Focus()
             DistanceTbx.Clear()
         End If
+    End Sub
+
+    Private Sub TabControl1_Enter(sender As Object, e As EventArgs) Handles TabControl1.Enter
+        Dim SDA As New MySqlDataAdapter
+        Dim dbDataSet As New DataTable
+        Dim count As Integer
+        conn = New MySqlConnection With {
+            .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
+        }
+        Dim reader As MySqlDataReader
+        Try
+            conn.Open()
+            Dim query As String = "SELECT TBL_USER2.employee_id, name, Dept FROM tbl_user2 INNER JOIN tbl_attachment ON tbl_user2.employee_id = tbl_attachment.employee_id INNER JOIN tbl_order WHERE tbl_order.order_id = tbl_attachment.order_id;"
+            command = New MySqlCommand(query, conn)
+            reader = command.ExecuteReader
+            count = 0
+            While reader.Read
+                count = +1
+            End While
+            reader.Close()
+            If count >= 1 Then
+                SDA.SelectCommand = command
+                SDA.Fill(dbDataSet)
+                AttachedGridPerson.DataSource = dbDataSet
+                SDA.Update(dbDataSet)
+                With AttachedGridPerson
+                    .RowHeadersVisible = False
+                    .Columns(0).HeaderCell.Value = "Employee ID"
+                    .Columns(0).Width = 120
+                    .Columns(1).HeaderCell.Value = "Full Name"
+                    .Columns(1).Width = 200
+                    .Columns(2).HeaderCell.Value = "Department"
+                    .Columns(2).Width = 200
+                End With
+                conn.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            If conn IsNot Nothing Then
+                conn.Close()
+            End If
+        End Try
     End Sub
 End Class
