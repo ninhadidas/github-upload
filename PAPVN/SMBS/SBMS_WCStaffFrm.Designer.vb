@@ -39,7 +39,7 @@ Partial Class SBMS_WCStaffFrm
         Me.QuitBtn = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.GAReviewBtn = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
@@ -199,7 +199,7 @@ Partial Class SBMS_WCStaffFrm
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.Button1)
+        Me.GroupBox3.Controls.Add(Me.GAReviewBtn)
         Me.GroupBox3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(245, 268)
         Me.GroupBox3.Name = "GroupBox3"
@@ -208,15 +208,15 @@ Partial Class SBMS_WCStaffFrm
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "For GA Check"
         '
-        'Button1
+        'GAReviewBtn
         '
-        Me.Button1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(28, 22)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(178, 55)
-        Me.Button1.TabIndex = 17
-        Me.Button1.Text = "Review Bus Request" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(For GA Only)"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.GAReviewBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GAReviewBtn.Location = New System.Drawing.Point(28, 22)
+        Me.GAReviewBtn.Name = "GAReviewBtn"
+        Me.GAReviewBtn.Size = New System.Drawing.Size(178, 55)
+        Me.GAReviewBtn.TabIndex = 17
+        Me.GAReviewBtn.Text = "Review Bus Request" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(For GA Only)"
+        Me.GAReviewBtn.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
@@ -285,7 +285,7 @@ Partial Class SBMS_WCStaffFrm
     Friend WithEvents QuitBtn As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents GAReviewBtn As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ToolTip1 As ToolTip
 End Class

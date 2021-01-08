@@ -127,9 +127,9 @@ Public Class BusRequestFrm
                         'End Using
                         'MessageBox.Show("Your request was submitted to manager successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Dim query_mail As String = "SELECT tbl_user2.email FROM tbl_user2 INNER JOIN tbl_approval ON tbl_approval.app1 = tbl_user2.employee_id WHERE tbl_approval.employee_id ='" & userid & "';"
-                    command = New MySqlCommand(query_mail, conn)
-                    reader = command.ExecuteReader
-                    count = 0
+                        command = New MySqlCommand(query_mail, conn)
+                        reader = command.ExecuteReader
+                        count = 0
                         While reader.Read
                             count = +1
                         End While

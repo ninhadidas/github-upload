@@ -22,4 +22,8 @@ Public Class SBMS_WCStaffFrm
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         ChangeStaffPw.Show()
     End Sub
+
+    Private Sub GAReviewBtn_Click(sender As Object, e As EventArgs) Handles GAReviewBtn.Click
+        SBMS_GAView.Show()
+    End Sub
 End Class

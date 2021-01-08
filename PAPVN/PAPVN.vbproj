@@ -292,12 +292,6 @@
     <Compile Include="SMBS\SBMS_GAView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SMBS\SBMS_MngLoginFrm.Designer.vb">
-      <DependentUpon>SBMS_MngLoginFrm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SMBS\SBMS_MngLoginFrm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="SMBS\SBMS_MngView.Designer.vb">
       <DependentUpon>SBMS_MngView.vb</DependentUpon>
     </Compile>
@@ -422,9 +416,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SMBS\SBMS_GAView.resx">
       <DependentUpon>SBMS_GAView.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SMBS\SBMS_MngLoginFrm.resx">
-      <DependentUpon>SBMS_MngLoginFrm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SMBS\SBMS_MngView.resx">
       <DependentUpon>SBMS_MngView.vb</DependentUpon>

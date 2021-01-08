@@ -56,7 +56,6 @@ C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.SBMSStaffLoginFrm.resour
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.SBMS_WCStaffFrm.resources
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.SBMS_MngView.resources
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.ReviewGridMng.resources
-C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.SBMS_MngLoginFrm.resources
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.Competency.resources
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.HRMasterViewFrm.resources
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.MasterGridUser.resources

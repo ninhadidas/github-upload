@@ -27,8 +27,13 @@ Public Class SBMSStaffLoginFrm
                 Me.Hide()
                 Dim approval As String
                 approval = reader("is_approval").ToString
+                Dim ga As String
+                ga = reader("is_ga").ToString
                 If approval <> True Then
                     SBMS_WCStaffFrm.ReviewRequestBtn.Enabled = False
+                End If
+                If ga <> True Then
+                    SBMS_WCStaffFrm.GAReviewBtn.Enabled = False
                 End If
                 SBMS_WCStaffFrm.Show()
                 SBMS_WCStaffFrm.NameLabel.Text = reader("name").ToString
