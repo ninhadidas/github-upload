@@ -25,6 +25,7 @@ Partial Class SBMS_BusSelect
         Me.BusyGridBus = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.today_lbl = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.BusyGridBus, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -37,7 +38,7 @@ Partial Class SBMS_BusSelect
         Me.BusyGridBus.Location = New System.Drawing.Point(27, 54)
         Me.BusyGridBus.Name = "BusyGridBus"
         Me.BusyGridBus.ReadOnly = True
-        Me.BusyGridBus.Size = New System.Drawing.Size(1290, 577)
+        Me.BusyGridBus.Size = New System.Drawing.Size(1290, 277)
         Me.BusyGridBus.TabIndex = 0
         '
         'Label1
@@ -63,11 +64,21 @@ Partial Class SBMS_BusSelect
         Me.today_lbl.Text = "TODAY: "
         Me.today_lbl.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(27, 349)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'SBMS_BusSelect
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1344, 661)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.today_lbl)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BusyGridBus)
@@ -82,4 +93,5 @@ Partial Class SBMS_BusSelect
     Friend WithEvents BusyGridBus As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents today_lbl As Label
+    Friend WithEvents Button1 As Button
 End Class
