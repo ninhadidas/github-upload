@@ -268,6 +268,12 @@
     <Compile Include="PMS\ReleaseStatusFrm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SMBS\ReviewGridGA.Designer.vb">
+      <DependentUpon>ReviewGridGA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SMBS\ReviewGridGA.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SMBS\ReviewGridMng.Designer.vb">
       <DependentUpon>ReviewGridMng.vb</DependentUpon>
     </Compile>
@@ -404,6 +410,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PMS\ReleaseStatusFrm.resx">
       <DependentUpon>ReleaseStatusFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMBS\ReviewGridGA.resx">
+      <DependentUpon>ReviewGridGA.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SMBS\ReviewGridMng.resx">
       <DependentUpon>ReviewGridMng.vb</DependentUpon>

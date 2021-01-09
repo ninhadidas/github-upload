@@ -24,6 +24,6 @@ Public Class SBMS_WCStaffFrm
     End Sub
 
     Private Sub GAReviewBtn_Click(sender As Object, e As EventArgs) Handles GAReviewBtn.Click
-        SBMS_GAView.Show()
+        ReviewGridGA.Show()
     End Sub
 End Class

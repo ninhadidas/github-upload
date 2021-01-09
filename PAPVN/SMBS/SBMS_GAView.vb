@@ -9,19 +9,50 @@ Public Class SBMS_GAView
         Dim order_id As String
         Dim reader As MySqlDataReader
         Dim bus As String = busID.Text
+        Dim bus_name As String = BusNameTbx.Text
+        Dim distance As String = DistanceTbx.Text
+        Dim driver_name As String = DriverNameTbx.Text
+        Dim driver_phone As String = DriverMobileTbx.Text
+        Dim OutlookMessage As outlook.MailItem
+        Dim AppOutlook As New outlook.Application
         conn = New MySqlConnection With {
                 .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
             }
         order_id = Id_Label.Text
         Dim result As DialogResult = MessageBox.Show("Are you sure to submit this request?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If result = DialogResult.Yes And BusNameTbx.Text <> "" And DistanceTbx.Text <> "" Then
+        If result = DialogResult.Yes And BusNameTbx.Text <> "" And distance <> "" Then
             Try
                 conn.Open()
-                Dim query As String = "UPDATE tbl_order SET status_id='3', bus_id='" & bus & "' WHERE order_id='" & order_id & "';"
+                Dim query As String = "UPDATE tbl_order SET status_id='3', bus_id='" & bus & "', distance='" & distance & "' WHERE order_id='" & order_id & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 reader.Close()
-                MessageBox.Show("The request was submitted to GA successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                Dim Name As String = NameTbx.Text
+                Dim userid As String = EmployeeIDTbx.Text
+                Dim email As String = EmailTbx.Text
+                Try
+                    Dim SmtpServer As New SmtpClient()
+                    Dim sendmail As New MailMessage()
+                    SmtpServer.Credentials = New _
+                            Net.NetworkCredential("japan\70H9536", "Papvn17")
+                    SmtpServer.Port = 25
+                    SmtpServer.Host = "157.8.1.154"
+                    sendmail = New MailMessage With {
+                                .From = New MailAddress("helpdesk.papvn@vn.panasonic.com")
+                                }
+                    sendmail.To.Add(email)
+                    sendmail.IsBodyHtml = True
+                    sendmail.Subject = "Your Bus Request was Approved - Bus Management System."
+                    sendmail.Body = "Dear Mr/Ms " & Name & " (Employee ID: " & userid & "), <br><br> Please check details your Bus Request as below.<br><br> Order Number: " & order_id & "<br><br> Bus Name: " & bus_name & "<br><br> Driver's Name: " & driver_name & "<br><br> Driver's Phone Number: " & driver_phone & "<br><br> Please note the Order Number and Inform to Security Staff <br><br>*To save the environment,  DO NOT print this email. This message is automatically sent from system. (c) 2021 by IT Department"
+                    SmtpServer.Send(sendmail)
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                Finally
+                    OutlookMessage = Nothing
+                        AppOutlook = Nothing
+                    End Try
+                MessageBox.Show("The request was submitted successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             Finally
@@ -76,7 +107,6 @@ Public Class SBMS_GAView
     End Sub
 
     Private Sub SBMS_GAView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
     Private Sub CompanyBusBtn_Click(sender As Object, e As EventArgs) Handles CompanyBusBtn.Click
@@ -104,17 +134,18 @@ Public Class SBMS_GAView
         End If
     End Sub
 
-    Private Sub TabControl1_Enter(sender As Object, e As EventArgs) Handles TabControl1.Enter
+    Private Sub TabPage2_Enter(sender As Object, e As EventArgs) Handles TabPage2.Enter
         Dim SDA As New MySqlDataAdapter
         Dim dbDataSet As New DataTable
         Dim count As Integer
+        Dim order_id As String = Id_Label.Text
         conn = New MySqlConnection With {
             .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
         }
         Dim reader As MySqlDataReader
         Try
             conn.Open()
-            Dim query As String = "SELECT TBL_USER2.employee_id, name, Dept FROM tbl_user2 INNER JOIN tbl_attachment ON tbl_user2.employee_id = tbl_attachment.employee_id INNER JOIN tbl_order WHERE tbl_order.order_id = tbl_attachment.order_id;"
+            Dim query As String = "Select tbl_user2.employee_id, Name, Dept FROM tbl_user2 INNER JOIN tbl_attachment ON tbl_user2.employee_id = tbl_attachment.employee_id WHERE tbl_attachment.order_id='" & order_id & "';"
             command = New MySqlCommand(query, conn)
             reader = command.ExecuteReader
             count = 0

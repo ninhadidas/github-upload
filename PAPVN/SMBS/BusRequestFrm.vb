@@ -106,7 +106,7 @@ Public Class BusRequestFrm
             MessageBox.Show("Please fill in all fields to continue!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
             Dim result As DialogResult = MessageBox.Show("Are you sure to submit this request?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If result = DialogResult.Yes Then
+            If result = DialogResult.Yes And Radio_btn_No1.Checked = True Then
                 Try
                     conn.Open()
                     Dim query As String = "INSERT INTO tbl_order (order_id, Employee_ID, start_location, end_location, start_time, end_time, order_content, order_note, asset_bringout, submit_time, status_id) VALUES (@id, @Employee_ID, @start_location, @end_location, @start_time, @end_time, @order_content, @order_note, @asset_bringout, @submit_time, @status_id);"
@@ -161,11 +161,11 @@ Public Class BusRequestFrm
                                 MessageBox.Show(ex.Message)
                             Finally
                                 OutlookMessage = Nothing
-                            AppOutlook = Nothing
-                        End Try
-                    Else
-                        MessageBox.Show("Mail could not be sent") 'if you dont want this message, simply delete this line 
-                    End If
+                                AppOutlook = Nothing
+                            End Try
+                        Else
+                            MessageBox.Show("Mail could not be sent") 'if you dont want this message, simply delete this line 
+                        End If
                     End Using
                     MessageBox.Show("Your request were submitted to your manager successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Me.Close()

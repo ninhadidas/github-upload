@@ -22,8 +22,8 @@ Partial Class SBMS_GAView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SBMS_GAView))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DeptTbx = New System.Windows.Forms.TextBox()
@@ -73,7 +73,6 @@ Partial Class SBMS_GAView
         Me.NewReturnTime = New System.Windows.Forms.DateTimePicker()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.NewPickupTime = New System.Windows.Forms.DateTimePicker()
-        Me.TripCarBtn = New System.Windows.Forms.RadioButton()
         Me.TaxiCardBtn = New System.Windows.Forms.RadioButton()
         Me.CompanyBusBtn = New System.Windows.Forms.RadioButton()
         Me.Label36 = New System.Windows.Forms.Label()
@@ -276,9 +275,9 @@ Partial Class SBMS_GAView
         Me.Label11.ForeColor = System.Drawing.Color.Navy
         Me.Label11.Location = New System.Drawing.Point(212, 53)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(348, 25)
+        Me.Label11.Size = New System.Drawing.Size(283, 25)
         Me.Label11.TabIndex = 38
-        Me.Label11.Text = "BUS REQUEST FORM (ID:          )"
+        Me.Label11.Text = "BUS REQUEST FORM - ID:"
         '
         'RejectBtn
         '
@@ -586,23 +585,23 @@ Partial Class SBMS_GAView
         Me.AttachedGridPerson.AllowUserToAddRows = False
         Me.AttachedGridPerson.AllowUserToDeleteRows = False
         Me.AttachedGridPerson.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.AttachedGridPerson.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.AttachedGridPerson.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.AttachedGridPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.AttachedGridPerson.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.AttachedGridPerson.DefaultCellStyle = DataGridViewCellStyle4
         Me.AttachedGridPerson.Location = New System.Drawing.Point(32, 35)
         Me.AttachedGridPerson.Name = "AttachedGridPerson"
         Me.AttachedGridPerson.ReadOnly = True
@@ -616,7 +615,6 @@ Partial Class SBMS_GAView
         Me.TabPage3.Controls.Add(Me.NewReturnTime)
         Me.TabPage3.Controls.Add(Me.Label37)
         Me.TabPage3.Controls.Add(Me.NewPickupTime)
-        Me.TabPage3.Controls.Add(Me.TripCarBtn)
         Me.TabPage3.Controls.Add(Me.TaxiCardBtn)
         Me.TabPage3.Controls.Add(Me.CompanyBusBtn)
         Me.TabPage3.Controls.Add(Me.Label36)
@@ -671,17 +669,6 @@ Partial Class SBMS_GAView
         Me.NewPickupTime.Name = "NewPickupTime"
         Me.NewPickupTime.Size = New System.Drawing.Size(179, 20)
         Me.NewPickupTime.TabIndex = 81
-        '
-        'TripCarBtn
-        '
-        Me.TripCarBtn.AutoSize = True
-        Me.TripCarBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TripCarBtn.Location = New System.Drawing.Point(518, 29)
-        Me.TripCarBtn.Name = "TripCarBtn"
-        Me.TripCarBtn.Size = New System.Drawing.Size(76, 20)
-        Me.TripCarBtn.TabIndex = 80
-        Me.TripCarBtn.Text = "Trip Car"
-        Me.TripCarBtn.UseVisualStyleBackColor = True
         '
         'TaxiCardBtn
         '
@@ -765,11 +752,11 @@ Partial Class SBMS_GAView
         'busID
         '
         Me.busID.AutoSize = True
-        Me.busID.Location = New System.Drawing.Point(264, 132)
+        Me.busID.Location = New System.Drawing.Point(130, 16)
         Me.busID.Name = "busID"
-        Me.busID.Size = New System.Drawing.Size(45, 13)
+        Me.busID.Size = New System.Drawing.Size(17, 13)
         Me.busID.TabIndex = 67
-        Me.busID.Text = "Label1"
+        Me.busID.Text = "id"
         Me.busID.Visible = False
         '
         'Label40
@@ -912,7 +899,7 @@ Partial Class SBMS_GAView
         Me.Id_Label.AutoSize = True
         Me.Id_Label.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Id_Label.ForeColor = System.Drawing.Color.Navy
-        Me.Id_Label.Location = New System.Drawing.Point(483, 53)
+        Me.Id_Label.Location = New System.Drawing.Point(487, 53)
         Me.Id_Label.Name = "Id_Label"
         Me.Id_Label.Size = New System.Drawing.Size(64, 25)
         Me.Id_Label.TabIndex = 43
@@ -1007,7 +994,6 @@ Partial Class SBMS_GAView
     Friend WithEvents Label3 As Label
     Friend WithEvents PositionTbx As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents TripCarBtn As RadioButton
     Friend WithEvents TaxiCardBtn As RadioButton
     Friend WithEvents CompanyBusBtn As RadioButton
     Friend WithEvents Label36 As Label
