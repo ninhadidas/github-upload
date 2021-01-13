@@ -66,6 +66,7 @@ Partial Class SBMS_MngView
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.AttachedGridPerson = New System.Windows.Forms.DataGridView()
         Me.Id_Label = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -197,9 +198,9 @@ Partial Class SBMS_MngView
         Me.Label11.ForeColor = System.Drawing.Color.Navy
         Me.Label11.Location = New System.Drawing.Point(212, 53)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(348, 25)
+        Me.Label11.Size = New System.Drawing.Size(289, 25)
         Me.Label11.TabIndex = 38
-        Me.Label11.Text = "BUS REQUEST FORM (ID:          )"
+        Me.Label11.Text = "BUS REQUEST FORM - ID: "
         '
         'RejectBtn
         '
@@ -508,6 +509,7 @@ Partial Class SBMS_MngView
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Label14)
         Me.TabPage2.Controls.Add(Me.AttachedGridPerson)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
@@ -539,11 +541,11 @@ Partial Class SBMS_MngView
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.AttachedGridPerson.DefaultCellStyle = DataGridViewCellStyle2
-        Me.AttachedGridPerson.Location = New System.Drawing.Point(31, 14)
+        Me.AttachedGridPerson.Location = New System.Drawing.Point(31, 48)
         Me.AttachedGridPerson.Name = "AttachedGridPerson"
         Me.AttachedGridPerson.ReadOnly = True
         Me.AttachedGridPerson.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.AttachedGridPerson.Size = New System.Drawing.Size(656, 459)
+        Me.AttachedGridPerson.Size = New System.Drawing.Size(656, 425)
         Me.AttachedGridPerson.TabIndex = 2
         '
         'Id_Label
@@ -551,11 +553,22 @@ Partial Class SBMS_MngView
         Me.Id_Label.AutoSize = True
         Me.Id_Label.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Id_Label.ForeColor = System.Drawing.Color.Navy
-        Me.Id_Label.Location = New System.Drawing.Point(483, 53)
+        Me.Id_Label.Location = New System.Drawing.Point(486, 53)
         Me.Id_Label.Name = "Id_Label"
         Me.Id_Label.Size = New System.Drawing.Size(64, 25)
         Me.Id_Label.TabIndex = 43
         Me.Id_Label.Text = "1234"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Blue
+        Me.Label14.Location = New System.Drawing.Point(173, 19)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(336, 16)
+        Me.Label14.TabIndex = 81
+        Me.Label14.Text = "Attached person (Danh sách những người đi cùng)"
         '
         'SBMS_MngView
         '
@@ -582,6 +595,7 @@ Partial Class SBMS_MngView
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         CType(Me.AttachedGridPerson, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -628,4 +642,5 @@ Partial Class SBMS_MngView
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Id_Label As Label
     Friend WithEvents AttachedGridPerson As DataGridView
+    Friend WithEvents Label14 As Label
 End Class

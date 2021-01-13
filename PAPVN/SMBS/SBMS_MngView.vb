@@ -137,7 +137,7 @@ Public Class SBMS_MngView
         Dim reader As MySqlDataReader
         Try
             conn.Open()
-            Dim query As String = "SELECT TBL_USER2.employee_id, name, Dept FROM tbl_user2 INNER JOIN tbl_attachment ON tbl_user2.employee_id = tbl_attachment.employee_id INNER JOIN tbl_order ON tbl_order.order_id = tbl_attachment.order_id WHERE tbl_attachment.order_id = '" & order_id & "';"
+            Dim query As String = "Select tbl_user2.employee_id, Name, Dept FROM tbl_user2 INNER JOIN tbl_attachment ON tbl_user2.employee_id = tbl_attachment.employee_id WHERE tbl_attachment.order_id='" & order_id & "';"
             command = New MySqlCommand(query, conn)
             reader = command.ExecuteReader
             count = 0

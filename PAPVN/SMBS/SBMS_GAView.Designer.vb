@@ -22,8 +22,8 @@ Partial Class SBMS_GAView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SBMS_GAView))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DeptTbx = New System.Windows.Forms.TextBox()
@@ -67,6 +67,7 @@ Partial Class SBMS_GAView
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.AttachedGridPerson = New System.Windows.Forms.DataGridView()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Label38 = New System.Windows.Forms.Label()
@@ -571,6 +572,7 @@ Partial Class SBMS_GAView
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Label14)
         Me.TabPage2.Controls.Add(Me.AttachedGridPerson)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
@@ -580,33 +582,44 @@ Partial Class SBMS_GAView
         Me.TabPage2.Text = "Attached Person"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Blue
+        Me.Label14.Location = New System.Drawing.Point(181, 11)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(336, 16)
+        Me.Label14.TabIndex = 82
+        Me.Label14.Text = "Attached person (Danh sách những người đi cùng)"
+        '
         'AttachedGridPerson
         '
         Me.AttachedGridPerson.AllowUserToAddRows = False
         Me.AttachedGridPerson.AllowUserToDeleteRows = False
         Me.AttachedGridPerson.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.AttachedGridPerson.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.AttachedGridPerson.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.AttachedGridPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.AttachedGridPerson.DefaultCellStyle = DataGridViewCellStyle4
-        Me.AttachedGridPerson.Location = New System.Drawing.Point(32, 35)
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.AttachedGridPerson.DefaultCellStyle = DataGridViewCellStyle2
+        Me.AttachedGridPerson.Location = New System.Drawing.Point(32, 39)
         Me.AttachedGridPerson.Name = "AttachedGridPerson"
         Me.AttachedGridPerson.ReadOnly = True
         Me.AttachedGridPerson.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.AttachedGridPerson.Size = New System.Drawing.Size(656, 459)
+        Me.AttachedGridPerson.Size = New System.Drawing.Size(656, 455)
         Me.AttachedGridPerson.TabIndex = 1
         '
         'TabPage3
@@ -636,19 +649,20 @@ Partial Class SBMS_GAView
         Me.Label38.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label38.Location = New System.Drawing.Point(522, 261)
         Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(186, 16)
+        Me.Label38.Size = New System.Drawing.Size(129, 16)
         Me.Label38.TabIndex = 84
-        Me.Label38.Text = "New Return Time (Optional)"
+        Me.Label38.Text = "New Return Time *"
         '
         'NewReturnTime
         '
         Me.NewReturnTime.CustomFormat = "dd-MMM-yyyy HH:mm"
         Me.NewReturnTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.NewReturnTime.Location = New System.Drawing.Point(525, 280)
-        Me.NewReturnTime.MinDate = New Date(2020, 11, 1, 0, 0, 0, 0)
+        Me.NewReturnTime.MinDate = New Date(2021, 1, 1, 0, 0, 0, 0)
         Me.NewReturnTime.Name = "NewReturnTime"
         Me.NewReturnTime.Size = New System.Drawing.Size(179, 20)
         Me.NewReturnTime.TabIndex = 83
+        Me.NewReturnTime.Value = New Date(2021, 1, 13, 22, 38, 24, 0)
         '
         'Label37
         '
@@ -937,6 +951,7 @@ Partial Class SBMS_GAView
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         CType(Me.AttachedGridPerson, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
@@ -1019,4 +1034,5 @@ Partial Class SBMS_GAView
     Friend WithEvents DistanceTbx As TextBox
     Friend WithEvents AttachedGridPerson As DataGridView
     Friend WithEvents busID As Label
+    Friend WithEvents Label14 As Label
 End Class

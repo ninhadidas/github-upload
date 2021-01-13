@@ -1,28 +1,62 @@
-﻿Public Class Form2
+﻿Imports MySql.Data.MySqlClient
+Imports QRCoder
+Public Class Form2
+    Dim conn As MySqlConnection
+    Dim command As MySqlCommand
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim a As Double
-        Dim b As Double
-        Dim c As Double
-        Dim X As Double
+        'Dim time As Date
+        'Dim dbDataSet As New DataTable
+        'Dim SDA As New MySqlDataAdapter
+        'conn = New MySqlConnection With {
+        '.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
+        '    }
+        'time = DateTimePicker1.Value
+        'Try
+        '    conn.Open()
+        '    Dim query As String = "INSERT INTO tbl_order (order_id, start_time) VALUES (@order_id, @start_time);"
+        '    Using conn
+        '        command = New MySqlCommand(query, conn)
+        '        command.Parameters.AddWithValue("@order_id", "")
+        '        command.Parameters.AddWithValue("@start_time", time)
+        '        command.ExecuteNonQuery()
+        '    End Using
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.Message)
+        'Finally
+        '    If conn IsNot Nothing Then
+        '        conn.Close()
+        '    End If
+        'End Try
+        Dim time As Date
+        Dim dbDataSet As New DataTable
+        Dim SDA As New MySqlDataAdapter
 
-
-        a = TextBox1.Text * TextBox5.Text
-        b = TextBox2.Text * TextBox6.Text
-        c = TextBox3.Text * TextBox7.Text
-        X = (a + b + c) / 100
-
-
-        If X >= 1.45 And X <= 2.44 Then
-            X = 2
-        Else
-            If X >= 2.45 Then
-                X = 3
-            Else
-                If X >= 0 And X < 1.45 Then
-                    X = 1
-                End If
+        conn = New MySqlConnection With {
+        .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
+            }
+        time = DateTimePicker1.Value
+        Try
+            conn.Open()
+            Dim query As String = "UPDATE tbl_order SET start_time= @start_time WHERE order_id =51;"
+            Using conn
+                command = New MySqlCommand(query, conn)
+                command.Parameters.AddWithValue("@start_time", time)
+                command.ExecuteNonQuery()
+            End Using
+            MessageBox.Show("Done!", "OK!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            If conn IsNot Nothing Then
+                conn.Close()
             End If
-        End If
-        TextBox4.Text = X
+        End Try
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim gen As New QRCodeGenerator
+        Dim data = gen.CreateQrCode(Label1.Text, QRCodeGenerator.ECCLevel.Q)
+        Dim code As New QRCode(data)
+        PictureBox1.Image = code.GetGraphic(6)
     End Sub
 End Class

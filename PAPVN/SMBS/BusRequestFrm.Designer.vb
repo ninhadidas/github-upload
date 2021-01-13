@@ -23,10 +23,11 @@ Partial Class BusRequestFrm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BusRequestFrm))
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.CancelBtn = New System.Windows.Forms.Button()
+        Me.SaveDraftBtn = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.EmployeeIDTbx = New System.Windows.Forms.TextBox()
@@ -41,6 +42,7 @@ Partial Class BusRequestFrm
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GoBackTbx = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Radio_btn_No3 = New System.Windows.Forms.RadioButton()
@@ -49,8 +51,6 @@ Partial Class BusRequestFrm
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Radio_btn_No1 = New System.Windows.Forms.RadioButton()
         Me.Radio_btn_Yes1 = New System.Windows.Forms.RadioButton()
-        Me.Radio_btn_No2 = New System.Windows.Forms.RadioButton()
-        Me.Radio_btn_Yes2 = New System.Windows.Forms.RadioButton()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.ComebackTimePicker = New System.Windows.Forms.DateTimePicker()
@@ -68,41 +68,43 @@ Partial Class BusRequestFrm
         Me.DepatureTbx = New System.Windows.Forms.TextBox()
         Me.SubmitBtn = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.NameTbx9 = New System.Windows.Forms.TextBox()
+        Me.EmployeeTbx9 = New System.Windows.Forms.TextBox()
+        Me.NameTbx10 = New System.Windows.Forms.TextBox()
+        Me.EmployeeTbx10 = New System.Windows.Forms.TextBox()
+        Me.NameTbx7 = New System.Windows.Forms.TextBox()
+        Me.EmployeeTbx7 = New System.Windows.Forms.TextBox()
+        Me.NameTbx8 = New System.Windows.Forms.TextBox()
+        Me.EmployeeTbx8 = New System.Windows.Forms.TextBox()
+        Me.NameTbx6 = New System.Windows.Forms.TextBox()
+        Me.EmployeeTbx6 = New System.Windows.Forms.TextBox()
+        Me.NameTbx5 = New System.Windows.Forms.TextBox()
+        Me.EmployeeTbx5 = New System.Windows.Forms.TextBox()
+        Me.NameTbx3 = New System.Windows.Forms.TextBox()
+        Me.EmployeeTbx3 = New System.Windows.Forms.TextBox()
+        Me.NameTbx4 = New System.Windows.Forms.TextBox()
+        Me.EmployeeTbx4 = New System.Windows.Forms.TextBox()
+        Me.NameTbx2 = New System.Windows.Forms.TextBox()
+        Me.EmployeeTbx2 = New System.Windows.Forms.TextBox()
+        Me.NameTbx1 = New System.Windows.Forms.TextBox()
+        Me.EmployeeTbx1 = New System.Windows.Forms.TextBox()
+        Me.Id_Label = New System.Windows.Forms.Label()
+        Me.StatusLabel = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -110,28 +112,19 @@ Partial Class BusRequestFrm
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(14, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(177, 29)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 37
-        Me.PictureBox1.TabStop = False
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Navy
-        Me.Label11.Location = New System.Drawing.Point(262, 56)
+        Me.Label11.Location = New System.Drawing.Point(202, 56)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(228, 25)
+        Me.Label11.Size = New System.Drawing.Size(289, 25)
         Me.Label11.TabIndex = 38
-        Me.Label11.Text = "BUS REQUEST FORM"
+        Me.Label11.Text = "BUS REQUEST FORM - ID: "
         '
         'TabControl1
         '
@@ -145,6 +138,8 @@ Partial Class BusRequestFrm
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.CancelBtn)
+        Me.TabPage1.Controls.Add(Me.SaveDraftBtn)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.SubmitBtn)
@@ -155,6 +150,30 @@ Partial Class BusRequestFrm
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Form"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'CancelBtn
+        '
+        Me.CancelBtn.BackColor = System.Drawing.Color.Red
+        Me.CancelBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CancelBtn.ForeColor = System.Drawing.Color.White
+        Me.CancelBtn.Location = New System.Drawing.Point(560, 489)
+        Me.CancelBtn.Name = "CancelBtn"
+        Me.CancelBtn.Size = New System.Drawing.Size(152, 34)
+        Me.CancelBtn.TabIndex = 42
+        Me.CancelBtn.Text = "Cancel Request"
+        Me.CancelBtn.UseVisualStyleBackColor = False
+        '
+        'SaveDraftBtn
+        '
+        Me.SaveDraftBtn.BackColor = System.Drawing.Color.DodgerBlue
+        Me.SaveDraftBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SaveDraftBtn.ForeColor = System.Drawing.Color.White
+        Me.SaveDraftBtn.Location = New System.Drawing.Point(300, 489)
+        Me.SaveDraftBtn.Name = "SaveDraftBtn"
+        Me.SaveDraftBtn.Size = New System.Drawing.Size(152, 34)
+        Me.SaveDraftBtn.TabIndex = 41
+        Me.SaveDraftBtn.Text = "Save Draft"
+        Me.SaveDraftBtn.UseVisualStyleBackColor = False
         '
         'GroupBox1
         '
@@ -306,10 +325,9 @@ Partial Class BusRequestFrm
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.GoBackTbx)
         Me.GroupBox2.Controls.Add(Me.GroupBox4)
         Me.GroupBox2.Controls.Add(Me.GroupBox3)
-        Me.GroupBox2.Controls.Add(Me.Radio_btn_No2)
-        Me.GroupBox2.Controls.Add(Me.Radio_btn_Yes2)
         Me.GroupBox2.Controls.Add(Me.Label17)
         Me.GroupBox2.Controls.Add(Me.Label24)
         Me.GroupBox2.Controls.Add(Me.ComebackTimePicker)
@@ -332,6 +350,17 @@ Partial Class BusRequestFrm
         Me.GroupBox2.TabIndex = 40
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Trip's Information"
+        '
+        'GoBackTbx
+        '
+        Me.GoBackTbx.BackColor = System.Drawing.Color.LemonChiffon
+        Me.GoBackTbx.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GoBackTbx.ForeColor = System.Drawing.Color.MediumBlue
+        Me.GoBackTbx.Location = New System.Drawing.Point(668, 260)
+        Me.GoBackTbx.Name = "GoBackTbx"
+        Me.GoBackTbx.ReadOnly = True
+        Me.GoBackTbx.Size = New System.Drawing.Size(26, 23)
+        Me.GoBackTbx.TabIndex = 84
         '
         'GroupBox4
         '
@@ -419,37 +448,15 @@ Partial Class BusRequestFrm
         Me.Radio_btn_Yes1.Text = "Yes"
         Me.Radio_btn_Yes1.UseVisualStyleBackColor = True
         '
-        'Radio_btn_No2
-        '
-        Me.Radio_btn_No2.AutoSize = True
-        Me.Radio_btn_No2.Checked = True
-        Me.Radio_btn_No2.Location = New System.Drawing.Point(634, 271)
-        Me.Radio_btn_No2.Name = "Radio_btn_No2"
-        Me.Radio_btn_No2.Size = New System.Drawing.Size(41, 17)
-        Me.Radio_btn_No2.TabIndex = 78
-        Me.Radio_btn_No2.TabStop = True
-        Me.Radio_btn_No2.Text = "No"
-        Me.Radio_btn_No2.UseVisualStyleBackColor = True
-        '
-        'Radio_btn_Yes2
-        '
-        Me.Radio_btn_Yes2.AutoSize = True
-        Me.Radio_btn_Yes2.Location = New System.Drawing.Point(634, 248)
-        Me.Radio_btn_Yes2.Name = "Radio_btn_Yes2"
-        Me.Radio_btn_Yes2.Size = New System.Drawing.Size(46, 17)
-        Me.Radio_btn_Yes2.TabIndex = 77
-        Me.Radio_btn_Yes2.Text = "Yes"
-        Me.Radio_btn_Yes2.UseVisualStyleBackColor = True
-        '
         'Label17
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(497, 248)
+        Me.Label17.Location = New System.Drawing.Point(482, 256)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(133, 32)
+        Me.Label17.Size = New System.Drawing.Size(180, 32)
         Me.Label17.TabIndex = 74
-        Me.Label17.Text = "Attached Person? " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Có Người Về Cùng)"
+        Me.Label17.Text = "No Of Attached Person? " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Bao Nhiêu Người Về Cùng)"
         '
         'Label24
         '
@@ -596,7 +603,7 @@ Partial Class BusRequestFrm
         Me.SubmitBtn.BackColor = System.Drawing.Color.Green
         Me.SubmitBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SubmitBtn.ForeColor = System.Drawing.Color.White
-        Me.SubmitBtn.Location = New System.Drawing.Point(286, 489)
+        Me.SubmitBtn.Location = New System.Drawing.Point(9, 489)
         Me.SubmitBtn.Name = "SubmitBtn"
         Me.SubmitBtn.Size = New System.Drawing.Size(152, 34)
         Me.SubmitBtn.TabIndex = 38
@@ -619,26 +626,26 @@ Partial Class BusRequestFrm
         Me.TabPage2.Controls.Add(Me.Label12)
         Me.TabPage2.Controls.Add(Me.Label10)
         Me.TabPage2.Controls.Add(Me.Label1)
-        Me.TabPage2.Controls.Add(Me.TextBox17)
-        Me.TabPage2.Controls.Add(Me.TextBox18)
-        Me.TabPage2.Controls.Add(Me.TextBox19)
-        Me.TabPage2.Controls.Add(Me.TextBox20)
-        Me.TabPage2.Controls.Add(Me.TextBox9)
-        Me.TabPage2.Controls.Add(Me.TextBox10)
-        Me.TabPage2.Controls.Add(Me.TextBox11)
-        Me.TabPage2.Controls.Add(Me.TextBox12)
-        Me.TabPage2.Controls.Add(Me.TextBox13)
-        Me.TabPage2.Controls.Add(Me.TextBox14)
-        Me.TabPage2.Controls.Add(Me.TextBox15)
-        Me.TabPage2.Controls.Add(Me.TextBox16)
-        Me.TabPage2.Controls.Add(Me.TextBox7)
-        Me.TabPage2.Controls.Add(Me.TextBox8)
-        Me.TabPage2.Controls.Add(Me.TextBox5)
-        Me.TabPage2.Controls.Add(Me.TextBox6)
-        Me.TabPage2.Controls.Add(Me.TextBox3)
-        Me.TabPage2.Controls.Add(Me.TextBox4)
-        Me.TabPage2.Controls.Add(Me.TextBox1)
-        Me.TabPage2.Controls.Add(Me.TextBox2)
+        Me.TabPage2.Controls.Add(Me.NameTbx9)
+        Me.TabPage2.Controls.Add(Me.EmployeeTbx9)
+        Me.TabPage2.Controls.Add(Me.NameTbx10)
+        Me.TabPage2.Controls.Add(Me.EmployeeTbx10)
+        Me.TabPage2.Controls.Add(Me.NameTbx7)
+        Me.TabPage2.Controls.Add(Me.EmployeeTbx7)
+        Me.TabPage2.Controls.Add(Me.NameTbx8)
+        Me.TabPage2.Controls.Add(Me.EmployeeTbx8)
+        Me.TabPage2.Controls.Add(Me.NameTbx6)
+        Me.TabPage2.Controls.Add(Me.EmployeeTbx6)
+        Me.TabPage2.Controls.Add(Me.NameTbx5)
+        Me.TabPage2.Controls.Add(Me.EmployeeTbx5)
+        Me.TabPage2.Controls.Add(Me.NameTbx3)
+        Me.TabPage2.Controls.Add(Me.EmployeeTbx3)
+        Me.TabPage2.Controls.Add(Me.NameTbx4)
+        Me.TabPage2.Controls.Add(Me.EmployeeTbx4)
+        Me.TabPage2.Controls.Add(Me.NameTbx2)
+        Me.TabPage2.Controls.Add(Me.EmployeeTbx2)
+        Me.TabPage2.Controls.Add(Me.NameTbx1)
+        Me.TabPage2.Controls.Add(Me.EmployeeTbx1)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -647,11 +654,101 @@ Partial Class BusRequestFrm
         Me.TabPage2.Text = "Attach Person List"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.Location = New System.Drawing.Point(31, 462)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(24, 16)
+        Me.Label31.TabIndex = 90
+        Me.Label31.Text = "10"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.Location = New System.Drawing.Point(31, 420)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(16, 16)
+        Me.Label30.TabIndex = 89
+        Me.Label30.Text = "9"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.Location = New System.Drawing.Point(31, 378)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(16, 16)
+        Me.Label29.TabIndex = 88
+        Me.Label29.Text = "8"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Location = New System.Drawing.Point(31, 336)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(16, 16)
+        Me.Label26.TabIndex = 87
+        Me.Label26.Text = "7"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Location = New System.Drawing.Point(31, 294)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(16, 16)
+        Me.Label25.TabIndex = 86
+        Me.Label25.Text = "6"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(31, 252)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(16, 16)
+        Me.Label22.TabIndex = 85
+        Me.Label22.Text = "5"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(31, 210)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(16, 16)
+        Me.Label21.TabIndex = 84
+        Me.Label21.Text = "4"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(31, 168)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(16, 16)
+        Me.Label20.TabIndex = 83
+        Me.Label20.Text = "3"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(31, 126)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(16, 16)
+        Me.Label19.TabIndex = 82
+        Me.Label19.Text = "2"
+        '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(31, 72)
+        Me.Label15.Location = New System.Drawing.Point(31, 84)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(16, 16)
         Me.Label15.TabIndex = 81
@@ -662,17 +759,18 @@ Partial Class BusRequestFrm
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.Blue
-        Me.Label14.Location = New System.Drawing.Point(201, 9)
+        Me.Label14.Location = New System.Drawing.Point(31, 13)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(305, 16)
+        Me.Label14.Size = New System.Drawing.Size(648, 16)
         Me.Label14.TabIndex = 80
-        Me.Label14.Text = "Please input Employee ID for attached person"
+        Me.Label14.Text = "Please input Employee ID for attached person (Nhập Mã nhân viên danh sách những n" &
+    "gười đi cùng)"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(467, 40)
+        Me.Label12.Location = New System.Drawing.Point(467, 52)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(43, 16)
         Me.Label12.TabIndex = 79
@@ -682,7 +780,7 @@ Partial Class BusRequestFrm
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(139, 40)
+        Me.Label10.Location = New System.Drawing.Point(139, 52)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(87, 16)
         Me.Label10.TabIndex = 78
@@ -692,317 +790,268 @@ Partial Class BusRequestFrm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(31, 40)
+        Me.Label1.Location = New System.Drawing.Point(31, 52)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(24, 16)
         Me.Label1.TabIndex = 77
         Me.Label1.Text = "No"
         '
-        'TextBox17
+        'NameTbx9
         '
-        Me.TextBox17.BackColor = System.Drawing.Color.Silver
-        Me.TextBox17.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox17.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox17.Location = New System.Drawing.Point(295, 405)
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.ReadOnly = True
-        Me.TextBox17.Size = New System.Drawing.Size(398, 23)
-        Me.TextBox17.TabIndex = 75
+        Me.NameTbx9.BackColor = System.Drawing.Color.Silver
+        Me.NameTbx9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameTbx9.ForeColor = System.Drawing.Color.MediumBlue
+        Me.NameTbx9.Location = New System.Drawing.Point(295, 417)
+        Me.NameTbx9.Name = "NameTbx9"
+        Me.NameTbx9.ReadOnly = True
+        Me.NameTbx9.Size = New System.Drawing.Size(398, 23)
+        Me.NameTbx9.TabIndex = 75
         '
-        'TextBox18
+        'EmployeeTbx9
         '
-        Me.TextBox18.BackColor = System.Drawing.Color.LemonChiffon
-        Me.TextBox18.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox18.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox18.Location = New System.Drawing.Point(94, 405)
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(162, 23)
-        Me.TextBox18.TabIndex = 76
+        Me.EmployeeTbx9.BackColor = System.Drawing.Color.LemonChiffon
+        Me.EmployeeTbx9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeTbx9.ForeColor = System.Drawing.Color.MediumBlue
+        Me.EmployeeTbx9.Location = New System.Drawing.Point(94, 417)
+        Me.EmployeeTbx9.Name = "EmployeeTbx9"
+        Me.EmployeeTbx9.ReadOnly = True
+        Me.EmployeeTbx9.Size = New System.Drawing.Size(162, 23)
+        Me.EmployeeTbx9.TabIndex = 76
         '
-        'TextBox19
+        'NameTbx10
         '
-        Me.TextBox19.BackColor = System.Drawing.Color.Silver
-        Me.TextBox19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox19.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox19.Location = New System.Drawing.Point(295, 447)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.ReadOnly = True
-        Me.TextBox19.Size = New System.Drawing.Size(398, 23)
-        Me.TextBox19.TabIndex = 73
+        Me.NameTbx10.BackColor = System.Drawing.Color.Silver
+        Me.NameTbx10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameTbx10.ForeColor = System.Drawing.Color.MediumBlue
+        Me.NameTbx10.Location = New System.Drawing.Point(295, 459)
+        Me.NameTbx10.Name = "NameTbx10"
+        Me.NameTbx10.ReadOnly = True
+        Me.NameTbx10.Size = New System.Drawing.Size(398, 23)
+        Me.NameTbx10.TabIndex = 73
         '
-        'TextBox20
+        'EmployeeTbx10
         '
-        Me.TextBox20.BackColor = System.Drawing.Color.LemonChiffon
-        Me.TextBox20.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox20.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox20.Location = New System.Drawing.Point(94, 447)
-        Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.Size = New System.Drawing.Size(162, 23)
-        Me.TextBox20.TabIndex = 74
+        Me.EmployeeTbx10.BackColor = System.Drawing.Color.LemonChiffon
+        Me.EmployeeTbx10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeTbx10.ForeColor = System.Drawing.Color.MediumBlue
+        Me.EmployeeTbx10.Location = New System.Drawing.Point(94, 459)
+        Me.EmployeeTbx10.Name = "EmployeeTbx10"
+        Me.EmployeeTbx10.ReadOnly = True
+        Me.EmployeeTbx10.Size = New System.Drawing.Size(162, 23)
+        Me.EmployeeTbx10.TabIndex = 74
         '
-        'TextBox9
+        'NameTbx7
         '
-        Me.TextBox9.BackColor = System.Drawing.Color.Silver
-        Me.TextBox9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox9.Location = New System.Drawing.Point(295, 321)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.ReadOnly = True
-        Me.TextBox9.Size = New System.Drawing.Size(398, 23)
-        Me.TextBox9.TabIndex = 71
+        Me.NameTbx7.BackColor = System.Drawing.Color.Silver
+        Me.NameTbx7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameTbx7.ForeColor = System.Drawing.Color.MediumBlue
+        Me.NameTbx7.Location = New System.Drawing.Point(295, 333)
+        Me.NameTbx7.Name = "NameTbx7"
+        Me.NameTbx7.ReadOnly = True
+        Me.NameTbx7.Size = New System.Drawing.Size(398, 23)
+        Me.NameTbx7.TabIndex = 71
         '
-        'TextBox10
+        'EmployeeTbx7
         '
-        Me.TextBox10.BackColor = System.Drawing.Color.LemonChiffon
-        Me.TextBox10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox10.Location = New System.Drawing.Point(94, 321)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(162, 23)
-        Me.TextBox10.TabIndex = 72
+        Me.EmployeeTbx7.BackColor = System.Drawing.Color.LemonChiffon
+        Me.EmployeeTbx7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeTbx7.ForeColor = System.Drawing.Color.MediumBlue
+        Me.EmployeeTbx7.Location = New System.Drawing.Point(94, 333)
+        Me.EmployeeTbx7.Name = "EmployeeTbx7"
+        Me.EmployeeTbx7.ReadOnly = True
+        Me.EmployeeTbx7.Size = New System.Drawing.Size(162, 23)
+        Me.EmployeeTbx7.TabIndex = 72
         '
-        'TextBox11
+        'NameTbx8
         '
-        Me.TextBox11.BackColor = System.Drawing.Color.Silver
-        Me.TextBox11.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox11.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox11.Location = New System.Drawing.Point(295, 363)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.ReadOnly = True
-        Me.TextBox11.Size = New System.Drawing.Size(398, 23)
-        Me.TextBox11.TabIndex = 69
+        Me.NameTbx8.BackColor = System.Drawing.Color.Silver
+        Me.NameTbx8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameTbx8.ForeColor = System.Drawing.Color.MediumBlue
+        Me.NameTbx8.Location = New System.Drawing.Point(295, 375)
+        Me.NameTbx8.Name = "NameTbx8"
+        Me.NameTbx8.ReadOnly = True
+        Me.NameTbx8.Size = New System.Drawing.Size(398, 23)
+        Me.NameTbx8.TabIndex = 69
         '
-        'TextBox12
+        'EmployeeTbx8
         '
-        Me.TextBox12.BackColor = System.Drawing.Color.LemonChiffon
-        Me.TextBox12.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox12.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox12.Location = New System.Drawing.Point(94, 363)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(162, 23)
-        Me.TextBox12.TabIndex = 70
+        Me.EmployeeTbx8.BackColor = System.Drawing.Color.LemonChiffon
+        Me.EmployeeTbx8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeTbx8.ForeColor = System.Drawing.Color.MediumBlue
+        Me.EmployeeTbx8.Location = New System.Drawing.Point(94, 375)
+        Me.EmployeeTbx8.Name = "EmployeeTbx8"
+        Me.EmployeeTbx8.ReadOnly = True
+        Me.EmployeeTbx8.Size = New System.Drawing.Size(162, 23)
+        Me.EmployeeTbx8.TabIndex = 70
         '
-        'TextBox13
+        'NameTbx6
         '
-        Me.TextBox13.BackColor = System.Drawing.Color.Silver
-        Me.TextBox13.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox13.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox13.Location = New System.Drawing.Point(295, 279)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.ReadOnly = True
-        Me.TextBox13.Size = New System.Drawing.Size(398, 23)
-        Me.TextBox13.TabIndex = 67
+        Me.NameTbx6.BackColor = System.Drawing.Color.Silver
+        Me.NameTbx6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameTbx6.ForeColor = System.Drawing.Color.MediumBlue
+        Me.NameTbx6.Location = New System.Drawing.Point(295, 291)
+        Me.NameTbx6.Name = "NameTbx6"
+        Me.NameTbx6.ReadOnly = True
+        Me.NameTbx6.Size = New System.Drawing.Size(398, 23)
+        Me.NameTbx6.TabIndex = 67
         '
-        'TextBox14
+        'EmployeeTbx6
         '
-        Me.TextBox14.BackColor = System.Drawing.Color.LemonChiffon
-        Me.TextBox14.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox14.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox14.Location = New System.Drawing.Point(94, 279)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(162, 23)
-        Me.TextBox14.TabIndex = 68
+        Me.EmployeeTbx6.BackColor = System.Drawing.Color.LemonChiffon
+        Me.EmployeeTbx6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeTbx6.ForeColor = System.Drawing.Color.MediumBlue
+        Me.EmployeeTbx6.Location = New System.Drawing.Point(94, 291)
+        Me.EmployeeTbx6.Name = "EmployeeTbx6"
+        Me.EmployeeTbx6.ReadOnly = True
+        Me.EmployeeTbx6.Size = New System.Drawing.Size(162, 23)
+        Me.EmployeeTbx6.TabIndex = 68
         '
-        'TextBox15
+        'NameTbx5
         '
-        Me.TextBox15.BackColor = System.Drawing.Color.Silver
-        Me.TextBox15.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox15.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox15.Location = New System.Drawing.Point(295, 237)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.ReadOnly = True
-        Me.TextBox15.Size = New System.Drawing.Size(398, 23)
-        Me.TextBox15.TabIndex = 65
+        Me.NameTbx5.BackColor = System.Drawing.Color.Silver
+        Me.NameTbx5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameTbx5.ForeColor = System.Drawing.Color.MediumBlue
+        Me.NameTbx5.Location = New System.Drawing.Point(295, 249)
+        Me.NameTbx5.Name = "NameTbx5"
+        Me.NameTbx5.ReadOnly = True
+        Me.NameTbx5.Size = New System.Drawing.Size(398, 23)
+        Me.NameTbx5.TabIndex = 65
         '
-        'TextBox16
+        'EmployeeTbx5
         '
-        Me.TextBox16.BackColor = System.Drawing.Color.LemonChiffon
-        Me.TextBox16.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox16.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox16.Location = New System.Drawing.Point(94, 237)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(162, 23)
-        Me.TextBox16.TabIndex = 66
+        Me.EmployeeTbx5.BackColor = System.Drawing.Color.LemonChiffon
+        Me.EmployeeTbx5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeTbx5.ForeColor = System.Drawing.Color.MediumBlue
+        Me.EmployeeTbx5.Location = New System.Drawing.Point(94, 249)
+        Me.EmployeeTbx5.Name = "EmployeeTbx5"
+        Me.EmployeeTbx5.ReadOnly = True
+        Me.EmployeeTbx5.Size = New System.Drawing.Size(162, 23)
+        Me.EmployeeTbx5.TabIndex = 66
         '
-        'TextBox7
+        'NameTbx3
         '
-        Me.TextBox7.BackColor = System.Drawing.Color.Silver
-        Me.TextBox7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox7.Location = New System.Drawing.Point(295, 153)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.ReadOnly = True
-        Me.TextBox7.Size = New System.Drawing.Size(398, 23)
-        Me.TextBox7.TabIndex = 63
+        Me.NameTbx3.BackColor = System.Drawing.Color.Silver
+        Me.NameTbx3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameTbx3.ForeColor = System.Drawing.Color.MediumBlue
+        Me.NameTbx3.Location = New System.Drawing.Point(295, 165)
+        Me.NameTbx3.Name = "NameTbx3"
+        Me.NameTbx3.ReadOnly = True
+        Me.NameTbx3.Size = New System.Drawing.Size(398, 23)
+        Me.NameTbx3.TabIndex = 63
         '
-        'TextBox8
+        'EmployeeTbx3
         '
-        Me.TextBox8.BackColor = System.Drawing.Color.LemonChiffon
-        Me.TextBox8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox8.Location = New System.Drawing.Point(94, 153)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(162, 23)
-        Me.TextBox8.TabIndex = 64
+        Me.EmployeeTbx3.BackColor = System.Drawing.Color.LemonChiffon
+        Me.EmployeeTbx3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeTbx3.ForeColor = System.Drawing.Color.MediumBlue
+        Me.EmployeeTbx3.Location = New System.Drawing.Point(94, 165)
+        Me.EmployeeTbx3.Name = "EmployeeTbx3"
+        Me.EmployeeTbx3.ReadOnly = True
+        Me.EmployeeTbx3.Size = New System.Drawing.Size(162, 23)
+        Me.EmployeeTbx3.TabIndex = 64
         '
-        'TextBox5
+        'NameTbx4
         '
-        Me.TextBox5.BackColor = System.Drawing.Color.Silver
-        Me.TextBox5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox5.Location = New System.Drawing.Point(295, 195)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(398, 23)
-        Me.TextBox5.TabIndex = 61
+        Me.NameTbx4.BackColor = System.Drawing.Color.Silver
+        Me.NameTbx4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameTbx4.ForeColor = System.Drawing.Color.MediumBlue
+        Me.NameTbx4.Location = New System.Drawing.Point(295, 207)
+        Me.NameTbx4.Name = "NameTbx4"
+        Me.NameTbx4.ReadOnly = True
+        Me.NameTbx4.Size = New System.Drawing.Size(398, 23)
+        Me.NameTbx4.TabIndex = 61
         '
-        'TextBox6
+        'EmployeeTbx4
         '
-        Me.TextBox6.BackColor = System.Drawing.Color.LemonChiffon
-        Me.TextBox6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox6.Location = New System.Drawing.Point(94, 195)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(162, 23)
-        Me.TextBox6.TabIndex = 62
+        Me.EmployeeTbx4.BackColor = System.Drawing.Color.LemonChiffon
+        Me.EmployeeTbx4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeTbx4.ForeColor = System.Drawing.Color.MediumBlue
+        Me.EmployeeTbx4.Location = New System.Drawing.Point(94, 207)
+        Me.EmployeeTbx4.Name = "EmployeeTbx4"
+        Me.EmployeeTbx4.ReadOnly = True
+        Me.EmployeeTbx4.Size = New System.Drawing.Size(162, 23)
+        Me.EmployeeTbx4.TabIndex = 62
         '
-        'TextBox3
+        'NameTbx2
         '
-        Me.TextBox3.BackColor = System.Drawing.Color.Silver
-        Me.TextBox3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox3.Location = New System.Drawing.Point(295, 111)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(398, 23)
-        Me.TextBox3.TabIndex = 59
+        Me.NameTbx2.BackColor = System.Drawing.Color.Silver
+        Me.NameTbx2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameTbx2.ForeColor = System.Drawing.Color.MediumBlue
+        Me.NameTbx2.Location = New System.Drawing.Point(295, 123)
+        Me.NameTbx2.Name = "NameTbx2"
+        Me.NameTbx2.ReadOnly = True
+        Me.NameTbx2.Size = New System.Drawing.Size(398, 23)
+        Me.NameTbx2.TabIndex = 59
         '
-        'TextBox4
+        'EmployeeTbx2
         '
-        Me.TextBox4.BackColor = System.Drawing.Color.LemonChiffon
-        Me.TextBox4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox4.Location = New System.Drawing.Point(94, 111)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(162, 23)
-        Me.TextBox4.TabIndex = 60
+        Me.EmployeeTbx2.BackColor = System.Drawing.Color.LemonChiffon
+        Me.EmployeeTbx2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeTbx2.ForeColor = System.Drawing.Color.MediumBlue
+        Me.EmployeeTbx2.Location = New System.Drawing.Point(94, 123)
+        Me.EmployeeTbx2.Name = "EmployeeTbx2"
+        Me.EmployeeTbx2.ReadOnly = True
+        Me.EmployeeTbx2.Size = New System.Drawing.Size(162, 23)
+        Me.EmployeeTbx2.TabIndex = 60
         '
-        'TextBox1
+        'NameTbx1
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.Silver
-        Me.TextBox1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox1.Location = New System.Drawing.Point(295, 69)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(398, 23)
-        Me.TextBox1.TabIndex = 57
+        Me.NameTbx1.BackColor = System.Drawing.Color.Silver
+        Me.NameTbx1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameTbx1.ForeColor = System.Drawing.Color.MediumBlue
+        Me.NameTbx1.Location = New System.Drawing.Point(295, 81)
+        Me.NameTbx1.Name = "NameTbx1"
+        Me.NameTbx1.ReadOnly = True
+        Me.NameTbx1.Size = New System.Drawing.Size(398, 23)
+        Me.NameTbx1.TabIndex = 57
         '
-        'TextBox2
+        'EmployeeTbx1
         '
-        Me.TextBox2.BackColor = System.Drawing.Color.LemonChiffon
-        Me.TextBox2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.ForeColor = System.Drawing.Color.MediumBlue
-        Me.TextBox2.Location = New System.Drawing.Point(94, 69)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(162, 23)
-        Me.TextBox2.TabIndex = 58
+        Me.EmployeeTbx1.BackColor = System.Drawing.Color.LemonChiffon
+        Me.EmployeeTbx1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeTbx1.ForeColor = System.Drawing.Color.MediumBlue
+        Me.EmployeeTbx1.Location = New System.Drawing.Point(94, 81)
+        Me.EmployeeTbx1.Name = "EmployeeTbx1"
+        Me.EmployeeTbx1.Size = New System.Drawing.Size(162, 23)
+        Me.EmployeeTbx1.TabIndex = 58
         '
-        'Label19
+        'Id_Label
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(31, 114)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(16, 16)
-        Me.Label19.TabIndex = 82
-        Me.Label19.Text = "2"
+        Me.Id_Label.AutoSize = True
+        Me.Id_Label.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Id_Label.ForeColor = System.Drawing.Color.Navy
+        Me.Id_Label.Location = New System.Drawing.Point(477, 56)
+        Me.Id_Label.Name = "Id_Label"
+        Me.Id_Label.Size = New System.Drawing.Size(0, 25)
+        Me.Id_Label.TabIndex = 40
         '
-        'Label20
+        'StatusLabel
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(31, 156)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(16, 16)
-        Me.Label20.TabIndex = 83
-        Me.Label20.Text = "3"
+        Me.StatusLabel.AutoSize = True
+        Me.StatusLabel.Location = New System.Drawing.Point(611, 13)
+        Me.StatusLabel.Name = "StatusLabel"
+        Me.StatusLabel.Size = New System.Drawing.Size(37, 13)
+        Me.StatusLabel.TabIndex = 41
+        Me.StatusLabel.Text = "Status"
+        Me.StatusLabel.Visible = False
         '
-        'Label21
+        'PictureBox1
         '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(31, 198)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(16, 16)
-        Me.Label21.TabIndex = 84
-        Me.Label21.Text = "4"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(31, 240)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(16, 16)
-        Me.Label22.TabIndex = 85
-        Me.Label22.Text = "5"
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(31, 282)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(16, 16)
-        Me.Label25.TabIndex = 86
-        Me.Label25.Text = "6"
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(31, 324)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(16, 16)
-        Me.Label26.TabIndex = 87
-        Me.Label26.Text = "7"
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(31, 366)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(16, 16)
-        Me.Label29.TabIndex = 88
-        Me.Label29.Text = "8"
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(31, 408)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(16, 16)
-        Me.Label30.TabIndex = 89
-        Me.Label30.Text = "9"
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(31, 450)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(24, 16)
-        Me.Label31.TabIndex = 90
-        Me.Label31.Text = "10"
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(14, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(177, 29)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 37
+        Me.PictureBox1.TabStop = False
         '
         'BusRequestFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(736, 663)
+        Me.Controls.Add(Me.StatusLabel)
+        Me.Controls.Add(Me.Id_Label)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.PictureBox1)
@@ -1010,7 +1059,6 @@ Partial Class BusRequestFrm
         Me.Name = "BusRequestFrm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Bus Request Form"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
@@ -1023,6 +1071,7 @@ Partial Class BusRequestFrm
         Me.GroupBox3.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1060,26 +1109,26 @@ Partial Class BusRequestFrm
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents PositionTbx As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox17 As TextBox
-    Friend WithEvents TextBox18 As TextBox
-    Friend WithEvents TextBox19 As TextBox
-    Friend WithEvents TextBox20 As TextBox
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents TextBox11 As TextBox
-    Friend WithEvents TextBox12 As TextBox
-    Friend WithEvents TextBox13 As TextBox
-    Friend WithEvents TextBox14 As TextBox
-    Friend WithEvents TextBox15 As TextBox
-    Friend WithEvents TextBox16 As TextBox
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents NameTbx9 As TextBox
+    Friend WithEvents EmployeeTbx9 As TextBox
+    Friend WithEvents NameTbx10 As TextBox
+    Friend WithEvents EmployeeTbx10 As TextBox
+    Friend WithEvents NameTbx7 As TextBox
+    Friend WithEvents EmployeeTbx7 As TextBox
+    Friend WithEvents NameTbx8 As TextBox
+    Friend WithEvents EmployeeTbx8 As TextBox
+    Friend WithEvents NameTbx6 As TextBox
+    Friend WithEvents EmployeeTbx6 As TextBox
+    Friend WithEvents NameTbx5 As TextBox
+    Friend WithEvents EmployeeTbx5 As TextBox
+    Friend WithEvents NameTbx3 As TextBox
+    Friend WithEvents EmployeeTbx3 As TextBox
+    Friend WithEvents NameTbx4 As TextBox
+    Friend WithEvents EmployeeTbx4 As TextBox
+    Friend WithEvents NameTbx2 As TextBox
+    Friend WithEvents EmployeeTbx2 As TextBox
+    Friend WithEvents NameTbx1 As TextBox
+    Friend WithEvents EmployeeTbx1 As TextBox
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label12 As Label
@@ -1095,8 +1144,6 @@ Partial Class BusRequestFrm
     Friend WithEvents Radio_btn_No3 As RadioButton
     Friend WithEvents Radio_btn_Yes3 As RadioButton
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Radio_btn_No2 As RadioButton
-    Friend WithEvents Radio_btn_Yes2 As RadioButton
     Friend WithEvents Label22 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents Label20 As Label
@@ -1106,4 +1153,9 @@ Partial Class BusRequestFrm
     Friend WithEvents Label29 As Label
     Friend WithEvents Label26 As Label
     Friend WithEvents Label25 As Label
+    Friend WithEvents Id_Label As Label
+    Friend WithEvents SaveDraftBtn As Button
+    Friend WithEvents GoBackTbx As TextBox
+    Friend WithEvents CancelBtn As Button
+    Friend WithEvents StatusLabel As Label
 End Class

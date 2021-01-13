@@ -36,6 +36,7 @@ Partial Class SBMS_WCStaffFrm
         Me.DeptLabel = New System.Windows.Forms.Label()
         Me.DivLabel = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CheckRequestBtn = New System.Windows.Forms.Button()
         Me.QuitBtn = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -93,7 +94,7 @@ Partial Class SBMS_WCStaffFrm
         Me.NormalRequestBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NormalRequestBtn.Location = New System.Drawing.Point(16, 30)
         Me.NormalRequestBtn.Name = "NormalRequestBtn"
-        Me.NormalRequestBtn.Size = New System.Drawing.Size(178, 55)
+        Me.NormalRequestBtn.Size = New System.Drawing.Size(125, 55)
         Me.NormalRequestBtn.TabIndex = 5
         Me.NormalRequestBtn.Text = "Request bus (Normal)"
         Me.NormalRequestBtn.UseVisualStyleBackColor = True
@@ -101,9 +102,9 @@ Partial Class SBMS_WCStaffFrm
         'OTRequestBtn
         '
         Me.OTRequestBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OTRequestBtn.Location = New System.Drawing.Point(261, 30)
+        Me.OTRequestBtn.Location = New System.Drawing.Point(163, 30)
         Me.OTRequestBtn.Name = "OTRequestBtn"
-        Me.OTRequestBtn.Size = New System.Drawing.Size(177, 55)
+        Me.OTRequestBtn.Size = New System.Drawing.Size(125, 55)
         Me.OTRequestBtn.TabIndex = 6
         Me.OTRequestBtn.Text = "Request bus (OT)"
         Me.OTRequestBtn.UseVisualStyleBackColor = True
@@ -164,6 +165,7 @@ Partial Class SBMS_WCStaffFrm
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.CheckRequestBtn)
         Me.GroupBox1.Controls.Add(Me.OTRequestBtn)
         Me.GroupBox1.Controls.Add(Me.NormalRequestBtn)
         Me.GroupBox1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -173,6 +175,16 @@ Partial Class SBMS_WCStaffFrm
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "For Requester"
+        '
+        'CheckRequestBtn
+        '
+        Me.CheckRequestBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckRequestBtn.Location = New System.Drawing.Point(314, 30)
+        Me.CheckRequestBtn.Name = "CheckRequestBtn"
+        Me.CheckRequestBtn.Size = New System.Drawing.Size(125, 55)
+        Me.CheckRequestBtn.TabIndex = 7
+        Me.CheckRequestBtn.Text = "Check Your Request"
+        Me.CheckRequestBtn.UseVisualStyleBackColor = True
         '
         'QuitBtn
         '
@@ -206,7 +218,7 @@ Partial Class SBMS_WCStaffFrm
         Me.GroupBox3.Size = New System.Drawing.Size(224, 93)
         Me.GroupBox3.TabIndex = 15
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "For GA Check"
+        Me.GroupBox3.Text = "For GA"
         '
         'GAReviewBtn
         '
@@ -215,7 +227,7 @@ Partial Class SBMS_WCStaffFrm
         Me.GAReviewBtn.Name = "GAReviewBtn"
         Me.GAReviewBtn.Size = New System.Drawing.Size(178, 55)
         Me.GAReviewBtn.TabIndex = 17
-        Me.GAReviewBtn.Text = "Review Bus Request" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(For GA Only)"
+        Me.GAReviewBtn.Text = "Control Panel"
         Me.GAReviewBtn.UseVisualStyleBackColor = True
         '
         'PictureBox1
@@ -288,4 +300,5 @@ Partial Class SBMS_WCStaffFrm
     Friend WithEvents GAReviewBtn As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents CheckRequestBtn As Button
 End Class

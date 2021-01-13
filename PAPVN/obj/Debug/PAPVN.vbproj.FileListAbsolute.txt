@@ -64,3 +64,5 @@ C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.ForgotPwMngFrm.resources
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.SBMS_GAView.resources
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.SBMS_BusSelect.resources
 C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.ReviewGridGA.resources
+C:\Users\Admin\source\repos\PAPVN\PAPVN\bin\Debug\QRCoder.dll
+C:\Users\Admin\source\repos\PAPVN\PAPVN\obj\Debug\PAPVN.RequestGrid.resources
