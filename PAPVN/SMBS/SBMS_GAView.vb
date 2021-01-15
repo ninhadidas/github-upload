@@ -20,7 +20,7 @@ Public Class SBMS_GAView
             }
         order_id = Id_Label.Text
         Dim result As DialogResult = MessageBox.Show("Are you sure to submit this request?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If result = DialogResult.Yes And BusNameTbx.Text <> "" And distance <> "" Then
+        If result = DialogResult.Yes And BusNameTbx.Text <> "" And distance <> "" And TaxiCardBtn.Checked = False Then
             Try
                 conn.Open()
                 Dim query As String = "UPDATE tbl_order SET status_id='3', bus_id='" & bus & "', distance='" & distance & "' WHERE order_id='" & order_id & "';"
@@ -50,8 +50,8 @@ Public Class SBMS_GAView
                     MessageBox.Show(ex.Message)
                 Finally
                     OutlookMessage = Nothing
-                        AppOutlook = Nothing
-                    End Try
+                    AppOutlook = Nothing
+                End Try
                 MessageBox.Show("The request was submitted successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
@@ -61,6 +61,52 @@ Public Class SBMS_GAView
                 End If
             End Try
             Me.Close()
+        Else
+            If result = DialogResult.Yes And TaxiCardBtn.Checked = True Then
+                Try
+                    conn.Open()
+                    Dim query As String = "UPDATE tbl_order SET status_id='3', is_taxi = true WHERE order_id='" & order_id & "';"
+                    command = New MySqlCommand(query, conn)
+                    reader = command.ExecuteReader
+                    reader.Close()
+
+                    Dim Name As String = NameTbx.Text
+                    Dim userid As String = EmployeeIDTbx.Text
+                    Dim email As String = EmailTbx.Text
+                    Try
+                        Dim SmtpServer As New SmtpClient()
+                        Dim sendmail As New MailMessage()
+                        SmtpServer.Credentials = New _
+                                Net.NetworkCredential("japan\70H9536", "Papvn17")
+                        SmtpServer.Port = 25
+                        SmtpServer.Host = "157.8.1.154"
+                        sendmail = New MailMessage With {
+                                    .From = New MailAddress("helpdesk.papvn@vn.panasonic.com")
+                                    }
+                        sendmail.To.Add(email)
+                        sendmail.IsBodyHtml = True
+                        sendmail.Subject = "Your Bus Request was Approved - Bus Management System."
+                        sendmail.Body = "Dear Mr/Ms " & Name & " (Employee ID: " & userid & "), <br><br> Please check details your Bus Request as below.<br><br> Order Number: " & order_id & "<br><br> Bus Name: Taxi <br><br> Please note the Order Number and Inform to Security Staff <br><br>*To save the environment,  DO NOT print this email. This message is automatically sent from system. (c) 2021 by IT Department"
+                        SmtpServer.Send(sendmail)
+                    Catch ex As Exception
+                        MessageBox.Show(ex.Message)
+                    Finally
+                        OutlookMessage = Nothing
+                        AppOutlook = Nothing
+                    End Try
+                    MessageBox.Show("The request was submitted successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                Finally
+                    If conn IsNot Nothing Then
+                        conn.Close()
+                    End If
+                End Try
+                Me.Close()
+
+            Else
+                MessageBox.Show("Please check data and try again!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
         End If
         'ReviewGridMng.Controls.Clear() 'removes all the controls on the form
         'ReviewGridMng.InitializeComponent() 'load all the controls again
@@ -177,4 +223,5 @@ Public Class SBMS_GAView
             End If
         End Try
     End Sub
+
 End Class
