@@ -322,6 +322,12 @@
     <Compile Include="SMBS\SBMS_MngView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SMBS\SBMS_UserGrid.Designer.vb">
+      <DependentUpon>SBMS_UserGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SMBS\SBMS_UserGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SMBS\SBMS_WCStaffFrm.Designer.vb">
       <DependentUpon>SBMS_WCStaffFrm.vb</DependentUpon>
     </Compile>
@@ -452,6 +458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SMBS\SBMS_MngView.resx">
       <DependentUpon>SBMS_MngView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMBS\SBMS_UserGrid.resx">
+      <DependentUpon>SBMS_UserGrid.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SMBS\SBMS_WCStaffFrm.resx">
       <DependentUpon>SBMS_WCStaffFrm.vb</DependentUpon>

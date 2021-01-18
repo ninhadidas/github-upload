@@ -55,7 +55,7 @@ Public Class SBMS_BusSelect
         Dim reader As MySqlDataReader
         Try
             conn.Open()
-            Dim query As String = "SELECT bus_name, tbl_order.order_id, tbl_order.start_time, tbl_order.end_time, tbl_order.start_location, tbl_order.end_location, tbl_order.order_content, tbl_bus_quota.quota, tbl_order.order_note, bks, name, mobile1, tbl_businfo.bus_id FROM tbl_businfo INNER JOIN tbl_order ON tbl_order.bus_id = tbl_businfo.bus_id INNER JOIN tbl_bus_quota ON tbl_order.bus_id = tbl_bus_quota.bus_id INNER JOIN tbl_driverinfo ON tbl_businfo.bus_id=tbl_driverinfo.bus_id WHERE DATE(tbl_order.end_time) = CURRENT_DATE;"
+            Dim query As String = "SELECT bus_name, tbl_order.order_id, tbl_order.start_time, tbl_order.end_time, tbl_order.start_location, tbl_order.end_location, tbl_order.order_content, km_remain, tbl_order.order_note, bks, name, mobile1, tbl_businfo.bus_id FROM tbl_businfo INNER JOIN tbl_order ON tbl_order.bus_id = tbl_businfo.bus_id INNER JOIN tbl_bus_quota ON tbl_order.bus_id = tbl_bus_quota.bus_id INNER JOIN tbl_driverinfo ON tbl_businfo.bus_id=tbl_driverinfo.bus_id WHERE DATE(tbl_order.end_time) = CURRENT_DATE;"
             command = New MySqlCommand(query, conn)
             reader = command.ExecuteReader
             count = 0
@@ -98,9 +98,9 @@ Public Class SBMS_BusSelect
                     .Columns(12).Width = 80
                 End With
                 conn.Close()
-            Else
-                MessageBox.Show("No Data Found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                Me.Close()
+                'Else
+                '    MessageBox.Show("No Data Found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                '    Me.Close()
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -121,7 +121,7 @@ Public Class SBMS_BusSelect
         Dim reader As MySqlDataReader
         Try
             conn.Open()
-            Dim query As String = "SELECT bus_name, tbl_bus_quota.quota, bks, name, mobile1, company, tbl_businfo.bus_id FROM tbl_businfo INNER JOIN tbl_driverinfo ON tbl_businfo.bus_id = tbl_driverinfo.bus_id INNER JOIN tbl_bus_quota ON tbl_businfo.bus_id = tbl_bus_quota.bus_id;"
+            Dim query As String = "SELECT bus_name, km_remain, bks, name, mobile1, company, tbl_businfo.bus_id FROM tbl_businfo INNER JOIN tbl_driverinfo ON tbl_businfo.bus_id = tbl_driverinfo.bus_id INNER JOIN tbl_bus_quota ON tbl_businfo.bus_id = tbl_bus_quota.bus_id;"
             command = New MySqlCommand(query, conn)
             reader = command.ExecuteReader
             count = 0
@@ -153,7 +153,7 @@ Public Class SBMS_BusSelect
                 conn.Close()
             Else
                 MessageBox.Show("No Data Found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                Me.Close()
+                'Me.Close()
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)

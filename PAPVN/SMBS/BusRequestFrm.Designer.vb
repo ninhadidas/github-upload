@@ -420,11 +420,11 @@ Partial Class BusRequestFrm
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(9, 17)
+        Me.Label16.Location = New System.Drawing.Point(5, 17)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(129, 32)
+        Me.Label16.Size = New System.Drawing.Size(137, 32)
         Me.Label16.TabIndex = 73
-        Me.Label16.Text = "Attached Person? " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Có Người Đi Cùng)"
+        Me.Label16.Text = "Attached Person?* " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Có Người Đi Cùng)"
         '
         'Radio_btn_No1
         '

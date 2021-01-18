@@ -166,6 +166,7 @@ Public Class SBMS_GAView
             DriverNameTbx.Text = Nothing
             PlateNoTbx.Text = Nothing
             KmRemainTbx.Text = Nothing
+            DistanceTbx.Text = Nothing
             DistanceTbx.ReadOnly = True
         Else
             DistanceTbx.ReadOnly = False
@@ -224,4 +225,131 @@ Public Class SBMS_GAView
         End Try
     End Sub
 
+    Private Sub DeleteBtn_Click(sender As Object, e As EventArgs) Handles DeleteBtn.Click
+        Dim order_id As String
+        Dim userid As String
+        Dim reader As MySqlDataReader
+        Dim OutlookMessage As outlook.MailItem
+        Dim AppOutlook As New outlook.Application
+        conn = New MySqlConnection With {
+                .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
+            }
+        order_id = Id_Label.Text
+        userid = EmployeeIDTbx.Text
+        Dim Name As String = NameTbx.Text
+        Dim email As String = EmailTbx.Text
+        Dim pickup As String = DepatureTbx.Text
+        Dim note As String = GANoteTbx.Text
+        Dim arrive As String = ArrivalTbx.Text
+        Dim result As DialogResult = MessageBox.Show("Are you sure to delete this request?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.Yes Then
+            If note = Nothing Then
+                MessageBox.Show("Please input the reason to delete this request in GA's Note box", "Input the reason!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Else
+                Try
+                    conn.Open()
+                    Try
+                        Dim SmtpServer As New SmtpClient()
+                        Dim sendmail As New MailMessage()
+                        SmtpServer.Credentials = New _
+                            Net.NetworkCredential("japan\70H9536", "Papvn17")
+                        SmtpServer.Port = 25
+                        SmtpServer.Host = "157.8.1.154"
+                        sendmail = New MailMessage With {
+                                .From = New MailAddress("helpdesk.papvn@vn.panasonic.com")
+                                }
+                        sendmail.To.Add(email)
+                        sendmail.IsBodyHtml = True
+                        sendmail.Subject = "Your Bus Request was Deleted - Bus Management System."
+                        sendmail.Body = "Dear Mr/Ms " & Name & " (Employee ID: " & userid & "), <br><br> Your Bus Request as below was deleted by GA.<br><br> Order Number: " & order_id & "<br><br> Pickup Place: " & pickup & "<br><br>Destination Place: " & arrive & "<br><br> Reason: " & note & "<br><br> *To save the environment,  DO NOT print this email. This message is automatically sent from system. (c) 2021 by IT Department"
+                        SmtpServer.Send(sendmail)
+                    Catch ex As Exception
+                        MessageBox.Show(ex.Message)
+                    Finally
+                        OutlookMessage = Nothing
+                        AppOutlook = Nothing
+                    End Try
+                    Dim query As String = "DELETE FROM tbl_order WHERE order_id ='" & order_id & "' AND employee_id='" & userid & "';"
+                    command = New MySqlCommand(query, conn)
+                    reader = command.ExecuteReader
+                    reader.Close()
+                    MessageBox.Show("This request was deleted successfully!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                Finally
+                    If conn IsNot Nothing Then
+                        conn.Close()
+                    End If
+                End Try
+                Me.Close()
+            End If
+        End If
+        ReviewGridGA.Controls.Clear() 'removes all the controls on the form
+        ReviewGridGA.InitializeComponent() 'load all the controls again
+        ReviewGridGA.ReviewGridGA_Load(e, e) 'Load everything in your form, load event again
+    End Sub
+
+    Private Sub RejectBtn_Click(sender As Object, e As EventArgs) Handles RejectBtn.Click
+        Dim order_id As String
+        Dim userid As String
+        Dim reader As MySqlDataReader
+        Dim OutlookMessage As outlook.MailItem
+        Dim AppOutlook As New outlook.Application
+        conn = New MySqlConnection With {
+                .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
+            }
+        order_id = Id_Label.Text
+        userid = EmployeeIDTbx.Text
+        Dim Name As String = NameTbx.Text
+        Dim email As String = EmailTbx.Text
+        Dim pickup As String = DepatureTbx.Text
+        Dim arrive As String = ArrivalTbx.Text
+        Dim note As String = GANoteTbx.Text
+        Dim result As DialogResult = MessageBox.Show("Are you sure to send back this request to Manager?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.Yes Then
+            If note = Nothing Then
+                MessageBox.Show("Please input the reason to send back this request in GA's Note box", "Input the reason!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Else
+                Try
+                    conn.Open()
+                    Try
+                        Dim SmtpServer As New SmtpClient()
+                        Dim sendmail As New MailMessage()
+                        SmtpServer.Credentials = New _
+                            Net.NetworkCredential("japan\70H9536", "Papvn17")
+                        SmtpServer.Port = 25
+                        SmtpServer.Host = "157.8.1.154"
+                        sendmail = New MailMessage With {
+                                .From = New MailAddress("helpdesk.papvn@vn.panasonic.com")
+                                }
+                        sendmail.To.Add(email)
+                        sendmail.IsBodyHtml = True
+                        sendmail.Subject = "Bus Request was sent back to Manager - Bus Management System."
+                        sendmail.Body = "Dear Manager, <br><br> The Bus request of your team member - Mr/Ms " & Name & " (Employee ID: " & userid & ") was sent back to you by GA to re-check, details information as below.<br><br> Order Number: " & order_id & "<br><br> Pickup Place: " & pickup & "<br><br> Destination Place: " & arrive & "<br><br> Reason: " & note & "<br><br> *To save the environment,  DO NOT print this email. This message is automatically sent from system. (c) 2021 by IT Department"
+                        SmtpServer.Send(sendmail)
+                    Catch ex As Exception
+                        MessageBox.Show(ex.Message)
+                    Finally
+                        OutlookMessage = Nothing
+                        AppOutlook = Nothing
+                    End Try
+                    Dim query As String = "UPDATE tbl_order SET status_id='1' WHERE order_id='" & order_id & "';"
+                    command = New MySqlCommand(query, conn)
+                    reader = command.ExecuteReader
+                    reader.Close()
+                    MessageBox.Show("This request was sent back successfully!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                Finally
+                    If conn IsNot Nothing Then
+                        conn.Close()
+                    End If
+                End Try
+                Me.Close()
+            End If
+        End If
+        ReviewGridGA.Controls.Clear() 'removes all the controls on the form
+        ReviewGridGA.InitializeComponent() 'load all the controls again
+        ReviewGridGA.ReviewGridGA_Load(e, e) 'Load everything in your form, load event again
+    End Sub
 End Class

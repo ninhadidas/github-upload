@@ -10,7 +10,7 @@ Public Class SBMS_GAControlPanel
     End Sub
 
     Private Sub UserMasterBtn_Click(sender As Object, e As EventArgs) Handles UserMasterBtn.Click
-
+        SBMS_UserGrid.Show()
     End Sub
 
     Private Sub BusMasterBtn_Click(sender As Object, e As EventArgs) Handles BusMasterBtn.Click

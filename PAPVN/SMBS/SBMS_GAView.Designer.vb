@@ -70,6 +70,7 @@ Partial Class SBMS_GAView
         Me.Label14 = New System.Windows.Forms.Label()
         Me.AttachedGridPerson = New System.Windows.Forms.DataGridView()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.DeleteBtn = New System.Windows.Forms.Button()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.NewReturnTime = New System.Windows.Forms.DateTimePicker()
         Me.Label37 = New System.Windows.Forms.Label()
@@ -262,7 +263,7 @@ Partial Class SBMS_GAView
         Me.ApproveBtn.BackColor = System.Drawing.Color.Green
         Me.ApproveBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ApproveBtn.ForeColor = System.Drawing.Color.White
-        Me.ApproveBtn.Location = New System.Drawing.Point(187, 474)
+        Me.ApproveBtn.Location = New System.Drawing.Point(6, 474)
         Me.ApproveBtn.Name = "ApproveBtn"
         Me.ApproveBtn.Size = New System.Drawing.Size(152, 34)
         Me.ApproveBtn.TabIndex = 38
@@ -282,14 +283,14 @@ Partial Class SBMS_GAView
         '
         'RejectBtn
         '
-        Me.RejectBtn.BackColor = System.Drawing.Color.Red
+        Me.RejectBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.RejectBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RejectBtn.ForeColor = System.Drawing.Color.White
-        Me.RejectBtn.Location = New System.Drawing.Point(382, 474)
+        Me.RejectBtn.Location = New System.Drawing.Point(287, 474)
         Me.RejectBtn.Name = "RejectBtn"
         Me.RejectBtn.Size = New System.Drawing.Size(152, 34)
         Me.RejectBtn.TabIndex = 39
-        Me.RejectBtn.Text = "Reject"
+        Me.RejectBtn.Text = "Send Back"
         Me.RejectBtn.UseVisualStyleBackColor = False
         '
         'GroupBox3
@@ -624,6 +625,7 @@ Partial Class SBMS_GAView
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.DeleteBtn)
         Me.TabPage3.Controls.Add(Me.Label38)
         Me.TabPage3.Controls.Add(Me.NewReturnTime)
         Me.TabPage3.Controls.Add(Me.Label37)
@@ -642,6 +644,18 @@ Partial Class SBMS_GAView
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "GA's Information"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'DeleteBtn
+        '
+        Me.DeleteBtn.BackColor = System.Drawing.Color.Red
+        Me.DeleteBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DeleteBtn.ForeColor = System.Drawing.Color.White
+        Me.DeleteBtn.Location = New System.Drawing.Point(554, 474)
+        Me.DeleteBtn.Name = "DeleteBtn"
+        Me.DeleteBtn.Size = New System.Drawing.Size(152, 34)
+        Me.DeleteBtn.TabIndex = 85
+        Me.DeleteBtn.Text = "Delete"
+        Me.DeleteBtn.UseVisualStyleBackColor = False
         '
         'Label38
         '
@@ -1035,4 +1049,5 @@ Partial Class SBMS_GAView
     Friend WithEvents AttachedGridPerson As DataGridView
     Friend WithEvents busID As Label
     Friend WithEvents Label14 As Label
+    Friend WithEvents DeleteBtn As Button
 End Class

@@ -11,6 +11,16 @@ Public Class BusRequestFrm
 
     Private Sub Radio_btn_No1_CheckedChanged(sender As Object, e As EventArgs) Handles Radio_btn_No1.CheckedChanged
         TabControl1.TabPages(1).Enabled = False
+        EmployeeTbx1.Text = Nothing
+        EmployeeTbx2.Text = Nothing
+        EmployeeTbx3.Text = Nothing
+        EmployeeTbx4.Text = Nothing
+        EmployeeTbx5.Text = Nothing
+        EmployeeTbx6.Text = Nothing
+        EmployeeTbx7.Text = Nothing
+        EmployeeTbx8.Text = Nothing
+        EmployeeTbx9.Text = Nothing
+        EmployeeTbx10.Text = Nothing
     End Sub
 
     Private Sub Radio_btn_Yes1_CheckedChanged(sender As Object, e As EventArgs) Handles Radio_btn_Yes1.CheckedChanged
@@ -117,11 +127,15 @@ Public Class BusRequestFrm
             Dim result As DialogResult = MessageBox.Show("Are you sure to submit this request?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If result = DialogResult.Yes Then
                 Try
+
+
                     conn.Open()
+
+
                     Dim query As String = "UPDATE tbl_order SET start_location=@depature, end_location=@arrival, start_time=@pickuptime, end_time=@combacktime, order_content =@content, order_note=@note, asset_bringout=@asset, submit_time=@submit, status_id=@status WHERE order_id='" & order_id & "';"
                     Using conn
                         command = New MySqlCommand(query, conn)
-                        command.Parameters.AddWithValue("@departure", depature)
+                        command.Parameters.AddWithValue("@depature", depature)
                         command.Parameters.AddWithValue("@arrival", arrival)
                         command.Parameters.AddWithValue("@pickuptime", pickuptime)
                         command.Parameters.AddWithValue("@combacktime", combacktime)
@@ -131,67 +145,69 @@ Public Class BusRequestFrm
                         command.Parameters.AddWithValue("@submit", Now)
                         command.Parameters.AddWithValue("@status", "1")
                         command.ExecuteNonQuery()
-                        Dim query2 As String = "INSERT INTO tbl_attachment (order_id, Employee_ID) VALUES (@order_id, @Employee_ID);"
-                        'Using conn
-                        If attachment1 <> "" Then
-                            command = New MySqlCommand(query2, conn)
-                            command.Parameters.AddWithValue("@order_id", order_id)
-                            command.Parameters.AddWithValue("@Employee_ID", attachment1)
-                            command.ExecuteNonQuery()
-                        End If
-                        If attachment2 <> "" Then
-                            command = New MySqlCommand(query2, conn)
-                            command.Parameters.AddWithValue("@order_id", order_id)
-                            command.Parameters.AddWithValue("@Employee_ID", attachment2)
-                            command.ExecuteNonQuery()
-                        End If
-                        If attachment3 <> "" Then
-                            command = New MySqlCommand(query2, conn)
-                            command.Parameters.AddWithValue("@order_id", order_id)
-                            command.Parameters.AddWithValue("@Employee_ID", attachment3)
-                            command.ExecuteNonQuery()
-                        End If
-                        If attachment4 <> "" Then
-                            command = New MySqlCommand(query2, conn)
-                            command.Parameters.AddWithValue("@order_id", order_id)
-                            command.Parameters.AddWithValue("@Employee_ID", attachment4)
-                            command.ExecuteNonQuery()
-                        End If
-                        If attachment5 <> "" Then
-                            command = New MySqlCommand(query2, conn)
-                            command.Parameters.AddWithValue("@order_id", order_id)
-                            command.Parameters.AddWithValue("@Employee_ID", attachment5)
-                            command.ExecuteNonQuery()
-                        End If
-                        If attachment6 <> "" Then
-                            command = New MySqlCommand(query2, conn)
-                            command.Parameters.AddWithValue("@order_id", order_id)
-                            command.Parameters.AddWithValue("@Employee_ID", attachment6)
-                            command.ExecuteNonQuery()
-                        End If
-                        If attachment7 <> "" Then
-                            command = New MySqlCommand(query2, conn)
-                            command.Parameters.AddWithValue("@order_id", order_id)
-                            command.Parameters.AddWithValue("@Employee_ID", attachment7)
-                            command.ExecuteNonQuery()
-                        End If
-                        If attachment8 <> "" Then
-                            command = New MySqlCommand(query2, conn)
-                            command.Parameters.AddWithValue("@order_id", order_id)
-                            command.Parameters.AddWithValue("@Employee_ID", attachment8)
-                            command.ExecuteNonQuery()
-                        End If
-                        If attachment9 <> "" Then
-                            command = New MySqlCommand(query2, conn)
-                            command.Parameters.AddWithValue("@order_id", order_id)
-                            command.Parameters.AddWithValue("@Employee_ID", attachment9)
-                            command.ExecuteNonQuery()
-                        End If
-                        If attachment10 <> "" Then
-                            command = New MySqlCommand(query2, conn)
-                            command.Parameters.AddWithValue("@order_id", order_id)
-                            command.Parameters.AddWithValue("@Employee_ID", attachment10)
-                            command.ExecuteNonQuery()
+                        If Radio_btn_Yes1.Checked = True Then
+                            Dim query2 As String = "INSERT INTO tbl_attachment (order_id, Employee_ID) VALUES (@order_id, @Employee_ID);"
+                            'Using conn
+                            If attachment1 <> "" Then
+                                command = New MySqlCommand(query2, conn)
+                                command.Parameters.AddWithValue("@order_id", order_id)
+                                command.Parameters.AddWithValue("@Employee_ID", attachment1)
+                                command.ExecuteNonQuery()
+                            End If
+                            If attachment2 <> "" Then
+                                command = New MySqlCommand(query2, conn)
+                                command.Parameters.AddWithValue("@order_id", order_id)
+                                command.Parameters.AddWithValue("@Employee_ID", attachment2)
+                                command.ExecuteNonQuery()
+                            End If
+                            If attachment3 <> "" Then
+                                command = New MySqlCommand(query2, conn)
+                                command.Parameters.AddWithValue("@order_id", order_id)
+                                command.Parameters.AddWithValue("@Employee_ID", attachment3)
+                                command.ExecuteNonQuery()
+                            End If
+                            If attachment4 <> "" Then
+                                command = New MySqlCommand(query2, conn)
+                                command.Parameters.AddWithValue("@order_id", order_id)
+                                command.Parameters.AddWithValue("@Employee_ID", attachment4)
+                                command.ExecuteNonQuery()
+                            End If
+                            If attachment5 <> "" Then
+                                command = New MySqlCommand(query2, conn)
+                                command.Parameters.AddWithValue("@order_id", order_id)
+                                command.Parameters.AddWithValue("@Employee_ID", attachment5)
+                                command.ExecuteNonQuery()
+                            End If
+                            If attachment6 <> "" Then
+                                command = New MySqlCommand(query2, conn)
+                                command.Parameters.AddWithValue("@order_id", order_id)
+                                command.Parameters.AddWithValue("@Employee_ID", attachment6)
+                                command.ExecuteNonQuery()
+                            End If
+                            If attachment7 <> "" Then
+                                command = New MySqlCommand(query2, conn)
+                                command.Parameters.AddWithValue("@order_id", order_id)
+                                command.Parameters.AddWithValue("@Employee_ID", attachment7)
+                                command.ExecuteNonQuery()
+                            End If
+                            If attachment8 <> "" Then
+                                command = New MySqlCommand(query2, conn)
+                                command.Parameters.AddWithValue("@order_id", order_id)
+                                command.Parameters.AddWithValue("@Employee_ID", attachment8)
+                                command.ExecuteNonQuery()
+                            End If
+                            If attachment9 <> "" Then
+                                command = New MySqlCommand(query2, conn)
+                                command.Parameters.AddWithValue("@order_id", order_id)
+                                command.Parameters.AddWithValue("@Employee_ID", attachment9)
+                                command.ExecuteNonQuery()
+                            End If
+                            If attachment10 <> "" Then
+                                command = New MySqlCommand(query2, conn)
+                                command.Parameters.AddWithValue("@order_id", order_id)
+                                command.Parameters.AddWithValue("@Employee_ID", attachment10)
+                                command.ExecuteNonQuery()
+                            End If
                         End If
                         Dim query_mail As String = "SELECT tbl_user2.email FROM tbl_user2 INNER JOIN tbl_approval ON tbl_approval.app1 = tbl_user2.employee_id WHERE tbl_approval.employee_id ='" & userid & "';"
                         command = New MySqlCommand(query_mail, conn)
@@ -236,6 +252,8 @@ Public Class BusRequestFrm
                     End Using
                     MessageBox.Show("Your request were submitted to your manager successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Me.Close()
+
+
                 Catch ex As Exception
                     MessageBox.Show(ex.Message)
                 Finally
