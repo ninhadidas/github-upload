@@ -22,9 +22,9 @@ Partial Class SBMS_GAView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SBMS_GAView))
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DeptTbx = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -44,18 +44,16 @@ Partial Class SBMS_GAView
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.MngCm_Tbx = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.ComebackTimeTbx = New System.Windows.Forms.TextBox()
         Me.PickUpTimeTbx = New System.Windows.Forms.TextBox()
-        Me.Radio_btn_No2 = New System.Windows.Forms.RadioButton()
-        Me.Radio_btn_Yes2 = New System.Windows.Forms.RadioButton()
-        Me.Label17 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.ContentTbx = New System.Windows.Forms.TextBox()
-        Me.Radio_btn_No1 = New System.Windows.Forms.RadioButton()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.NoteTbx = New System.Windows.Forms.TextBox()
-        Me.Radio_btn_Yes1 = New System.Windows.Forms.RadioButton()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.AssetTbx = New System.Windows.Forms.TextBox()
@@ -95,11 +93,16 @@ Partial Class SBMS_GAView
         Me.Label34 = New System.Windows.Forms.Label()
         Me.PlateNoTbx = New System.Windows.Forms.TextBox()
         Me.Label35 = New System.Windows.Forms.Label()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.NoBtn = New System.Windows.Forms.RadioButton()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.YesBtn = New System.Windows.Forms.RadioButton()
         Me.Id_Label = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -107,6 +110,7 @@ Partial Class SBMS_GAView
         Me.TabPage3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -263,7 +267,7 @@ Partial Class SBMS_GAView
         Me.ApproveBtn.BackColor = System.Drawing.Color.Green
         Me.ApproveBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ApproveBtn.ForeColor = System.Drawing.Color.White
-        Me.ApproveBtn.Location = New System.Drawing.Point(6, 474)
+        Me.ApproveBtn.Location = New System.Drawing.Point(13, 474)
         Me.ApproveBtn.Name = "ApproveBtn"
         Me.ApproveBtn.Size = New System.Drawing.Size(152, 34)
         Me.ApproveBtn.TabIndex = 38
@@ -319,18 +323,16 @@ Partial Class SBMS_GAView
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.Label17)
+        Me.GroupBox2.Controls.Add(Me.PictureBox2)
+        Me.GroupBox2.Controls.Add(Me.Label16)
         Me.GroupBox2.Controls.Add(Me.ComebackTimeTbx)
         Me.GroupBox2.Controls.Add(Me.PickUpTimeTbx)
-        Me.GroupBox2.Controls.Add(Me.Radio_btn_No2)
-        Me.GroupBox2.Controls.Add(Me.Radio_btn_Yes2)
-        Me.GroupBox2.Controls.Add(Me.Label17)
         Me.GroupBox2.Controls.Add(Me.Label24)
         Me.GroupBox2.Controls.Add(Me.ContentTbx)
-        Me.GroupBox2.Controls.Add(Me.Radio_btn_No1)
         Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.NoteTbx)
-        Me.GroupBox2.Controls.Add(Me.Radio_btn_Yes1)
-        Me.GroupBox2.Controls.Add(Me.Label16)
         Me.GroupBox2.Controls.Add(Me.Label23)
         Me.GroupBox2.Controls.Add(Me.Label28)
         Me.GroupBox2.Controls.Add(Me.AssetTbx)
@@ -347,6 +349,45 @@ Partial Class SBMS_GAView
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Trip's Information"
         '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TextBox1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(637, 267)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(55, 23)
+        Me.TextBox1.TabIndex = 86
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(500, 274)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(121, 16)
+        Me.Label17.TabIndex = 85
+        Me.Label17.Text = "Số Người Về Cùng"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(656, 38)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(36, 32)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 84
+        Me.PictureBox2.TabStop = False
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(493, 38)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(162, 32)
+        Me.Label16.TabIndex = 83
+        Me.Label16.Text = "List of Attached Person" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Xem DS Người Đi Cùng)"
+        '
         'ComebackTimeTbx
         '
         Me.ComebackTimeTbx.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -362,38 +403,8 @@ Partial Class SBMS_GAView
         Me.PickUpTimeTbx.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PickUpTimeTbx.Location = New System.Drawing.Point(305, 47)
         Me.PickUpTimeTbx.Name = "PickUpTimeTbx"
-        Me.PickUpTimeTbx.Size = New System.Drawing.Size(154, 23)
+        Me.PickUpTimeTbx.Size = New System.Drawing.Size(171, 23)
         Me.PickUpTimeTbx.TabIndex = 79
-        '
-        'Radio_btn_No2
-        '
-        Me.Radio_btn_No2.AutoSize = True
-        Me.Radio_btn_No2.Location = New System.Drawing.Point(613, 274)
-        Me.Radio_btn_No2.Name = "Radio_btn_No2"
-        Me.Radio_btn_No2.Size = New System.Drawing.Size(41, 17)
-        Me.Radio_btn_No2.TabIndex = 78
-        Me.Radio_btn_No2.Text = "No"
-        Me.Radio_btn_No2.UseVisualStyleBackColor = True
-        '
-        'Radio_btn_Yes2
-        '
-        Me.Radio_btn_Yes2.AutoSize = True
-        Me.Radio_btn_Yes2.Location = New System.Drawing.Point(559, 274)
-        Me.Radio_btn_Yes2.Name = "Radio_btn_Yes2"
-        Me.Radio_btn_Yes2.Size = New System.Drawing.Size(46, 17)
-        Me.Radio_btn_Yes2.TabIndex = 77
-        Me.Radio_btn_Yes2.Text = "Yes"
-        Me.Radio_btn_Yes2.UseVisualStyleBackColor = True
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(302, 274)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(254, 16)
-        Me.Label17.TabIndex = 74
-        Me.Label17.Text = "Attached Person? (Có Người Về Cùng)"
         '
         'Label24
         '
@@ -415,18 +426,6 @@ Partial Class SBMS_GAView
         Me.ContentTbx.Size = New System.Drawing.Size(687, 23)
         Me.ContentTbx.TabIndex = 64
         '
-        'Radio_btn_No1
-        '
-        Me.Radio_btn_No1.AutoSize = True
-        Me.Radio_btn_No1.Checked = True
-        Me.Radio_btn_No1.Location = New System.Drawing.Point(634, 50)
-        Me.Radio_btn_No1.Name = "Radio_btn_No1"
-        Me.Radio_btn_No1.Size = New System.Drawing.Size(41, 17)
-        Me.Radio_btn_No1.TabIndex = 76
-        Me.Radio_btn_No1.TabStop = True
-        Me.Radio_btn_No1.Text = "No"
-        Me.Radio_btn_No1.UseVisualStyleBackColor = True
-        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -446,26 +445,6 @@ Partial Class SBMS_GAView
         Me.NoteTbx.Name = "NoteTbx"
         Me.NoteTbx.Size = New System.Drawing.Size(390, 23)
         Me.NoteTbx.TabIndex = 72
-        '
-        'Radio_btn_Yes1
-        '
-        Me.Radio_btn_Yes1.AutoSize = True
-        Me.Radio_btn_Yes1.Location = New System.Drawing.Point(634, 28)
-        Me.Radio_btn_Yes1.Name = "Radio_btn_Yes1"
-        Me.Radio_btn_Yes1.Size = New System.Drawing.Size(46, 17)
-        Me.Radio_btn_Yes1.TabIndex = 75
-        Me.Radio_btn_Yes1.Text = "Yes"
-        Me.Radio_btn_Yes1.UseVisualStyleBackColor = True
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(501, 30)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(129, 32)
-        Me.Label16.TabIndex = 73
-        Me.Label16.Text = "Attached Person? " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Có Người Đi Cùng)"
         '
         'Label23
         '
@@ -599,23 +578,23 @@ Partial Class SBMS_GAView
         Me.AttachedGridPerson.AllowUserToAddRows = False
         Me.AttachedGridPerson.AllowUserToDeleteRows = False
         Me.AttachedGridPerson.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.AttachedGridPerson.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.AttachedGridPerson.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.AttachedGridPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.AttachedGridPerson.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.AttachedGridPerson.DefaultCellStyle = DataGridViewCellStyle4
         Me.AttachedGridPerson.Location = New System.Drawing.Point(32, 39)
         Me.AttachedGridPerson.Name = "AttachedGridPerson"
         Me.AttachedGridPerson.ReadOnly = True
@@ -637,6 +616,7 @@ Partial Class SBMS_GAView
         Me.TabPage3.Controls.Add(Me.GroupBox4)
         Me.TabPage3.Controls.Add(Me.ApproveBtn)
         Me.TabPage3.Controls.Add(Me.RejectBtn)
+        Me.TabPage3.Controls.Add(Me.GroupBox6)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
@@ -682,7 +662,7 @@ Partial Class SBMS_GAView
         '
         Me.Label37.AutoSize = True
         Me.Label37.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label37.Location = New System.Drawing.Point(12, 261)
+        Me.Label37.Location = New System.Drawing.Point(284, 261)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(182, 16)
         Me.Label37.TabIndex = 82
@@ -692,7 +672,7 @@ Partial Class SBMS_GAView
         '
         Me.NewPickupTime.CustomFormat = "dd-MMM-yyyy HH:mm"
         Me.NewPickupTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.NewPickupTime.Location = New System.Drawing.Point(15, 280)
+        Me.NewPickupTime.Location = New System.Drawing.Point(287, 280)
         Me.NewPickupTime.MinDate = New Date(2020, 11, 1, 0, 0, 0, 0)
         Me.NewPickupTime.Name = "NewPickupTime"
         Me.NewPickupTime.Size = New System.Drawing.Size(179, 20)
@@ -702,7 +682,7 @@ Partial Class SBMS_GAView
         '
         Me.TaxiCardBtn.AutoSize = True
         Me.TaxiCardBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TaxiCardBtn.Location = New System.Drawing.Point(399, 29)
+        Me.TaxiCardBtn.Location = New System.Drawing.Point(399, 25)
         Me.TaxiCardBtn.Name = "TaxiCardBtn"
         Me.TaxiCardBtn.Size = New System.Drawing.Size(85, 20)
         Me.TaxiCardBtn.TabIndex = 79
@@ -713,7 +693,7 @@ Partial Class SBMS_GAView
         '
         Me.CompanyBusBtn.AutoSize = True
         Me.CompanyBusBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CompanyBusBtn.Location = New System.Drawing.Point(253, 30)
+        Me.CompanyBusBtn.Location = New System.Drawing.Point(253, 26)
         Me.CompanyBusBtn.Name = "CompanyBusBtn"
         Me.CompanyBusBtn.Size = New System.Drawing.Size(112, 20)
         Me.CompanyBusBtn.TabIndex = 78
@@ -724,7 +704,7 @@ Partial Class SBMS_GAView
         '
         Me.Label36.AutoSize = True
         Me.Label36.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label36.Location = New System.Drawing.Point(12, 31)
+        Me.Label36.Location = New System.Drawing.Point(12, 27)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(191, 16)
         Me.Label36.TabIndex = 77
@@ -770,7 +750,7 @@ Partial Class SBMS_GAView
         Me.GroupBox4.Controls.Add(Me.PlateNoTbx)
         Me.GroupBox4.Controls.Add(Me.Label35)
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(6, 74)
+        Me.GroupBox4.Location = New System.Drawing.Point(6, 66)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(700, 154)
         Me.GroupBox4.TabIndex = 40
@@ -922,6 +902,51 @@ Partial Class SBMS_GAView
         Me.Label35.TabIndex = 27
         Me.Label35.Text = "Bus's Plate No"
         '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.NoBtn)
+        Me.GroupBox6.Controls.Add(Me.Label1)
+        Me.GroupBox6.Controls.Add(Me.YesBtn)
+        Me.GroupBox6.Location = New System.Drawing.Point(6, 226)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(260, 99)
+        Me.GroupBox6.TabIndex = 89
+        Me.GroupBox6.TabStop = False
+        '
+        'NoBtn
+        '
+        Me.NoBtn.AutoSize = True
+        Me.NoBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NoBtn.Location = New System.Drawing.Point(163, 54)
+        Me.NoBtn.Name = "NoBtn"
+        Me.NoBtn.Size = New System.Drawing.Size(42, 20)
+        Me.NoBtn.TabIndex = 88
+        Me.NoBtn.Text = "No"
+        Me.NoBtn.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(10, 42)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(129, 16)
+        Me.Label1.TabIndex = 86
+        Me.Label1.Text = "Need update time?"
+        '
+        'YesBtn
+        '
+        Me.YesBtn.AutoSize = True
+        Me.YesBtn.Checked = True
+        Me.YesBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.YesBtn.Location = New System.Drawing.Point(163, 28)
+        Me.YesBtn.Name = "YesBtn"
+        Me.YesBtn.Size = New System.Drawing.Size(50, 20)
+        Me.YesBtn.TabIndex = 87
+        Me.YesBtn.TabStop = True
+        Me.YesBtn.Text = "Yes"
+        Me.YesBtn.UseVisualStyleBackColor = True
+        '
         'Id_Label
         '
         Me.Id_Label.AutoSize = True
@@ -962,6 +987,7 @@ Partial Class SBMS_GAView
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
@@ -973,6 +999,8 @@ Partial Class SBMS_GAView
         Me.GroupBox5.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -994,16 +1022,10 @@ Partial Class SBMS_GAView
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents MngCm_Tbx As TextBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Radio_btn_No2 As RadioButton
-    Friend WithEvents Radio_btn_Yes2 As RadioButton
-    Friend WithEvents Label17 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents ContentTbx As TextBox
-    Friend WithEvents Radio_btn_No1 As RadioButton
     Friend WithEvents Label13 As Label
     Friend WithEvents NoteTbx As TextBox
-    Friend WithEvents Radio_btn_Yes1 As RadioButton
-    Friend WithEvents Label16 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents Label28 As Label
     Friend WithEvents AssetTbx As TextBox
@@ -1050,4 +1072,12 @@ Partial Class SBMS_GAView
     Friend WithEvents busID As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents DeleteBtn As Button
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents NoBtn As RadioButton
+    Friend WithEvents YesBtn As RadioButton
+    Friend WithEvents Label1 As Label
+    Friend WithEvents GroupBox6 As GroupBox
 End Class

@@ -1,12 +1,22 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.Net.Mail
 Imports outlook = Microsoft.Office.Interop.Outlook
-
+Imports System.Text.RegularExpressions
+Imports QRCoder
 Public Class BusRequestFrm
     Dim conn As MySqlConnection
     Dim command As MySqlCommand
     Private Sub BusRequestFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         EmployeeIDTbx.Text = SBMS_WCStaffFrm.EmployeeIdLabel.Text
+        If Radio_btn_No3.Checked = True Then
+            ComebackTimePicker.Enabled = False
+            GoBackTbx.ReadOnly = True
+            ComebackTimePicker.CustomFormat = " "
+        Else
+            ComebackTimePicker.Enabled = True
+            GoBackTbx.ReadOnly = False
+            ComebackTimePicker.CustomFormat = "dd-MMM-yyyy HH:mm"
+        End If
     End Sub
 
     Private Sub Radio_btn_No1_CheckedChanged(sender As Object, e As EventArgs) Handles Radio_btn_No1.CheckedChanged
@@ -28,8 +38,18 @@ Public Class BusRequestFrm
     End Sub
 
     Private Sub Radio_btn_No3_CheckedChanged(sender As Object, e As EventArgs) Handles Radio_btn_No3.CheckedChanged
-        ComebackTimePicker.Enabled = False
-        GoBackTbx.Enabled = False
+
+        If Radio_btn_No3.Checked = True Then
+            ComebackTimePicker.Enabled = False
+            GoBackTbx.ReadOnly = True
+            ComebackTimePicker.CustomFormat = " "
+            GoBackTbx.Text = Nothing
+        Else
+            ComebackTimePicker.Enabled = True
+            GoBackTbx.ReadOnly = False
+            ComebackTimePicker.CustomFormat = "dd-MMM-yyyy HH:mm"
+        End If
+
     End Sub
 
     Private Sub EmployeeIDTbx_TextChanged(sender As Object, e As EventArgs) Handles EmployeeIDTbx.TextChanged
@@ -78,7 +98,7 @@ Public Class BusRequestFrm
 
     Private Sub Radio_btn_Yes3_CheckedChanged(sender As Object, e As EventArgs) Handles Radio_btn_Yes3.CheckedChanged
         ComebackTimePicker.Enabled = True
-        GoBackTbx.Enabled = True
+        GoBackTbx.ReadOnly = False
     End Sub
 
     Private Sub SubmitBtn_Click(sender As Object, e As EventArgs) Handles SubmitBtn.Click
@@ -122,30 +142,54 @@ Public Class BusRequestFrm
         Dim attachment9 As String = EmployeeTbx9.Text
         Dim attachment10 As String = EmployeeTbx10.Text
         If depature = "" Or arrival = "" Or content = "" Then
-            MessageBox.Show("Please fill in all fields to continue!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        Else
-            Dim result As DialogResult = MessageBox.Show("Are you sure to submit this request?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                MessageBox.Show("Please fill in all fields to continue!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            ElseIf Radio_btn_Yes3.Checked = True And GoBackTbx.Text = "" Then
+                MessageBox.Show("Please input number of person comeback with you!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Else
+                Dim result As DialogResult = MessageBox.Show("Are you sure to submit this request?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If result = DialogResult.Yes Then
                 Try
-
-
                     conn.Open()
-
-
-                    Dim query As String = "UPDATE tbl_order SET start_location=@depature, end_location=@arrival, start_time=@pickuptime, end_time=@combacktime, order_content =@content, order_note=@note, asset_bringout=@asset, submit_time=@submit, status_id=@status WHERE order_id='" & order_id & "';"
                     Using conn
-                        command = New MySqlCommand(query, conn)
-                        command.Parameters.AddWithValue("@depature", depature)
-                        command.Parameters.AddWithValue("@arrival", arrival)
-                        command.Parameters.AddWithValue("@pickuptime", pickuptime)
-                        command.Parameters.AddWithValue("@combacktime", combacktime)
-                        command.Parameters.AddWithValue("@content", content)
-                        command.Parameters.AddWithValue("@note", note)
-                        command.Parameters.AddWithValue("@asset", asset)
-                        command.Parameters.AddWithValue("@submit", Now)
-                        command.Parameters.AddWithValue("@status", "1")
-                        command.ExecuteNonQuery()
-                        If Radio_btn_Yes1.Checked = True Then
+                        If Radio_btn_No3.Checked = True Then 'Di 1 chieu ko ve
+                            Dim query As String = "UPDATE tbl_order SET start_location=@depature, end_location=@arrival, start_time=@pickuptime, end_time=@combacktime, order_content =@content, order_note=@note, asset_bringout=@asset, submit_time=@submit, status_id=@status WHERE order_id='" & order_id & "';"
+                            command = New MySqlCommand(query, conn)
+                            command.Parameters.AddWithValue("@depature", depature)
+                            command.Parameters.AddWithValue("@arrival", arrival)
+                            command.Parameters.AddWithValue("@pickuptime", pickuptime)
+                            command.Parameters.AddWithValue("@combacktime", combacktime)
+                            command.Parameters.AddWithValue("@content", content)
+                            command.Parameters.AddWithValue("@note", note)
+                            command.Parameters.AddWithValue("@asset", asset)
+                            command.Parameters.AddWithValue("@submit", Now)
+                            If SBMS_WCStaffFrm.GroupBox2.Visible = False Then
+                                command.Parameters.AddWithValue("@status", "1")
+                            Else
+                                command.Parameters.AddWithValue("@status", "2")
+                            End If
+                            command.ExecuteNonQuery()
+                        Else
+                            Dim goback_qty As Integer = GoBackTbx.Text
+                            Dim query As String = "UPDATE tbl_order SET start_location=@depature, end_location=@arrival, start_time=@pickuptime, end_time=@combacktime, order_content =@content, order_note=@note, goback_qty=@goback_qty, asset_bringout=@asset, submit_time=@submit, status_id=@status WHERE order_id='" & order_id & "';"
+                            command = New MySqlCommand(query, conn)
+                            command.Parameters.AddWithValue("@depature", depature)
+                            command.Parameters.AddWithValue("@arrival", arrival)
+                            command.Parameters.AddWithValue("@pickuptime", pickuptime)
+                            command.Parameters.AddWithValue("@combacktime", combacktime)
+                            command.Parameters.AddWithValue("@content", content)
+                            command.Parameters.AddWithValue("@note", note)
+                            command.Parameters.AddWithValue("@goback_qty", goback_qty)
+                            command.Parameters.AddWithValue("@asset", asset)
+                            command.Parameters.AddWithValue("@submit", Now)
+                            If GroupBox2.Visible = False Then
+                                command.Parameters.AddWithValue("@status", "1")
+                            Else
+                                command.Parameters.AddWithValue("@status", "2")
+                            End If
+                            command.ExecuteNonQuery()
+
+                        End If ' ket thuc check di 1 chieu hay 2 chieu
+                        If Radio_btn_Yes1.Checked = True Then 'co nguoi di cung
                             Dim query2 As String = "INSERT INTO tbl_attachment (order_id, Employee_ID) VALUES (@order_id, @Employee_ID);"
                             'Using conn
                             If attachment1 <> "" Then
@@ -208,61 +252,103 @@ Public Class BusRequestFrm
                                 command.Parameters.AddWithValue("@Employee_ID", attachment10)
                                 command.ExecuteNonQuery()
                             End If
-                        End If
-                        Dim query_mail As String = "SELECT tbl_user2.email FROM tbl_user2 INNER JOIN tbl_approval ON tbl_approval.app1 = tbl_user2.employee_id WHERE tbl_approval.employee_id ='" & userid & "';"
-                        command = New MySqlCommand(query_mail, conn)
-                        reader = command.ExecuteReader
-                        count = 0
-                        While reader.Read
-                            count = +1
-                        End While
-                        reader.Close()
-                        If count >= 1 Then
-                            Try
-                                SDA.SelectCommand = command
-                                SDA.Fill(dbDataSet)
-                                For Each row As DataRow In dbDataSet.Rows
-                                    email.Add(row.Item("email").ToString())
-                                Next
-                                Dim SmtpServer As New SmtpClient()
-                                Dim sendmail As New MailMessage()
-                                SmtpServer.Credentials = New _
-                                    Net.NetworkCredential("japan\70H9536", "Papvn17")
-                                SmtpServer.Port = 25
-                                SmtpServer.Host = "157.8.1.154"
-                                sendmail = New MailMessage With {
-                                        .From = New MailAddress("helpdesk.papvn@vn.panasonic.com")
-                                        }
-                                For Each r As String In email
-                                    sendmail.To.Add(New MailAddress(r))
-                                Next
-                                sendmail.IsBodyHtml = True
-                                sendmail.Subject = "Request Pending Your Approval - Bus Management System."
-                                sendmail.Body = "Dear Approver, <br> <br> Your team member, " & Name & " (Employee ID: " & userid & ") submitted request to Order Company Bus on System.<br> Please open the system and review.<br><br>*This message is automatically sent from system."
-                                SmtpServer.Send(sendmail)
-                            Catch ex As Exception
-                                MessageBox.Show(ex.Message)
-                            Finally
-                                OutlookMessage = Nothing
-                                AppOutlook = Nothing
-                            End Try
+                        End If 'ket thuc check co nguoi di cung
+                        If SBMS_WCStaffFrm.GroupBox2.Visible = False Then
+                            Dim query_mail As String = "SELECT tbl_user2.email FROM tbl_user2 INNER JOIN tbl_approval ON tbl_approval.app1 = tbl_user2.employee_id WHERE tbl_approval.employee_id ='" & userid & "';"
+                            command = New MySqlCommand(query_mail, conn)
+                            reader = command.ExecuteReader
+                            count = 0
+                            While reader.Read
+                                count = +1
+                            End While
+                            reader.Close()
+                            If count >= 1 Then
+                                Try
+                                    SDA.SelectCommand = command
+                                    SDA.Fill(dbDataSet)
+                                    For Each row As DataRow In dbDataSet.Rows
+                                        email.Add(row.Item("email").ToString())
+                                    Next
+                                    Dim SmtpServer As New SmtpClient()
+                                    Dim sendmail As New MailMessage()
+                                    SmtpServer.Credentials = New _
+                                        Net.NetworkCredential("japan\70H9536", "Papvn17")
+                                    SmtpServer.Port = 25
+                                    SmtpServer.Host = "157.8.1.154"
+                                    sendmail = New MailMessage With {
+                                            .From = New MailAddress("helpdesk.papvn@vn.panasonic.com")
+                                            }
+                                    For Each r As String In email
+                                        sendmail.To.Add(New MailAddress(r))
+                                    Next
+                                    sendmail.IsBodyHtml = True
+                                    sendmail.Subject = "Request Pending Your Approval - Bus Management System."
+                                    sendmail.Body = "Dear Approver, <br> <br> Your team member, " & Name & " (Employee ID: " & userid & ") submitted request to Order Company Bus on System.<br> Please open the system and review.<br><br>*This message is automatically sent from system."
+                                    SmtpServer.Send(sendmail)
+                                Catch ex As Exception
+                                    MessageBox.Show(ex.Message)
+                                Finally
+                                    OutlookMessage = Nothing
+                                    AppOutlook = Nothing
+                                End Try
+                            Else
+                                MessageBox.Show("Mail could not be sent")
+                            End If
                         Else
-                            MessageBox.Show("Mail could not be sent") 'if you dont want this message, simply delete this line 
+                            Dim query_mail As String = "SELECT tbl_user2.email FROM tbl_user2 INNER JOIN tbl_approval ON tbl_approval.app2 = tbl_user2.employee_id WHERE tbl_approval.employee_id ='" & userid & "';"
+                            command = New MySqlCommand(query_mail, conn)
+                            reader = command.ExecuteReader
+                            count = 0
+                            While reader.Read
+                                count = +1
+                            End While
+                            reader.Close()
+                            If count >= 1 Then
+                                Try
+                                    SDA.SelectCommand = command
+                                    SDA.Fill(dbDataSet)
+                                    For Each row As DataRow In dbDataSet.Rows
+                                        email.Add(row.Item("email").ToString())
+                                    Next
+                                    Dim SmtpServer As New SmtpClient()
+                                    Dim sendmail As New MailMessage()
+                                    SmtpServer.Credentials = New _
+                                        Net.NetworkCredential("japan\70H9536", "Papvn17")
+                                    SmtpServer.Port = 25
+                                    SmtpServer.Host = "157.8.1.154"
+                                    sendmail = New MailMessage With {
+                                            .From = New MailAddress("helpdesk.papvn@vn.panasonic.com")
+                                            }
+                                    For Each r As String In email
+                                        sendmail.To.Add(New MailAddress(r))
+                                    Next
+                                    sendmail.IsBodyHtml = True
+                                    sendmail.Subject = "Request Pending Your Approval - Bus Management System."
+                                    sendmail.Body = "Dear GA team, <br> <br> Mr/Ms , " & Name & " (Employee ID: " & userid & ") submitted request to Order Company Bus on System.<br> Please open the system and review.<br><br>*This message is automatically sent from system."
+                                    SmtpServer.Send(sendmail)
+                                Catch ex As Exception
+                                    MessageBox.Show(ex.Message)
+                                Finally
+                                    OutlookMessage = Nothing
+                                    AppOutlook = Nothing
+                                End Try
+                            Else
+                                MessageBox.Show("Mail could not be sent")
+                            End If
                         End If
                     End Using
-                    MessageBox.Show("Your request were submitted to your manager successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Me.Close()
-
-
-                Catch ex As Exception
-                    MessageBox.Show(ex.Message)
-                Finally
-                    If conn IsNot Nothing Then
-                        conn.Close()
-                    End If
-                End Try
+                        MessageBox.Show("Your request were submitted to your manager successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Me.Close()
+                    Catch ex As Exception
+                        MessageBox.Show(ex.Message)
+                    Finally
+                        If conn IsNot Nothing Then
+                            conn.Close()
+                        End If
+                    End Try
+                End If
             End If
-        End If
+
     End Sub
 
     Private Sub EmployeeTbx1_TextChanged(sender As Object, e As EventArgs) Handles EmployeeTbx1.TextChanged
@@ -816,5 +902,20 @@ Public Class BusRequestFrm
             End Try
             Me.Close()
         End If
+    End Sub
+
+    Private Sub GoBackTbx_TextChanged(sender As Object, e As EventArgs) Handles GoBackTbx.TextChanged
+        If Not Regex.Match(GoBackTbx.Text, "^\d+$", RegexOptions.IgnoreCase).Success Then
+            MessageBox.Show("Please enter number only.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            GoBackTbx.Focus()
+            GoBackTbx.Clear()
+        End If
+    End Sub
+
+    Private Sub Id_Label_TextChanged(sender As Object, e As EventArgs) Handles Id_Label.TextChanged
+        Dim gen As New QRCodeGenerator
+        Dim data = gen.CreateQrCode(Id_Label.Text, QRCodeGenerator.ECCLevel.Q)
+        Dim code As New QRCode(data)
+        QRCodeBox.Image = code.GetGraphic(6)
     End Sub
 End Class

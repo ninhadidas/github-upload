@@ -75,8 +75,8 @@ Public Class RequestGrid
             BusRequestFrm.PickupTimePicker.Value = DataGridView.CurrentRow.Cells(5).Value.ToString
             BusRequestFrm.ComebackTimePicker.Value = DataGridView.CurrentRow.Cells(6).Value.ToString
             BusRequestFrm.AssetTbx.Text = DataGridView.CurrentRow.Cells(7).Value.ToString
+            Me.Close()
         End If
-        Me.Close()
     End Sub
     Private Sub DataGridView_KeyDown(sender As Object, e As KeyEventArgs) Handles DataGridView.KeyDown
         If DataGridView.CurrentRow.Cells(10).Value.ToString = "Draft" Then
@@ -92,8 +92,8 @@ Public Class RequestGrid
                 BusRequestFrm.ComebackTimePicker.Value = DataGridView.CurrentRow.Cells(6).Value.ToString
                 BusRequestFrm.AssetTbx.Text = DataGridView.CurrentRow.Cells(7).Value.ToString
             End If
+            Me.Close()
         End If
-        Me.Close()
     End Sub
 
 End Class

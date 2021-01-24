@@ -1,5 +1,4 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports System.Data
 Imports excel = Microsoft.Office.Interop.Excel
 Public Class ExportDataFrm
     Private Sub ExportDataBtn_Click(sender As Object, e As EventArgs) Handles ExportDataBtn.Click
@@ -20,10 +19,11 @@ Public Class ExportDataFrm
             MessageBox.Show("Nothing to export!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
             Dim spath As String = ""
-            Dim fo As New SaveFileDialog
-            fo.Filter = "All files|*.xlsx"
-            fo.CheckPathExists = True
-            fo.OverwritePrompt = True
+            Dim fo As New SaveFileDialog With {
+                .Filter = "All files|*.xlsx",
+                .CheckPathExists = True,
+                .OverwritePrompt = True
+            }
             If fo.ShowDialog() = DialogResult.OK Then
                 spath = fo.FileName
             End If

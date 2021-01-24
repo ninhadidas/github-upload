@@ -30,10 +30,10 @@ Public Class SBMSStaffLoginFrm
                 Dim ga As String
                 ga = reader("is_ga").ToString
                 If approval <> True Then
-                    SBMS_WCStaffFrm.ReviewRequestBtn.Enabled = False
+                    SBMS_WCStaffFrm.GroupBox2.Visible = False
                 End If
                 If ga <> True Then
-                    SBMS_WCStaffFrm.GAReviewBtn.Enabled = False
+                    SBMS_WCStaffFrm.GroupBox3.Visible = False
                 End If
                 SBMS_WCStaffFrm.Show()
                 SBMS_WCStaffFrm.NameLabel.Text = reader("name").ToString
@@ -59,6 +59,6 @@ Public Class SBMSStaffLoginFrm
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        ForgotPwFrm.Show()
+        SBMS_ForgotPassword.Show()
     End Sub
 End Class

@@ -15,6 +15,7 @@ Public Class SBMS_MngView
         Dim AppOutlook As New outlook.Application
         Dim Name As String
         Dim userid As String
+        Dim mngcm As String = MngCm_Tbx.Text
         conn = New MySqlConnection With {
                 .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
             }
@@ -23,7 +24,7 @@ Public Class SBMS_MngView
         If result = DialogResult.Yes Then
             Try
                 conn.Open()
-                Dim query As String = "UPDATE tbl_order SET status_id='2' WHERE order_id='" & order_id & "';"
+                Dim query As String = "UPDATE tbl_order SET status_id='2', mng_comment ='" & mngcm & "', mng_action_time = now() WHERE order_id='" & order_id & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 reader.Close()
@@ -296,5 +297,9 @@ Public Class SBMS_MngView
         ReviewGridMng.Controls.Clear() 'removes all the controls on the form
         ReviewGridMng.InitializeComponent() 'load all the controls again
         ReviewGridMng.ReviewGridMng_Load(e, e) 'Load everything in your form, load event again
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        TabControl1.SelectedIndex = 1
     End Sub
 End Class

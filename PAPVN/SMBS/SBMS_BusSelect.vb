@@ -2,48 +2,6 @@
 Public Class SBMS_BusSelect
     Dim conn As MySqlConnection
     Dim command As MySqlCommand
-    Private Sub BusListGrid_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles BusListGrid.CellMouseDoubleClick
-        SBMS_GAView.BusNameTbx.Text = BusListGrid.CurrentRow.Cells(0).Value.ToString
-        SBMS_GAView.KmRemainTbx.Text = BusListGrid.CurrentRow.Cells(1).Value.ToString
-        SBMS_GAView.PlateNoTbx.Text = BusListGrid.CurrentRow.Cells(2).Value.ToString
-        SBMS_GAView.DriverNameTbx.Text = BusListGrid.CurrentRow.Cells(3).Value.ToString
-        SBMS_GAView.DriverMobileTbx.Text = BusListGrid.CurrentRow.Cells(4).Value.ToString
-        SBMS_GAView.busID.Text = BusListGrid.CurrentRow.Cells(6).Value.ToString
-        Me.Close()
-    End Sub
-
-    Private Sub BusListGrid_KeyDown(sender As Object, e As KeyEventArgs) Handles BusListGrid.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            SBMS_GAView.BusNameTbx.Text = BusListGrid.CurrentRow.Cells(0).Value.ToString
-            SBMS_GAView.KmRemainTbx.Text = BusListGrid.CurrentRow.Cells(1).Value.ToString
-            SBMS_GAView.PlateNoTbx.Text = BusListGrid.CurrentRow.Cells(2).Value.ToString
-            SBMS_GAView.DriverNameTbx.Text = BusListGrid.CurrentRow.Cells(3).Value.ToString
-            SBMS_GAView.DriverMobileTbx.Text = BusListGrid.CurrentRow.Cells(4).Value.ToString
-            SBMS_GAView.busID.Text = BusListGrid.CurrentRow.Cells(6).Value.ToString
-            Me.Close()
-        End If
-    End Sub
-    Private Sub BusyGridBus_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles BusyGridBus.CellMouseDoubleClick
-        SBMS_GAView.BusNameTbx.Text = BusyGridBus.CurrentRow.Cells(0).Value.ToString
-        SBMS_GAView.KmRemainTbx.Text = BusyGridBus.CurrentRow.Cells(7).Value.ToString
-        SBMS_GAView.PlateNoTbx.Text = BusyGridBus.CurrentRow.Cells(9).Value.ToString
-        SBMS_GAView.DriverNameTbx.Text = BusyGridBus.CurrentRow.Cells(10).Value.ToString
-        SBMS_GAView.DriverMobileTbx.Text = BusyGridBus.CurrentRow.Cells(11).Value.ToString
-        SBMS_GAView.busID.Text = BusyGridBus.CurrentRow.Cells(12).Value.ToString
-        Me.Close()
-    End Sub
-
-    Private Sub BusyGridBus_KeyDown(sender As Object, e As KeyEventArgs) Handles BusyGridBus.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            SBMS_GAView.BusNameTbx.Text = BusyGridBus.CurrentRow.Cells(0).Value.ToString
-            SBMS_GAView.KmRemainTbx.Text = BusyGridBus.CurrentRow.Cells(7).Value.ToString
-            SBMS_GAView.PlateNoTbx.Text = BusyGridBus.CurrentRow.Cells(9).Value.ToString
-            SBMS_GAView.DriverNameTbx.Text = BusyGridBus.CurrentRow.Cells(10).Value.ToString
-            SBMS_GAView.DriverMobileTbx.Text = BusyGridBus.CurrentRow.Cells(11).Value.ToString
-            SBMS_GAView.busID.Text = BusyGridBus.CurrentRow.Cells(12).Value.ToString
-            Me.Close()
-        End If
-    End Sub
     Private Sub SBMS_BusSelect_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         today_lbl.Text = Today
         Dim SDA As New MySqlDataAdapter
@@ -55,7 +13,7 @@ Public Class SBMS_BusSelect
         Dim reader As MySqlDataReader
         Try
             conn.Open()
-            Dim query As String = "SELECT bus_name, tbl_order.order_id, tbl_order.start_time, tbl_order.end_time, tbl_order.start_location, tbl_order.end_location, tbl_order.order_content, km_remain, tbl_order.order_note, bks, name, mobile1, tbl_businfo.bus_id FROM tbl_businfo INNER JOIN tbl_order ON tbl_order.bus_id = tbl_businfo.bus_id INNER JOIN tbl_bus_quota ON tbl_order.bus_id = tbl_bus_quota.bus_id INNER JOIN tbl_driverinfo ON tbl_businfo.bus_id=tbl_driverinfo.bus_id WHERE DATE(tbl_order.end_time) = CURRENT_DATE;"
+            Dim query As String = "SELECT bus_name, tbl_order.order_id, tbl_order.start_time, tbl_order.end_time, tbl_order.start_location, tbl_order.end_location, tbl_order.order_content, km_remain, tbl_order.order_note, bks, driver_name, driver_phone, tbl_businfo.bus_id FROM tbl_order INNER JOIN tbl_businfo ON tbl_order.bus_id = tbl_businfo.bus_id INNER JOIN tbl_bus_quota ON tbl_order.bus_id = tbl_bus_quota.bus_id WHERE DATE(tbl_order.start_time) = CURRENT_DATE;"
             command = New MySqlCommand(query, conn)
             reader = command.ExecuteReader
             count = 0
@@ -121,7 +79,7 @@ Public Class SBMS_BusSelect
         Dim reader As MySqlDataReader
         Try
             conn.Open()
-            Dim query As String = "SELECT bus_name, km_remain, bks, name, mobile1, company, tbl_businfo.bus_id FROM tbl_businfo INNER JOIN tbl_driverinfo ON tbl_businfo.bus_id = tbl_driverinfo.bus_id INNER JOIN tbl_bus_quota ON tbl_businfo.bus_id = tbl_bus_quota.bus_id;"
+            Dim query As String = "SELECT bus_name, km_remain, bks, driver_name, driver_phone, company, tbl_businfo.bus_id FROM tbl_businfo INNER JOIN tbl_bus_quota ON tbl_businfo.bus_id = tbl_bus_quota.bus_id;"
             command = New MySqlCommand(query, conn)
             reader = command.ExecuteReader
             count = 0
@@ -138,17 +96,17 @@ Public Class SBMS_BusSelect
                     .RowHeadersVisible = False
                     .Columns(0).HeaderCell.Value = "Bus Name"
                     .Columns(1).HeaderCell.Value = "Km Remain"
-                    .Columns(1).Width = 80
+                    .Columns(1).Width = 200
                     .Columns(2).HeaderCell.Value = "Plate No"
-                    .Columns(2).Width = 80
+                    .Columns(2).Width = 200
                     .Columns(3).HeaderCell.Value = "Driver's Name"
-                    .Columns(3).Width = 150
+                    .Columns(3).Width = 200
                     .Columns(4).HeaderCell.Value = "Driver's Mobile"
-                    .Columns(4).Width = 100
+                    .Columns(4).Width = 200
                     .Columns(5).HeaderCell.Value = "Company"
-                    .Columns(5).Width = 100
+                    .Columns(5).Width = 200
                     .Columns(6).HeaderCell.Value = "Bus ID"
-                    .Columns(6).Width = 80
+                    .Columns(6).Width = 150
                 End With
                 conn.Close()
             Else
@@ -162,5 +120,48 @@ Public Class SBMS_BusSelect
                 conn.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub BusListGrid_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles BusListGrid.CellMouseDoubleClick
+        SBMS_GAView.BusNameTbx.Text = BusListGrid.CurrentRow.Cells(0).Value.ToString
+        SBMS_GAView.KmRemainTbx.Text = BusListGrid.CurrentRow.Cells(1).Value.ToString
+        SBMS_GAView.PlateNoTbx.Text = BusListGrid.CurrentRow.Cells(2).Value.ToString
+        SBMS_GAView.DriverNameTbx.Text = BusListGrid.CurrentRow.Cells(3).Value.ToString
+        SBMS_GAView.DriverMobileTbx.Text = BusListGrid.CurrentRow.Cells(4).Value.ToString
+        SBMS_GAView.busID.Text = BusListGrid.CurrentRow.Cells(6).Value.ToString
+        Me.Close()
+    End Sub
+
+    Private Sub BusListGrid_KeyDown(sender As Object, e As KeyEventArgs) Handles BusListGrid.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SBMS_GAView.BusNameTbx.Text = BusListGrid.CurrentRow.Cells(0).Value.ToString
+            SBMS_GAView.KmRemainTbx.Text = BusListGrid.CurrentRow.Cells(1).Value.ToString
+            SBMS_GAView.PlateNoTbx.Text = BusListGrid.CurrentRow.Cells(2).Value.ToString
+            SBMS_GAView.DriverNameTbx.Text = BusListGrid.CurrentRow.Cells(3).Value.ToString
+            SBMS_GAView.DriverMobileTbx.Text = BusListGrid.CurrentRow.Cells(4).Value.ToString
+            SBMS_GAView.busID.Text = BusListGrid.CurrentRow.Cells(6).Value.ToString
+            Me.Close()
+        End If
+    End Sub
+    Private Sub BusyGridBus_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles BusyGridBus.CellMouseDoubleClick
+        SBMS_GAView.BusNameTbx.Text = BusyGridBus.CurrentRow.Cells(0).Value.ToString
+        SBMS_GAView.KmRemainTbx.Text = BusyGridBus.CurrentRow.Cells(7).Value.ToString
+        SBMS_GAView.PlateNoTbx.Text = BusyGridBus.CurrentRow.Cells(9).Value.ToString
+        SBMS_GAView.DriverNameTbx.Text = BusyGridBus.CurrentRow.Cells(10).Value.ToString
+        SBMS_GAView.DriverMobileTbx.Text = BusyGridBus.CurrentRow.Cells(11).Value.ToString
+        SBMS_GAView.busID.Text = BusyGridBus.CurrentRow.Cells(12).Value.ToString
+        Me.Close()
+    End Sub
+
+    Private Sub BusyGridBus_KeyDown(sender As Object, e As KeyEventArgs) Handles BusyGridBus.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SBMS_GAView.BusNameTbx.Text = BusyGridBus.CurrentRow.Cells(0).Value.ToString
+            SBMS_GAView.KmRemainTbx.Text = BusyGridBus.CurrentRow.Cells(7).Value.ToString
+            SBMS_GAView.PlateNoTbx.Text = BusyGridBus.CurrentRow.Cells(9).Value.ToString
+            SBMS_GAView.DriverNameTbx.Text = BusyGridBus.CurrentRow.Cells(10).Value.ToString
+            SBMS_GAView.DriverMobileTbx.Text = BusyGridBus.CurrentRow.Cells(11).Value.ToString
+            SBMS_GAView.busID.Text = BusyGridBus.CurrentRow.Cells(12).Value.ToString
+            Me.Close()
+        End If
     End Sub
 End Class

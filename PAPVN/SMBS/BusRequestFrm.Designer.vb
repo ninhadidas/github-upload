@@ -105,6 +105,7 @@ Partial Class BusRequestFrm
         Me.Id_Label = New System.Windows.Forms.Label()
         Me.StatusLabel = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.QRCodeBox = New System.Windows.Forms.PictureBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -113,6 +114,7 @@ Partial Class BusRequestFrm
         Me.GroupBox3.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.QRCodeBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label11
@@ -356,10 +358,10 @@ Partial Class BusRequestFrm
         Me.GoBackTbx.BackColor = System.Drawing.Color.LemonChiffon
         Me.GoBackTbx.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GoBackTbx.ForeColor = System.Drawing.Color.MediumBlue
-        Me.GoBackTbx.Location = New System.Drawing.Point(668, 260)
+        Me.GoBackTbx.Location = New System.Drawing.Point(655, 260)
         Me.GoBackTbx.Name = "GoBackTbx"
         Me.GoBackTbx.ReadOnly = True
-        Me.GoBackTbx.Size = New System.Drawing.Size(26, 23)
+        Me.GoBackTbx.Size = New System.Drawing.Size(39, 23)
         Me.GoBackTbx.TabIndex = 84
         '
         'GroupBox4
@@ -454,9 +456,9 @@ Partial Class BusRequestFrm
         Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.Location = New System.Drawing.Point(482, 256)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(180, 32)
+        Me.Label17.Size = New System.Drawing.Size(175, 32)
         Me.Label17.TabIndex = 74
-        Me.Label17.Text = "No Of Attached Person? " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Bao Nhiêu Người Về Cùng)"
+        Me.Label17.Text = "No Of Attached Person? *" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Số Người Về Cùng *)"
         '
         'Label24
         '
@@ -1028,7 +1030,7 @@ Partial Class BusRequestFrm
         'StatusLabel
         '
         Me.StatusLabel.AutoSize = True
-        Me.StatusLabel.Location = New System.Drawing.Point(611, 13)
+        Me.StatusLabel.Location = New System.Drawing.Point(12, 68)
         Me.StatusLabel.Name = "StatusLabel"
         Me.StatusLabel.Size = New System.Drawing.Size(37, 13)
         Me.StatusLabel.TabIndex = 41
@@ -1045,11 +1047,21 @@ Partial Class BusRequestFrm
         Me.PictureBox1.TabIndex = 37
         Me.PictureBox1.TabStop = False
         '
+        'QRCodeBox
+        '
+        Me.QRCodeBox.Location = New System.Drawing.Point(630, 12)
+        Me.QRCodeBox.Name = "QRCodeBox"
+        Me.QRCodeBox.Size = New System.Drawing.Size(100, 100)
+        Me.QRCodeBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.QRCodeBox.TabIndex = 42
+        Me.QRCodeBox.TabStop = False
+        '
         'BusRequestFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(736, 663)
+        Me.Controls.Add(Me.QRCodeBox)
         Me.Controls.Add(Me.StatusLabel)
         Me.Controls.Add(Me.Id_Label)
         Me.Controls.Add(Me.TabControl1)
@@ -1072,6 +1084,7 @@ Partial Class BusRequestFrm
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.QRCodeBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1158,4 +1171,5 @@ Partial Class BusRequestFrm
     Friend WithEvents GoBackTbx As TextBox
     Friend WithEvents CancelBtn As Button
     Friend WithEvents StatusLabel As Label
+    Friend WithEvents QRCodeBox As PictureBox
 End Class

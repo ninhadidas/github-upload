@@ -30,7 +30,7 @@ Partial Class SBMS_GAControlPanel
         Me.UserMasterBtn = New System.Windows.Forms.PictureBox()
         Me.BusQuotaBtn = New System.Windows.Forms.PictureBox()
         Me.BusMasterBtn = New System.Windows.Forms.PictureBox()
-        Me.QuitBtn = New System.Windows.Forms.PictureBox()
+        Me.RoutingBtn = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -46,7 +46,7 @@ Partial Class SBMS_GAControlPanel
         CType(Me.UserMasterBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BusQuotaBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BusMasterBtn, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.QuitBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RoutingBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ReviewBtn
@@ -104,15 +104,15 @@ Partial Class SBMS_GAControlPanel
         Me.BusMasterBtn.TabStop = False
         Me.ToolTip2.SetToolTip(Me.BusMasterBtn, "Update Bus Information")
         '
-        'QuitBtn
+        'RoutingBtn
         '
-        Me.QuitBtn.Image = CType(resources.GetObject("QuitBtn.Image"), System.Drawing.Image)
-        Me.QuitBtn.Location = New System.Drawing.Point(376, 185)
-        Me.QuitBtn.Name = "QuitBtn"
-        Me.QuitBtn.Size = New System.Drawing.Size(150, 150)
-        Me.QuitBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.QuitBtn.TabIndex = 22
-        Me.QuitBtn.TabStop = False
+        Me.RoutingBtn.Image = CType(resources.GetObject("RoutingBtn.Image"), System.Drawing.Image)
+        Me.RoutingBtn.Location = New System.Drawing.Point(376, 185)
+        Me.RoutingBtn.Name = "RoutingBtn"
+        Me.RoutingBtn.Size = New System.Drawing.Size(150, 150)
+        Me.RoutingBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.RoutingBtn.TabIndex = 22
+        Me.RoutingBtn.TabStop = False
         '
         'Label1
         '
@@ -177,37 +177,36 @@ Partial Class SBMS_GAControlPanel
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(223, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(131, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(183, Byte), Integer))
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(430, 315)
+        Me.Label6.Location = New System.Drawing.Point(394, 315)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(37, 18)
+        Me.Label6.Size = New System.Drawing.Size(122, 18)
         Me.Label6.TabIndex = 28
-        Me.Label6.Text = "Exit"
+        Me.Label6.Text = "Routing Master"
         '
         'SBMS_GAControlPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(541, 350)
-        Me.ControlBox = False
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.QuitBtn)
+        Me.Controls.Add(Me.RoutingBtn)
         Me.Controls.Add(Me.BusMasterBtn)
         Me.Controls.Add(Me.BusQuotaBtn)
         Me.Controls.Add(Me.ReviewBtn)
         Me.Controls.Add(Me.ReportBtn)
         Me.Controls.Add(Me.UserMasterBtn)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.HelpButton = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "SBMS_GAControlPanel"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " Control Panel"
@@ -216,7 +215,7 @@ Partial Class SBMS_GAControlPanel
         CType(Me.UserMasterBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BusQuotaBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BusMasterBtn, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.QuitBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RoutingBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -227,7 +226,7 @@ Partial Class SBMS_GAControlPanel
     Friend WithEvents ReviewBtn As PictureBox
     Friend WithEvents BusQuotaBtn As PictureBox
     Friend WithEvents BusMasterBtn As PictureBox
-    Friend WithEvents QuitBtn As PictureBox
+    Friend WithEvents RoutingBtn As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label

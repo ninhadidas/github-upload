@@ -135,4 +135,10 @@ C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.vbpro
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.exe
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.xml
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.pdb
-C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_UserGrid.resources
+C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_BusQuotaMaster.resources
+C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_BusInfoMaster.resources
+C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_ApprovalRoute.resources
+C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_ExportData.resources
+C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_UserGrid.resources
+C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_ForgotPassword.resources

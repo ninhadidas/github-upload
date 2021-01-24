@@ -13,6 +13,9 @@ Public Class SBMS_GAView
         Dim distance As String = DistanceTbx.Text
         Dim driver_name As String = DriverNameTbx.Text
         Dim driver_phone As String = DriverMobileTbx.Text
+        Dim note As String = GANoteTbx.Text
+        Dim newpicktime As Date = NewPickupTime.Value
+        Dim newbacktime As Date = NewReturnTime.Value
         Dim OutlookMessage As outlook.MailItem
         Dim AppOutlook As New outlook.Application
         conn = New MySqlConnection With {
@@ -23,11 +26,25 @@ Public Class SBMS_GAView
         If result = DialogResult.Yes And BusNameTbx.Text <> "" And distance <> "" And TaxiCardBtn.Checked = False Then
             Try
                 conn.Open()
-                Dim query As String = "UPDATE tbl_order SET status_id='3', bus_id='" & bus & "', distance='" & distance & "' WHERE order_id='" & order_id & "';"
-                command = New MySqlCommand(query, conn)
-                reader = command.ExecuteReader
-                reader.Close()
-
+                If NoBtn.Checked = True Then
+                    Dim query As String = "UPDATE tbl_order SET status_id='3', bus_id='" & bus & "', distance='" & distance & "', ga_comment='" & note & "', ga_action_time=now() WHERE order_id='" & order_id & "';"
+                    command = New MySqlCommand(query, conn)
+                    reader = command.ExecuteReader
+                    reader.Close()
+                Else
+                    Using conn
+                        Dim query As String = "UPDATE tbl_order SET status_id=@status, bus_id=@bus, distance=@distance, start_time=@newpicktime, end_time=@newbacktime, ga_comment=@note, ga_action_time=@time WHERE order_id='" & order_id & "';"
+                        command = New MySqlCommand(query, conn)
+                        command.Parameters.AddWithValue("@status", 3)
+                        command.Parameters.AddWithValue("@bus", bus)
+                        command.Parameters.AddWithValue("@distance", distance)
+                        command.Parameters.AddWithValue("@newpicktime", newpicktime)
+                        command.Parameters.AddWithValue("@newbacktime", newbacktime)
+                        command.Parameters.AddWithValue("@note", note)
+                        command.Parameters.AddWithValue("@time", Now)
+                        command.ExecuteNonQuery()
+                    End Using
+                End If
                 Dim Name As String = NameTbx.Text
                 Dim userid As String = EmployeeIDTbx.Text
                 Dim email As String = EmailTbx.Text
@@ -44,7 +61,7 @@ Public Class SBMS_GAView
                     sendmail.To.Add(email)
                     sendmail.IsBodyHtml = True
                     sendmail.Subject = "Your Bus Request was Approved - Bus Management System."
-                    sendmail.Body = "Dear Mr/Ms " & Name & " (Employee ID: " & userid & "), <br><br> Please check details your Bus Request as below.<br><br> Order Number: " & order_id & "<br><br> Bus Name: " & bus_name & "<br><br> Driver's Name: " & driver_name & "<br><br> Driver's Phone Number: " & driver_phone & "<br><br> Please note the Order Number and Inform to Security Staff <br><br>*To save the environment,  DO NOT print this email. This message is automatically sent from system. (c) 2021 by IT Department"
+                    sendmail.Body = "Dear Mr/Ms " & Name & " (Employee ID: " & userid & "), <br><br> Please check details your Bus Request as below.<br><br> Order Number: " & order_id & "<br><br> Bus Name: " & bus_name & "<br><br> Driver's Name: " & driver_name & "<br><br> Driver's Phone Number: " & driver_phone & "<br><br> Pickup Time: " & newpicktime & "<br><br> Please note the Order Number and Inform to Security Staff <br><br>*To save the environment,  DO NOT print this email. This message is automatically sent from system. (c) 2021 by IT Department"
                     SmtpServer.Send(sendmail)
                 Catch ex As Exception
                     MessageBox.Show(ex.Message)
@@ -65,7 +82,7 @@ Public Class SBMS_GAView
             If result = DialogResult.Yes And TaxiCardBtn.Checked = True Then
                 Try
                     conn.Open()
-                    Dim query As String = "UPDATE tbl_order SET status_id='3', is_taxi = true WHERE order_id='" & order_id & "';"
+                    Dim query As String = "UPDATE tbl_order SET status_id='3', bus_id=0, is_taxi = true WHERE order_id='" & order_id & "';"
                     command = New MySqlCommand(query, conn)
                     reader = command.ExecuteReader
                     reader.Close()
@@ -108,9 +125,9 @@ Public Class SBMS_GAView
                 MessageBox.Show("Please check data and try again!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         End If
-        'ReviewGridMng.Controls.Clear() 'removes all the controls on the form
-        'ReviewGridMng.InitializeComponent() 'load all the controls again
-        'ReviewGridMng.ReviewGridMng_Load(e, e) 'Load everything in your form, load event again
+        ReviewGridGA.Controls.Clear() 'removes all the controls on the form
+        ReviewGridGA.InitializeComponent() 'load all the controls again
+        ReviewGridGA.ReviewGridGA_Load(e, e) 'Load everything in your form, load event again
     End Sub
 
     Private Sub EmployeeIDTbx_TextChanged(sender As Object, e As EventArgs) Handles EmployeeIDTbx.TextChanged
@@ -333,7 +350,7 @@ Public Class SBMS_GAView
                         OutlookMessage = Nothing
                         AppOutlook = Nothing
                     End Try
-                    Dim query As String = "UPDATE tbl_order SET status_id='1' WHERE order_id='" & order_id & "';"
+                    Dim query As String = "UPDATE tbl_order SET status_id='1', ga_comment='" & note & "', ga_action_time = now() WHERE order_id='" & order_id & "';"
                     command = New MySqlCommand(query, conn)
                     reader = command.ExecuteReader
                     reader.Close()
@@ -352,4 +369,28 @@ Public Class SBMS_GAView
         ReviewGridGA.InitializeComponent() 'load all the controls again
         ReviewGridGA.ReviewGridGA_Load(e, e) 'Load everything in your form, load event again
     End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        TabControl1.SelectedIndex = 1
+    End Sub
+
+    Private Sub NoBtn_CheckedChanged(sender As Object, e As EventArgs) Handles NoBtn.CheckedChanged
+        If NoBtn.Checked = True Then
+            NewPickupTime.Enabled = False
+            NewPickupTime.CustomFormat = " "
+            NewReturnTime.Enabled = False
+            NewReturnTime.CustomFormat = " "
+        Else
+            NewPickupTime.Enabled = True
+            NewPickupTime.Value = Convert.ToDateTime(PickUpTimeTbx.Text)
+            NewPickupTime.CustomFormat = "dd-MMM-yyyy HH:mm"
+            NewReturnTime.Enabled = True
+            NewReturnTime.CustomFormat = "dd-MMM-yyyy HH:mm"
+        End If
+    End Sub
+
+    Private Sub TabPage3_Enter(sender As Object, e As EventArgs) Handles TabPage3.Enter
+        NewPickupTime.Value = Convert.ToDateTime(PickUpTimeTbx.Text)
+    End Sub
+
 End Class
