@@ -27,41 +27,39 @@ Partial Class SBMS_WCStaffFrm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.NameLabel = New System.Windows.Forms.Label()
         Me.EmployeeIdLabel = New System.Windows.Forms.Label()
         Me.DeptLabel = New System.Windows.Forms.Label()
-        Me.DivLabel = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.OTRequestBtn = New System.Windows.Forms.PictureBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.CheckRequestBtn = New System.Windows.Forms.PictureBox()
         Me.NormalRequestBtn = New System.Windows.Forms.PictureBox()
         Me.QuitBtn = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.ReviewRequestBtn = New System.Windows.Forms.PictureBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.GAReviewBtn = New System.Windows.Forms.PictureBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.OTRequestBtn = New System.Windows.Forms.PictureBox()
-        Me.GAReviewBtn = New System.Windows.Forms.PictureBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip3 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip4 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip5 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip6 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
+        CType(Me.OTRequestBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckRequestBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NormalRequestBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.ReviewRequestBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.OTRequestBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GAReviewBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -93,16 +91,6 @@ Partial Class SBMS_WCStaffFrm
         Me.Label3.Size = New System.Drawing.Size(91, 16)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Department:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(25, 135)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(62, 16)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Division:"
         '
         'NameLabel
         '
@@ -137,17 +125,6 @@ Partial Class SBMS_WCStaffFrm
         Me.DeptLabel.TabIndex = 11
         Me.DeptLabel.Text = "DeptLabel"
         '
-        'DivLabel
-        '
-        Me.DivLabel.AutoSize = True
-        Me.DivLabel.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DivLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.DivLabel.Location = New System.Drawing.Point(93, 135)
-        Me.DivLabel.Name = "DivLabel"
-        Me.DivLabel.Size = New System.Drawing.Size(62, 16)
-        Me.DivLabel.TabIndex = 12
-        Me.DivLabel.Text = "DivLabel"
-        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -157,12 +134,59 @@ Partial Class SBMS_WCStaffFrm
         Me.GroupBox1.Controls.Add(Me.CheckRequestBtn)
         Me.GroupBox1.Controls.Add(Me.NormalRequestBtn)
         Me.GroupBox1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 164)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 138)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(454, 169)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "For Requester"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(321, 136)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(104, 16)
+        Me.Label7.TabIndex = 25
+        Me.Label7.Text = "Check Request"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(143, Byte), Integer))
+        Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(172, 136)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(109, 16)
+        Me.Label6.TabIndex = 24
+        Me.Label6.Text = "OT Bus Request"
+        '
+        'OTRequestBtn
+        '
+        Me.OTRequestBtn.Image = CType(resources.GetObject("OTRequestBtn.Image"), System.Drawing.Image)
+        Me.OTRequestBtn.Location = New System.Drawing.Point(165, 28)
+        Me.OTRequestBtn.Name = "OTRequestBtn"
+        Me.OTRequestBtn.Size = New System.Drawing.Size(125, 125)
+        Me.OTRequestBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.OTRequestBtn.TabIndex = 21
+        Me.OTRequestBtn.TabStop = False
+        Me.ToolTip3.SetToolTip(Me.OTRequestBtn, "OT Bus Request")
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(22, 135)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(110, 16)
+        Me.Label5.TabIndex = 23
+        Me.Label5.Text = "Normal Request"
         '
         'CheckRequestBtn
         '
@@ -203,12 +227,24 @@ Partial Class SBMS_WCStaffFrm
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.ReviewRequestBtn)
         Me.GroupBox2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 339)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 313)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(160, 170)
         Me.GroupBox2.TabIndex = 14
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "For Approver"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(236, Byte), Integer))
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(22, 131)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(113, 16)
+        Me.Label8.TabIndex = 26
+        Me.Label8.Text = "Review Request"
         '
         'ReviewRequestBtn
         '
@@ -226,93 +262,12 @@ Partial Class SBMS_WCStaffFrm
         Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.GAReviewBtn)
         Me.GroupBox3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(305, 339)
+        Me.GroupBox3.Location = New System.Drawing.Point(302, 313)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(164, 170)
         Me.GroupBox3.TabIndex = 15
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "For GA"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(22, 22)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 17
-        Me.PictureBox1.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Change Password")
-        '
-        'OTRequestBtn
-        '
-        Me.OTRequestBtn.Image = CType(resources.GetObject("OTRequestBtn.Image"), System.Drawing.Image)
-        Me.OTRequestBtn.Location = New System.Drawing.Point(165, 28)
-        Me.OTRequestBtn.Name = "OTRequestBtn"
-        Me.OTRequestBtn.Size = New System.Drawing.Size(125, 125)
-        Me.OTRequestBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.OTRequestBtn.TabIndex = 21
-        Me.OTRequestBtn.TabStop = False
-        Me.ToolTip3.SetToolTip(Me.OTRequestBtn, "OT Bus Request")
-        '
-        'GAReviewBtn
-        '
-        Me.GAReviewBtn.Image = CType(resources.GetObject("GAReviewBtn.Image"), System.Drawing.Image)
-        Me.GAReviewBtn.Location = New System.Drawing.Point(21, 22)
-        Me.GAReviewBtn.Name = "GAReviewBtn"
-        Me.GAReviewBtn.Size = New System.Drawing.Size(125, 125)
-        Me.GAReviewBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.GAReviewBtn.TabIndex = 22
-        Me.GAReviewBtn.TabStop = False
-        Me.ToolTip6.SetToolTip(Me.GAReviewBtn, "Control Center for GA")
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(22, 135)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(110, 16)
-        Me.Label5.TabIndex = 23
-        Me.Label5.Text = "Normal Request"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(143, Byte), Integer))
-        Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(172, 136)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(109, 16)
-        Me.Label6.TabIndex = 24
-        Me.Label6.Text = "OT Bus Request"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(321, 136)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(104, 16)
-        Me.Label7.TabIndex = 25
-        Me.Label7.Text = "Check Request"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(236, Byte), Integer))
-        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(22, 131)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(113, 16)
-        Me.Label8.TabIndex = 26
-        Me.Label8.Text = "Review Request"
         '
         'Label9
         '
@@ -326,21 +281,41 @@ Partial Class SBMS_WCStaffFrm
         Me.Label9.TabIndex = 27
         Me.Label9.Text = "GA Control Panel"
         '
+        'GAReviewBtn
+        '
+        Me.GAReviewBtn.Image = CType(resources.GetObject("GAReviewBtn.Image"), System.Drawing.Image)
+        Me.GAReviewBtn.Location = New System.Drawing.Point(21, 22)
+        Me.GAReviewBtn.Name = "GAReviewBtn"
+        Me.GAReviewBtn.Size = New System.Drawing.Size(125, 125)
+        Me.GAReviewBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.GAReviewBtn.TabIndex = 22
+        Me.GAReviewBtn.TabStop = False
+        Me.ToolTip6.SetToolTip(Me.GAReviewBtn, "Control Center for GA")
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(22, 22)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 17
+        Me.PictureBox1.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Change Password")
+        '
         'SBMS_WCStaffFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(477, 521)
+        Me.ClientSize = New System.Drawing.Size(477, 491)
         Me.ControlBox = False
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.QuitBtn)
-        Me.Controls.Add(Me.DivLabel)
         Me.Controls.Add(Me.DeptLabel)
         Me.Controls.Add(Me.EmployeeIdLabel)
         Me.Controls.Add(Me.NameLabel)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -354,6 +329,7 @@ Partial Class SBMS_WCStaffFrm
         Me.Text = "Welcome!"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.OTRequestBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CheckRequestBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NormalRequestBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
@@ -361,9 +337,8 @@ Partial Class SBMS_WCStaffFrm
         CType(Me.ReviewRequestBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.OTRequestBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GAReviewBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -372,7 +347,6 @@ Partial Class SBMS_WCStaffFrm
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
@@ -381,7 +355,6 @@ Partial Class SBMS_WCStaffFrm
     Friend WithEvents NameLabel As Label
     Friend WithEvents EmployeeIdLabel As Label
     Friend WithEvents DeptLabel As Label
-    Friend WithEvents DivLabel As Label
     Friend WithEvents GroupBox1 As GroupBox
 
     Friend WithEvents QuitBtn As Button

@@ -30,7 +30,6 @@ Partial Class SBMS_ApprovalRoute
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.ApprovalRouteView = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BrowseBtn = New System.Windows.Forms.Button()
         Me.UploadBtn = New System.Windows.Forms.Button()
@@ -43,25 +42,28 @@ Partial Class SBMS_ApprovalRoute
         Me.UpdateBtn = New System.Windows.Forms.Button()
         Me.BusID2 = New System.Windows.Forms.Label()
         Me.AddrTbx2 = New System.Windows.Forms.TextBox()
-        Me.BusNameCombox2 = New System.Windows.Forms.ComboBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.EmployeeIDTbx2 = New System.Windows.Forms.TextBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.MobileTbx2 = New System.Windows.Forms.TextBox()
-        Me.NameTbx2 = New System.Windows.Forms.TextBox()
+        Me.EmployeeIDTbx = New System.Windows.Forms.TextBox()
+        Me.Is_Approval = New System.Windows.Forms.Label()
+        Me.DeptTbx = New System.Windows.Forms.TextBox()
+        Me.NameTbx = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.EmailTbx2 = New System.Windows.Forms.TextBox()
+        Me.EmailTbx = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.TitleTbx = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Is_GA = New System.Windows.Forms.Label()
+        Me.ApprovalRouteView = New System.Windows.Forms.DataGridView()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        CType(Me.ApprovalRouteView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.ApprovalRouteView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -82,59 +84,19 @@ Partial Class SBMS_ApprovalRoute
         Me.TabControl1.Location = New System.Drawing.Point(17, 54)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(747, 439)
+        Me.TabControl1.Size = New System.Drawing.Size(747, 230)
         Me.TabControl1.TabIndex = 41
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.ApprovalRouteView)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(739, 413)
+        Me.TabPage1.Size = New System.Drawing.Size(739, 204)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Add New Approval Route"
         Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'ApprovalRouteView
-        '
-        Me.ApprovalRouteView.AllowUserToAddRows = False
-        Me.ApprovalRouteView.AllowUserToDeleteRows = False
-        Me.ApprovalRouteView.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ApprovalRouteView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.ApprovalRouteView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ApprovalRouteView.DefaultCellStyle = DataGridViewCellStyle2
-        Me.ApprovalRouteView.Location = New System.Drawing.Point(9, 181)
-        Me.ApprovalRouteView.MultiSelect = False
-        Me.ApprovalRouteView.Name = "ApprovalRouteView"
-        Me.ApprovalRouteView.ReadOnly = True
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ApprovalRouteView.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.ApprovalRouteView.RowHeadersVisible = False
-        Me.ApprovalRouteView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ApprovalRouteView.Size = New System.Drawing.Size(714, 226)
-        Me.ApprovalRouteView.TabIndex = 42
         '
         'GroupBox1
         '
@@ -206,42 +168,43 @@ Partial Class SBMS_ApprovalRoute
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(739, 413)
+        Me.TabPage2.Size = New System.Drawing.Size(739, 204)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Delete/Update Approval Route"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.Is_GA)
+        Me.GroupBox2.Controls.Add(Me.TitleTbx)
         Me.GroupBox2.Controls.Add(Me.DeleteBtn)
         Me.GroupBox2.Controls.Add(Me.UpdateBtn)
         Me.GroupBox2.Controls.Add(Me.BusID2)
         Me.GroupBox2.Controls.Add(Me.AddrTbx2)
-        Me.GroupBox2.Controls.Add(Me.BusNameCombox2)
         Me.GroupBox2.Controls.Add(Me.Label17)
         Me.GroupBox2.Controls.Add(Me.Label19)
-        Me.GroupBox2.Controls.Add(Me.EmployeeIDTbx2)
-        Me.GroupBox2.Controls.Add(Me.Label20)
-        Me.GroupBox2.Controls.Add(Me.MobileTbx2)
-        Me.GroupBox2.Controls.Add(Me.NameTbx2)
+        Me.GroupBox2.Controls.Add(Me.EmployeeIDTbx)
+        Me.GroupBox2.Controls.Add(Me.Is_Approval)
+        Me.GroupBox2.Controls.Add(Me.DeptTbx)
+        Me.GroupBox2.Controls.Add(Me.NameTbx)
         Me.GroupBox2.Controls.Add(Me.Label21)
         Me.GroupBox2.Controls.Add(Me.Label22)
-        Me.GroupBox2.Controls.Add(Me.EmailTbx2)
+        Me.GroupBox2.Controls.Add(Me.EmailTbx)
         Me.GroupBox2.Controls.Add(Me.Label23)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(3, 32)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 6)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(714, 206)
+        Me.GroupBox2.Size = New System.Drawing.Size(714, 193)
         Me.GroupBox2.TabIndex = 42
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Update/Delete Employee"
         '
         'DeleteBtn
         '
         Me.DeleteBtn.BackColor = System.Drawing.Color.Red
         Me.DeleteBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DeleteBtn.ForeColor = System.Drawing.Color.White
-        Me.DeleteBtn.Location = New System.Drawing.Point(313, 157)
+        Me.DeleteBtn.Location = New System.Drawing.Point(544, 147)
         Me.DeleteBtn.Name = "DeleteBtn"
         Me.DeleteBtn.Size = New System.Drawing.Size(152, 34)
         Me.DeleteBtn.TabIndex = 72
@@ -253,7 +216,7 @@ Partial Class SBMS_ApprovalRoute
         Me.UpdateBtn.BackColor = System.Drawing.Color.Blue
         Me.UpdateBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UpdateBtn.ForeColor = System.Drawing.Color.White
-        Me.UpdateBtn.Location = New System.Drawing.Point(73, 157)
+        Me.UpdateBtn.Location = New System.Drawing.Point(73, 147)
         Me.UpdateBtn.Name = "UpdateBtn"
         Me.UpdateBtn.Size = New System.Drawing.Size(152, 34)
         Me.UpdateBtn.TabIndex = 41
@@ -263,7 +226,7 @@ Partial Class SBMS_ApprovalRoute
         'BusID2
         '
         Me.BusID2.AutoSize = True
-        Me.BusID2.Location = New System.Drawing.Point(98, 157)
+        Me.BusID2.Location = New System.Drawing.Point(98, 147)
         Me.BusID2.Name = "BusID2"
         Me.BusID2.Size = New System.Drawing.Size(0, 13)
         Me.BusID2.TabIndex = 71
@@ -274,89 +237,78 @@ Partial Class SBMS_ApprovalRoute
         Me.AddrTbx2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.AddrTbx2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddrTbx2.ForeColor = System.Drawing.Color.Navy
-        Me.AddrTbx2.Location = New System.Drawing.Point(313, 117)
+        Me.AddrTbx2.Location = New System.Drawing.Point(349, 107)
         Me.AddrTbx2.Name = "AddrTbx2"
-        Me.AddrTbx2.Size = New System.Drawing.Size(298, 23)
+        Me.AddrTbx2.Size = New System.Drawing.Size(111, 23)
         Me.AddrTbx2.TabIndex = 66
-        '
-        'BusNameCombox2
-        '
-        Me.BusNameCombox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.BusNameCombox2.ForeColor = System.Drawing.Color.Navy
-        Me.BusNameCombox2.FormattingEnabled = True
-        Me.BusNameCombox2.Items.AddRange(New Object() {"Bus 1-01", "Bus 1-02", "Bus 1-03", "Bus 1-04", "Bus 1-05", "Bus 1-06", "Bus 1-07", "Bus 1-08", "Bus 1-09"})
-        Me.BusNameCombox2.Location = New System.Drawing.Point(101, 119)
-        Me.BusNameCombox2.Name = "BusNameCombox2"
-        Me.BusNameCombox2.Size = New System.Drawing.Size(124, 21)
-        Me.BusNameCombox2.TabIndex = 63
         '
         'Label17
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(8, 119)
+        Me.Label17.Location = New System.Drawing.Point(8, 109)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(70, 16)
+        Me.Label17.Size = New System.Drawing.Size(35, 16)
         Me.Label17.TabIndex = 61
-        Me.Label17.Text = "Bus Name"
+        Me.Label17.Text = "Title"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(8, 34)
+        Me.Label19.Location = New System.Drawing.Point(8, 24)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(87, 16)
         Me.Label19.TabIndex = 57
         Me.Label19.Text = "Employee ID"
         '
-        'EmployeeIDTbx2
+        'EmployeeIDTbx
         '
-        Me.EmployeeIDTbx2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.EmployeeIDTbx2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EmployeeIDTbx2.ForeColor = System.Drawing.Color.Navy
-        Me.EmployeeIDTbx2.Location = New System.Drawing.Point(101, 31)
-        Me.EmployeeIDTbx2.MaxLength = 7
-        Me.EmployeeIDTbx2.Name = "EmployeeIDTbx2"
-        Me.EmployeeIDTbx2.Size = New System.Drawing.Size(124, 23)
-        Me.EmployeeIDTbx2.TabIndex = 58
+        Me.EmployeeIDTbx.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.EmployeeIDTbx.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeIDTbx.ForeColor = System.Drawing.Color.Navy
+        Me.EmployeeIDTbx.Location = New System.Drawing.Point(101, 21)
+        Me.EmployeeIDTbx.MaxLength = 7
+        Me.EmployeeIDTbx.Name = "EmployeeIDTbx"
+        Me.EmployeeIDTbx.Size = New System.Drawing.Size(124, 23)
+        Me.EmployeeIDTbx.TabIndex = 58
         '
-        'Label20
+        'Is_Approval
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(259, 119)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(44, 16)
-        Me.Label20.TabIndex = 6
-        Me.Label20.Text = "Addr."
+        Me.Is_Approval.AutoSize = True
+        Me.Is_Approval.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Is_Approval.Location = New System.Drawing.Point(259, 109)
+        Me.Is_Approval.Name = "Is_Approval"
+        Me.Is_Approval.Size = New System.Drawing.Size(83, 16)
+        Me.Is_Approval.TabIndex = 6
+        Me.Is_Approval.Text = "Is Approval"
         '
-        'MobileTbx2
+        'DeptTbx
         '
-        Me.MobileTbx2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.MobileTbx2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MobileTbx2.ForeColor = System.Drawing.Color.Navy
-        Me.MobileTbx2.Location = New System.Drawing.Point(101, 75)
-        Me.MobileTbx2.MaxLength = 10
-        Me.MobileTbx2.Name = "MobileTbx2"
-        Me.MobileTbx2.Size = New System.Drawing.Size(124, 23)
-        Me.MobileTbx2.TabIndex = 40
+        Me.DeptTbx.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.DeptTbx.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DeptTbx.ForeColor = System.Drawing.Color.Navy
+        Me.DeptTbx.Location = New System.Drawing.Point(101, 65)
+        Me.DeptTbx.MaxLength = 10
+        Me.DeptTbx.Name = "DeptTbx"
+        Me.DeptTbx.Size = New System.Drawing.Size(124, 23)
+        Me.DeptTbx.TabIndex = 40
         '
-        'NameTbx2
+        'NameTbx
         '
-        Me.NameTbx2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.NameTbx2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameTbx2.ForeColor = System.Drawing.Color.Navy
-        Me.NameTbx2.Location = New System.Drawing.Point(313, 31)
-        Me.NameTbx2.Name = "NameTbx2"
-        Me.NameTbx2.Size = New System.Drawing.Size(298, 23)
-        Me.NameTbx2.TabIndex = 34
+        Me.NameTbx.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.NameTbx.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameTbx.ForeColor = System.Drawing.Color.Navy
+        Me.NameTbx.Location = New System.Drawing.Point(349, 21)
+        Me.NameTbx.Name = "NameTbx"
+        Me.NameTbx.Size = New System.Drawing.Size(347, 23)
+        Me.NameTbx.TabIndex = 34
         '
         'Label21
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(259, 34)
+        Me.Label21.Location = New System.Drawing.Point(259, 24)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(43, 16)
         Me.Label21.TabIndex = 33
@@ -366,27 +318,27 @@ Partial Class SBMS_ApprovalRoute
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(8, 75)
+        Me.Label22.Location = New System.Drawing.Point(8, 65)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(69, 16)
+        Me.Label22.Size = New System.Drawing.Size(39, 16)
         Me.Label22.TabIndex = 7
-        Me.Label22.Text = "Mobile No"
+        Me.Label22.Text = "Dept"
         '
-        'EmailTbx2
+        'EmailTbx
         '
-        Me.EmailTbx2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.EmailTbx2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EmailTbx2.ForeColor = System.Drawing.Color.Navy
-        Me.EmailTbx2.Location = New System.Drawing.Point(313, 74)
-        Me.EmailTbx2.Name = "EmailTbx2"
-        Me.EmailTbx2.Size = New System.Drawing.Size(298, 23)
-        Me.EmailTbx2.TabIndex = 28
+        Me.EmailTbx.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.EmailTbx.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmailTbx.ForeColor = System.Drawing.Color.Navy
+        Me.EmailTbx.Location = New System.Drawing.Point(349, 64)
+        Me.EmailTbx.Name = "EmailTbx"
+        Me.EmailTbx.Size = New System.Drawing.Size(347, 23)
+        Me.EmailTbx.TabIndex = 28
         '
         'Label23
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(258, 78)
+        Me.Label23.Location = New System.Drawing.Point(258, 68)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(40, 16)
         Me.Label23.TabIndex = 27
@@ -400,11 +352,82 @@ Partial Class SBMS_ApprovalRoute
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'TitleTbx
+        '
+        Me.TitleTbx.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TitleTbx.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TitleTbx.ForeColor = System.Drawing.Color.Navy
+        Me.TitleTbx.Location = New System.Drawing.Point(101, 106)
+        Me.TitleTbx.MaxLength = 10
+        Me.TitleTbx.Name = "TitleTbx"
+        Me.TitleTbx.Size = New System.Drawing.Size(124, 23)
+        Me.TitleTbx.TabIndex = 73
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TextBox1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.Navy
+        Me.TextBox1.Location = New System.Drawing.Point(585, 109)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(111, 23)
+        Me.TextBox1.TabIndex = 75
+        '
+        'Is_GA
+        '
+        Me.Is_GA.AutoSize = True
+        Me.Is_GA.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Is_GA.Location = New System.Drawing.Point(531, 111)
+        Me.Is_GA.Name = "Is_GA"
+        Me.Is_GA.Size = New System.Drawing.Size(42, 16)
+        Me.Is_GA.TabIndex = 74
+        Me.Is_GA.Text = "Is GA"
+        '
+        'ApprovalRouteView
+        '
+        Me.ApprovalRouteView.AllowUserToAddRows = False
+        Me.ApprovalRouteView.AllowUserToDeleteRows = False
+        Me.ApprovalRouteView.BackgroundColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ApprovalRouteView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.ApprovalRouteView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ApprovalRouteView.DefaultCellStyle = DataGridViewCellStyle2
+        Me.ApprovalRouteView.Location = New System.Drawing.Point(21, 290)
+        Me.ApprovalRouteView.MultiSelect = False
+        Me.ApprovalRouteView.Name = "ApprovalRouteView"
+        Me.ApprovalRouteView.ReadOnly = True
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ApprovalRouteView.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.ApprovalRouteView.RowHeadersVisible = False
+        Me.ApprovalRouteView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.ApprovalRouteView.Size = New System.Drawing.Size(739, 226)
+        Me.ApprovalRouteView.TabIndex = 43
+        '
         'SBMS_ApprovalRoute
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(776, 505)
+        Me.ClientSize = New System.Drawing.Size(776, 547)
+        Me.Controls.Add(Me.ApprovalRouteView)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -415,12 +438,12 @@ Partial Class SBMS_ApprovalRoute
         Me.Text = "Approval Route Master"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        CType(Me.ApprovalRouteView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.ApprovalRouteView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -437,21 +460,23 @@ Partial Class SBMS_ApprovalRoute
     Friend WithEvents UpdateBtn As Button
     Friend WithEvents BusID2 As Label
     Friend WithEvents AddrTbx2 As TextBox
-    Friend WithEvents BusNameCombox2 As ComboBox
     Friend WithEvents Label17 As Label
     Friend WithEvents Label19 As Label
-    Friend WithEvents EmployeeIDTbx2 As TextBox
-    Friend WithEvents Label20 As Label
-    Friend WithEvents MobileTbx2 As TextBox
-    Friend WithEvents NameTbx2 As TextBox
+    Friend WithEvents EmployeeIDTbx As TextBox
+    Friend WithEvents Is_Approval As Label
+    Friend WithEvents DeptTbx As TextBox
+    Friend WithEvents NameTbx As TextBox
     Friend WithEvents Label21 As Label
     Friend WithEvents Label22 As Label
-    Friend WithEvents EmailTbx2 As TextBox
+    Friend WithEvents EmailTbx As TextBox
     Friend WithEvents Label23 As Label
-    Friend WithEvents ApprovalRouteView As DataGridView
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents Timer1 As Timer
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents BrowseBtn As Button
     Friend WithEvents UploadBtn As Button
+    Friend WithEvents TitleTbx As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Is_GA As Label
+    Friend WithEvents ApprovalRouteView As DataGridView
 End Class

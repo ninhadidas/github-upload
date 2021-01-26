@@ -39,7 +39,6 @@ Public Class SBMSStaffLoginFrm
                 SBMS_WCStaffFrm.NameLabel.Text = reader("name").ToString
                 SBMS_WCStaffFrm.EmployeeIdLabel.Text = reader("employee_id").ToString
                 SBMS_WCStaffFrm.DeptLabel.Text = reader("dept").ToString
-                SBMS_WCStaffFrm.DivLabel.Text = reader("division").ToString
             Else
                 MessageBox.Show("Password incorrect, please try again!", "Wrong username or password!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If

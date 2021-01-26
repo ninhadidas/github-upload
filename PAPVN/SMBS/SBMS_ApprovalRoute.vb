@@ -117,4 +117,59 @@ Public Class SBMS_ApprovalRoute
             End If
         End Try
     End Sub
+
+    Private Sub UpdateBtn_Click(sender As Object, e As EventArgs) Handles UpdateBtn.Click
+
+        Dim SDA As New MySqlDataAdapter
+        Dim dbDataSet As New DataTable
+        Dim count As Integer
+        conn = New MySqlConnection With {
+            .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
+        }
+        Dim reader As MySqlDataReader
+        Try
+            conn.Open()
+            Dim query As String = "SELECT employee_id, App1, App2 FROM tbl_approval;"
+            command = New MySqlCommand(query, conn)
+            reader = command.ExecuteReader
+            count = 0
+            While reader.Read
+                count = +1
+            End While
+            reader.Close()
+            If count >= 1 Then
+                SDA.SelectCommand = command
+                SDA.Fill(dbDataSet)
+                ApprovalRouteView.DataSource = dbDataSet
+                SDA.Update(dbDataSet)
+                With ApprovalRouteView
+                    .RowHeadersVisible = False
+                    .Columns(0).HeaderCell.Value = "Employee ID"
+                    .Columns(0).Width = 150
+                    .Columns(1).HeaderCell.Value = "HoD ID"
+                    .Columns(1).Width = 150
+                    .Columns(2).HeaderCell.Value = "GA ID"
+                    .Columns(2).Width = 150
+                End With
+                conn.Close()
+                'Else
+                '    MessageBox.Show("No Data Found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                '    Me.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            If conn IsNot Nothing Then
+                conn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub DeleteBtn_Click(sender As Object, e As EventArgs) Handles DeleteBtn.Click
+        If TabControl1.SelectedIndex = 1 Then
+            Me.ApprovalRouteView.AllowUserToAddRows = True
+            Me.ApprovalRouteView.AllowUserToDeleteRows = True
+            Me.ApprovalRouteView.ReadOnly = False
+        End If
+    End Sub
 End Class
