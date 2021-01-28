@@ -35,7 +35,6 @@ Partial Class ReviewGridGA
         '
         Me.DataGridView.AllowUserToAddRows = False
         Me.DataGridView.AllowUserToDeleteRows = False
-        Me.DataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control

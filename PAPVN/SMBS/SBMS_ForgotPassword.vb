@@ -22,7 +22,7 @@ Public Class SBMS_ForgotPassword
             }
             Try
                 conn.Open()
-                Dim query As String = "SELECT * FROM tbl_user2 WHERE email = '" & email & "';"
+                Dim query As String = "SELECT * FROM tbl_user_login WHERE email = '" & email & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 count = 0
@@ -31,7 +31,7 @@ Public Class SBMS_ForgotPassword
                 End While
                 If count = 1 Then
                     name = reader("Name").ToString
-                    Dim query_update As String = "UPDATE tbl_user2 SET password= '" & temppw & "' WHERE email = '" & email & "';"
+                    Dim query_update As String = "UPDATE tbl_user_login SET password= '" & temppw & "' WHERE email = '" & email & "';"
                     command = New MySqlCommand(query_update, conn)
                         reader = command.ExecuteReader
                         reader.Close()

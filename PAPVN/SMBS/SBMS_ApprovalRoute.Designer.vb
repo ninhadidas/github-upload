@@ -38,6 +38,9 @@ Partial Class SBMS_ApprovalRoute
         Me.FileLocation = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Is_GA = New System.Windows.Forms.Label()
+        Me.TitleTbx = New System.Windows.Forms.TextBox()
         Me.DeleteBtn = New System.Windows.Forms.Button()
         Me.UpdateBtn = New System.Windows.Forms.Button()
         Me.BusID2 = New System.Windows.Forms.Label()
@@ -54,9 +57,6 @@ Partial Class SBMS_ApprovalRoute
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.TitleTbx = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Is_GA = New System.Windows.Forms.Label()
         Me.ApprovalRouteView = New System.Windows.Forms.DataGridView()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -193,11 +193,43 @@ Partial Class SBMS_ApprovalRoute
         Me.GroupBox2.Controls.Add(Me.EmailTbx)
         Me.GroupBox2.Controls.Add(Me.Label23)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 5)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(714, 193)
         Me.GroupBox2.TabIndex = 42
         Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Visible = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TextBox1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.Navy
+        Me.TextBox1.Location = New System.Drawing.Point(585, 109)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(111, 23)
+        Me.TextBox1.TabIndex = 75
+        '
+        'Is_GA
+        '
+        Me.Is_GA.AutoSize = True
+        Me.Is_GA.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Is_GA.Location = New System.Drawing.Point(531, 111)
+        Me.Is_GA.Name = "Is_GA"
+        Me.Is_GA.Size = New System.Drawing.Size(42, 16)
+        Me.Is_GA.TabIndex = 74
+        Me.Is_GA.Text = "Is GA"
+        '
+        'TitleTbx
+        '
+        Me.TitleTbx.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TitleTbx.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TitleTbx.ForeColor = System.Drawing.Color.Navy
+        Me.TitleTbx.Location = New System.Drawing.Point(101, 106)
+        Me.TitleTbx.MaxLength = 10
+        Me.TitleTbx.Name = "TitleTbx"
+        Me.TitleTbx.Size = New System.Drawing.Size(124, 23)
+        Me.TitleTbx.TabIndex = 73
         '
         'DeleteBtn
         '
@@ -351,37 +383,6 @@ Partial Class SBMS_ApprovalRoute
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'TitleTbx
-        '
-        Me.TitleTbx.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.TitleTbx.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TitleTbx.ForeColor = System.Drawing.Color.Navy
-        Me.TitleTbx.Location = New System.Drawing.Point(101, 106)
-        Me.TitleTbx.MaxLength = 10
-        Me.TitleTbx.Name = "TitleTbx"
-        Me.TitleTbx.Size = New System.Drawing.Size(124, 23)
-        Me.TitleTbx.TabIndex = 73
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.TextBox1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.Navy
-        Me.TextBox1.Location = New System.Drawing.Point(585, 109)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(111, 23)
-        Me.TextBox1.TabIndex = 75
-        '
-        'Is_GA
-        '
-        Me.Is_GA.AutoSize = True
-        Me.Is_GA.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Is_GA.Location = New System.Drawing.Point(531, 111)
-        Me.Is_GA.Name = "Is_GA"
-        Me.Is_GA.Size = New System.Drawing.Size(42, 16)
-        Me.Is_GA.TabIndex = 74
-        Me.Is_GA.Text = "Is GA"
         '
         'ApprovalRouteView
         '

@@ -122,7 +122,6 @@ C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_GAView.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_MngView.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_WCStaffFrm.resources
-C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.ScheduleFrm.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SelfAssessFrm.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.WelcomeMngFrm.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.WelcomeStaffFrm.resources

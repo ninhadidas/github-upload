@@ -16,7 +16,7 @@ Public Class SBMSStaffLoginFrm
         password = PwTb.Text
         Try
             conn.Open()
-            Dim query As String = "SELECT * FROM tbl_user2 WHERE employee_id = '" & username & "' AND password = '" & password & "';"
+            Dim query As String = "SELECT * FROM tbl_user_login WHERE employee_id = '" & username & "' AND password = '" & password & "';"
             command = New MySqlCommand(query, conn)
             reader = command.ExecuteReader
             count = 0

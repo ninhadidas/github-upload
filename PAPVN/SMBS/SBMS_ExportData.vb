@@ -18,7 +18,7 @@ Public Class SBMS_ExportData
         Dim reader As MySqlDataReader
         Try
             conn.Open()
-            Dim query As String = "SELECT order_id, tbl_user2.name, start_location, end_location, order_content, start_time, end_time, asset_bringout, tbl_order.employee_id, Dept, Position, submit_time, mng_comment, is_taxi FROM tbl_order INNER JOIN tbl_user2 ON tbl_user2.employee_id = tbl_order.employee_id WHERE start_time >= '" & ConvertToDateSQL(from_date) & "' AND start_time <= '" & ConvertToDateSQL(to_date) & "';"
+            Dim query As String = "SELECT order_id, tbl_user_login.name, start_location, end_location, order_content, start_time, end_time, asset_bringout, tbl_order.employee_id, tbl_user_login.Dept, submit_time, mng_comment, is_taxi FROM tbl_order INNER JOIN tbl_user_login ON tbl_user_login.employee_id = tbl_order.employee_id WHERE start_time >= '" & ConvertToDateSQL(from_date) & "' AND start_time <= '" & ConvertToDateSQL(to_date) & "';"
             command = New MySqlCommand(query, conn)
             reader = command.ExecuteReader
             count = 0
@@ -54,14 +54,14 @@ Public Class SBMS_ExportData
                     .Columns(8).Width = 100
                     .Columns(9).HeaderCell.Value = "Deparment"
                     .Columns(9).Width = 150
-                    .Columns(10).HeaderCell.Value = "Position"
+                    '.Columns(10).HeaderCell.Value = "Position"
+                    '.Columns(10).Width = 150
+                    .Columns(10).HeaderCell.Value = "Submit Time"
                     .Columns(10).Width = 150
-                    .Columns(11).HeaderCell.Value = "Submit Time"
+                    .Columns(11).HeaderCell.Value = "Manager Comment"
                     .Columns(11).Width = 150
-                    .Columns(12).HeaderCell.Value = "Manager Comment"
+                    .Columns(12).HeaderCell.Value = "Taxi"
                     .Columns(12).Width = 150
-                    .Columns(13).HeaderCell.Value = "Taxi"
-                    .Columns(13).Width = 150
                 End With
                 conn.Close()
             Else

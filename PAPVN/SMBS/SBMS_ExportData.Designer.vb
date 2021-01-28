@@ -112,7 +112,7 @@ Partial Class SBMS_ExportData
         Me.FromDate.CalendarFont = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.FromDate.Location = New System.Drawing.Point(123, 68)
-        Me.FromDate.MinDate = New Date(2021, 1, 1, 0, 0, 0, 0)
+        Me.FromDate.MinDate = New Date(2020, 12, 1, 0, 0, 0, 0)
         Me.FromDate.Name = "FromDate"
         Me.FromDate.Size = New System.Drawing.Size(97, 20)
         Me.FromDate.TabIndex = 18

@@ -172,4 +172,8 @@ Public Class SBMS_ApprovalRoute
             Me.ApprovalRouteView.ReadOnly = False
         End If
     End Sub
+
+    Private Sub SBMS_ApprovalRoute_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TabControl1.TabPages(1).Enabled = False
+    End Sub
 End Class

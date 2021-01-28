@@ -55,6 +55,7 @@ Partial Class SBMSStaffLoginFrm
         '
         Me.UserIdTb.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UserIdTb.Location = New System.Drawing.Point(134, 35)
+        Me.UserIdTb.MaxLength = 7
         Me.UserIdTb.Name = "UserIdTb"
         Me.UserIdTb.Size = New System.Drawing.Size(149, 23)
         Me.UserIdTb.TabIndex = 2

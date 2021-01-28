@@ -21,7 +21,7 @@ Public Class ReviewGridGA
         username = SBMSStaffLoginFrm.UserIdTb.Text
         Try
             conn.Open()
-            Dim query As String = "SELECT order_id, tbl_user2.name, start_location, end_location, order_content, start_time, end_time, asset_bringout, tbl_order.employee_id, Dept, Position, submit_time, mng_comment FROM tbl_order INNER JOIN tbl_user2 ON tbl_user2.employee_id = tbl_order.employee_id INNER JOIN tbl_approval ON tbl_user2.employee_id = tbl_approval.employee_id WHERE tbl_approval.app2 = '" & username & "' AND status_id='2';"
+            Dim query As String = "SELECT order_id, tbl_user_login.name, start_location, end_location, order_content, start_time, end_time, asset_bringout, tbl_order.employee_id, Dept, Position, submit_time, mng_comment FROM tbl_order INNER JOIN tbl_user_login ON tbl_user_login.employee_id = tbl_order.employee_id INNER JOIN tbl_approval ON tbl_user_login.employee_id = tbl_approval.employee_id WHERE tbl_approval.app2 = '" & username & "' AND status_id='2';"
             command = New MySqlCommand(query, conn)
             reader = command.ExecuteReader
             count = 0
@@ -36,24 +36,33 @@ Public Class ReviewGridGA
                 SDA.Update(dbDataSet)
                 With DataGridView
                     .RowHeadersVisible = False
-                    .Columns(0).HeaderCell.Value = "Request ID"
-                    .Columns(0).Width = 100
+                    .Columns(0).HeaderCell.Value = "Order ID"
+                    .Columns(0).Width = 90
                     .Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                     .Columns(1).HeaderCell.Value = "Full Name"
                     .Columns(1).Width = 150
                     .Columns(2).HeaderCell.Value = "Departure"
                     .Columns(2).Width = 150
                     .Columns(3).HeaderCell.Value = "Arrival"
+                    .Columns(3).Width = 150
                     .Columns(4).HeaderCell.Value = "Purpose"
+                    .Columns(4).Width = 150
                     .Columns(5).HeaderCell.Value = "Start Time"
+                    .Columns(5).Width = 150
                     .Columns(6).HeaderCell.Value = "Comeback Time"
+                    .Columns(6).Width = 150
                     .Columns(7).HeaderCell.Value = "Asset Bring Out"
+                    .Columns(7).Width = 150
                     .Columns(8).HeaderCell.Value = "Employee ID"
-                    .Columns(8).Width = 100
+                    .Columns(8).Width = 120
                     .Columns(9).HeaderCell.Value = "Deparment"
+                    .Columns(9).Width = 100
                     .Columns(10).HeaderCell.Value = "Position"
+                    .Columns(10).Width = 150
                     .Columns(11).HeaderCell.Value = "Submit Time"
+                    .Columns(11).Width = 150
                     .Columns(12).HeaderCell.Value = "Manager Comment"
+                    .Columns(12).Width = 200
                 End With
                 conn.Close()
             Else

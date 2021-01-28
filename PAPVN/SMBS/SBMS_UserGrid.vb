@@ -125,7 +125,7 @@ Public Class SBMS_UserGrid
         Dim reader As MySqlDataReader
         Try
             conn.Open()
-            Dim query2 As String = "SELECT employee_id, Name, Dept, Location, Position, email, home_address, pickup_time, user_mobile, is_approval, is_ga, bus_name, tbl_user2.bus_id FROM tbl_user2 INNER JOIN tbl_businfo ON tbl_user2.bus_id = tbl_businfo.bus_id;"
+            Dim query2 As String = "SELECT tbl_user2.employee_id, Name, Dept, Location, Position, email, home_address, pickup_time, user_mobile, is_approval, is_ga, bus_name, tbl_user2.bus_id FROM tbl_user2 INNER JOIN tbl_businfo ON tbl_user2.bus_id = tbl_businfo.bus_id INNER JOIN tbl_user_login ON tbl_user_login.employee_id=tbl_user2.employee_id ORDER BY Dept, employee_id;"
             command = New MySqlCommand(query2, conn)
             reader = command.ExecuteReader
             count = 0
@@ -141,11 +141,11 @@ Public Class SBMS_UserGrid
                 With UserListGridView
                     .RowHeadersVisible = False
                     .Columns(0).HeaderCell.Value = "Employee ID"
-                    .Columns(0).Width = 120
+                    .Columns(0).Width = 110
                     .Columns(1).HeaderCell.Value = "Full Name"
-                    .Columns(1).Width = 200
+                    .Columns(1).Width = 180
                     .Columns(2).HeaderCell.Value = "Department"
-                    .Columns(2).Width = 200
+                    .Columns(2).Width = 130
                     .Columns(3).HeaderCell.Value = "Location"
                     .Columns(3).Width = 70
                     .Columns(4).HeaderCell.Value = "Position"
@@ -165,7 +165,7 @@ Public Class SBMS_UserGrid
                     .Columns(11).HeaderCell.Value = "Bus Name"
                     .Columns(11).Width = 100
                     .Columns(12).HeaderCell.Value = "Bus ID"
-                    .Columns(12).Width = 80
+                    .Columns(12).Width = 60
                 End With
                 'conn.Close()
                 'Else
@@ -184,110 +184,161 @@ Public Class SBMS_UserGrid
     Private Sub UserListGridView_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles UserListGridView.CellMouseDoubleClick
         If TabControl1.SelectedIndex = 1 Then
             EmployeeIDTbx2.Text = UserListGridView.CurrentRow.Cells(0).Value.ToString
-            MobileTbx2.Text = UserListGridView.CurrentRow.Cells(8).Value.ToString
-            BusNameCombox2.Text = UserListGridView.CurrentRow.Cells(11).Value.ToString
-            NameTbx2.Text = UserListGridView.CurrentRow.Cells(1).Value.ToString
-            EmailTbx2.Text = UserListGridView.CurrentRow.Cells(5).Value.ToString
-            TitleCombox2.Text = UserListGridView.CurrentRow.Cells(4).Value.ToString
-            DeptCombox2.Text = UserListGridView.CurrentRow.Cells(2).Value.ToString
-            PickUpTime2.Text = UserListGridView.CurrentRow.Cells(7).Value.ToString
-            isApprove2.Text = UserListGridView.CurrentRow.Cells(9).Value.ToString
-            LocationCombox2.Text = UserListGridView.CurrentRow.Cells(3).Value.ToString
-            GACombox2.Text = UserListGridView.CurrentRow.Cells(10).Value.ToString
-            AddrTbx2.Text = UserListGridView.CurrentRow.Cells(6).Value.ToString
+            'MobileTbx2.Text = UserListGridView.CurrentRow.Cells(8).Value.ToString
+            'BusNameCombox2.Text = UserListGridView.CurrentRow.Cells(11).Value.ToString
+            'NameTbx2.Text = UserListGridView.CurrentRow.Cells(1).Value.ToString
+            'EmailTbx2.Text = UserListGridView.CurrentRow.Cells(5).Value.ToString
+            'TitleCombox2.Text = UserListGridView.CurrentRow.Cells(4).Value.ToString
+            'DeptCombox2.Text = UserListGridView.CurrentRow.Cells(2).Value.ToString
+            'PickUpTime2.Text = UserListGridView.CurrentRow.Cells(7).Value.ToString
+            'isApprove2.Text = UserListGridView.CurrentRow.Cells(9).Value.ToString
+            'LocationCombox2.Text = UserListGridView.CurrentRow.Cells(3).Value.ToString
+            'GACombox2.Text = UserListGridView.CurrentRow.Cells(10).Value.ToString
+            'AddrTbx2.Text = UserListGridView.CurrentRow.Cells(6).Value.ToString
         End If
     End Sub
     Private Sub DownloadBtn_Click(sender As Object, e As EventArgs) Handles DownloadBtn.Click
-        'Dim xlsApp As Excel.Application
-        'Dim xlsWorkBook As Excel.Workbook
-        'Dim xlsWorkSheet As Excel.Worksheet
-        'Dim misValue As Object = System.Reflection.Missing.Value
-        'Dim conn As MySqlConnection
+        If UserListGridView.RowCount = 0 Then
+            MessageBox.Show("Nothing to Export, Please Show the List first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        Else
+            Dim xlsApp As Microsoft.Office.Interop.Excel.Application
+            Dim xlsWorkBook As Microsoft.Office.Interop.Excel.Workbook
+            Dim xlsWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
+            Dim misValue As Object = System.Reflection.Missing.Value
+            Dim conn As MySqlConnection
+            conn = New MySqlConnection With {
+                .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
+            }
+            Dim i, j As Integer
+            xlsApp = New Microsoft.Office.Interop.Excel.Application
+            Dim spath As String = ""
+            Dim fo As New SaveFileDialog With {
+                    .Filter = "Excel files|*.xlsx",
+                    .CheckPathExists = True,
+                    .OverwritePrompt = True
+                }
+            If fo.ShowDialog() = DialogResult.OK Then
+                spath = fo.FileName
+            End If
+            Try
+                xlsApp = New Microsoft.Office.Interop.Excel.Application
+                conn.Open()
+                Dim query As String = "SELECT tbl_user2.employee_id, Name, Dept, Location, Position, email, home_address, pickup_time, user_mobile, is_approval, is_ga, bus_name, tbl_user2.bus_id FROM tbl_user2 INNER JOIN tbl_businfo ON tbl_user2.bus_id = tbl_businfo.bus_id INNER JOIN tbl_user_login ON tbl_user_login.employee_id=tbl_user2.employee_id ORDER BY Dept, employee_id;"
+                Dim dscmd As New MySqlDataAdapter(query, conn)
+                Dim ds As New DataSet
+                dscmd.Fill(ds)
+                xlsWorkBook = xlsApp.Workbooks.Add(misValue)
+                xlsWorkSheet = xlsWorkBook.Sheets(1)
+                For k As Integer = 1 To UserListGridView.Columns.Count
+                    xlsWorkSheet.Cells(1, k) = UserListGridView.Columns(k - 1).HeaderText
+                Next
+                For i = 0 To ds.Tables(0).Rows.Count - 1
+                    For j = 0 To ds.Tables(0).Columns.Count - 1
+                        xlsWorkSheet.Cells(i + 2, j + 1) =
+                                ds.Tables(0).Rows(i).Item(j).ToString()
+                    Next
+                Next
+                xlsWorkSheet.Columns.AutoFit()
+                xlsWorkBook.SaveAs(spath)
+                MessageBox.Show("Successfully Exported!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                xlsWorkBook.Close()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+                conn.Close()
+            Finally
+                xlsApp.Quit()
+            End Try
+        End If
+
         'conn = New MySqlConnection With {
-        '    .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
-        '}
-        'Dim i, j As Integer
-        'xlsApp = New Excel.Application
-        'Dim spath As String = ""
-        'Dim fo As New SaveFileDialog With {
-        '        .Filter = "Excel files|*.xlsx",
-        '        .CheckPathExists = True,
-        '        .OverwritePrompt = True
+        '        .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
         '    }
-        'If fo.ShowDialog() = DialogResult.OK Then
-        '        spath = fo.FileName
-        '    End If
         'Try
-        '    xlsApp = New Microsoft.Office.Interop.Excel.Application
-        '    conn.Open()
-        '    Dim query As String = "SELECT * FROM tbl_user2 ORDER BY dept;"
-        '    Dim dscmd As New MySqlDataAdapter(query, conn)
-        '    Dim ds As New DataSet
-        '    dscmd.Fill(ds)
-        '    xlsWorkBook = xlsApp.Workbooks.Add(misValue)
-        '    xlsWorkSheet = xlsWorkBook.Sheets(1)
-        '    For i = 0 To ds.Tables(0).Rows.Count - 1
-        '        For j = 0 To ds.Tables(0).Columns.Count - 1
-        '            xlsWorkSheet.Cells(i + 1, j + 1) =
-        '                    ds.Tables(0).Rows(i).Item(j).ToString()
-        '        Next
+        '    Dim xlApp As Microsoft.Office.Interop.Excel.Application
+        '    Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
+        '    Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
+        '    Dim misValue As Object = System.Reflection.Missing.Value
+        '    'Dim i As Integer
+        '    Dim j As Integer
+        '    xlApp = New Microsoft.Office.Interop.Excel.Application
+        '    xlWorkBook = xlApp.Workbooks.Add(misValue)
+        '    xlWorkSheet = xlWorkBook.Sheets("sheet1")
+        '    xlWorkSheet.Columns.AutoFit()
+        '    For k As Integer = 1 To UserListGridView.Columns.Count
+        '        xlWorkSheet.Cells(1, k) = UserListGridView.Columns(k - 1).HeaderText
         '    Next
-        '    xlsWorkSheet.Columns.AutoFit()
-        '    xlsWorkBook.SaveAs(spath)
-        '    MessageBox.Show("Successfully Exported!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        '    xlsWorkBook.Close()
+
+        '    xlWorkSheet.Columns.AutoFit()
+        '    Dim fName As String = "Bus User List"
+        '    Using sfd As New SaveFileDialog
+        '        sfd.Title = "Save As"
+        '        sfd.OverwritePrompt = True
+        '        sfd.FileName = fName
+        '        sfd.DefaultExt = ".xlsx"
+        '        sfd.Filter = "Excel Workbook(*.xlsx)|"
+        '        sfd.AddExtension = True
+        '        If sfd.ShowDialog() = DialogResult.OK Then
+        '            xlWorkSheet.SaveAs(sfd.FileName)
+        '            xlWorkBook.Close()
+        '            xlApp.Quit()
+        '            ReleaseObject(xlApp)
+        '            ReleaseObject(xlWorkBook)
+        '            ReleaseObject(xlWorkSheet)
+        '            MessageBox.Show("Export Completed!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '        End If
+        '    End Using
         'Catch ex As Exception
+        '    conn.Close()
         '    MessageBox.Show(ex.Message)
-        'Finally
-        '    xlsApp.Quit()
         'End Try
 
 
-        conn = New MySqlConnection With {
-                .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
-            }
-        Try
-            Dim xlApp As Microsoft.Office.Interop.Excel.Application
-            Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
-            Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
-            Dim misValue As Object = System.Reflection.Missing.Value
-            Dim i As Integer
-            Dim j As Integer
-            xlApp = New Microsoft.Office.Interop.Excel.Application
-            xlWorkBook = xlApp.Workbooks.Add(misValue)
-            xlWorkSheet = xlWorkBook.Sheets("sheet1")
-            xlWorkSheet.Columns.AutoFit()
-            For i = 0 To UserListGridView.RowCount - 1
-                For j = 0 To UserListGridView.ColumnCount - 1
-                    For k As Integer = 1 To UserListGridView.Columns.Count
-                        xlWorkSheet.Cells(1, k) = UserListGridView.Columns(k - 1).HeaderText
-                        xlWorkSheet.Cells(i + 2, j + 1) = UserListGridView(j, i).Value.ToString()
-                    Next
-                Next
-            Next
-            xlWorkSheet.Columns.AutoFit()
-            Dim fName As String = "Bus User List"
-            Using sfd As New SaveFileDialog
-                sfd.Title = "Save As"
-                sfd.OverwritePrompt = True
-                sfd.FileName = fName
-                sfd.DefaultExt = ".xlsx"
-                sfd.Filter = "Excel Workbook(*.xlsx)|"
-                sfd.AddExtension = True
-                If sfd.ShowDialog() = DialogResult.OK Then
-                    xlWorkSheet.SaveAs(sfd.FileName)
-                    xlWorkBook.Close()
-                    xlApp.Quit()
-                    ReleaseObject(xlApp)
-                    ReleaseObject(xlWorkBook)
-                    ReleaseObject(xlWorkSheet)
-                    MessageBox.Show("Export Completed!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                End If
-            End Using
-        Catch ex As Exception
-            conn.Close()
-            MessageBox.Show(ex.Message)
-        End Try
+
+        'conn = New MySqlConnection With {
+        '        .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
+        '    }
+        'Try
+        '    Dim xlApp As Microsoft.Office.Interop.Excel.Application
+        '    Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
+        '    Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
+        '    Dim misValue As Object = System.Reflection.Missing.Value
+        '    Dim i As Integer
+        '    Dim j As Integer
+        '    xlApp = New Microsoft.Office.Interop.Excel.Application
+        '    xlWorkBook = xlApp.Workbooks.Add(misValue)
+        '    xlWorkSheet = xlWorkBook.Sheets("sheet1")
+        '    xlWorkSheet.Columns.AutoFit()
+        '    For i = 0 To UserListGridView.RowCount - 1
+        '        For j = 0 To UserListGridView.ColumnCount - 1
+        '            For k As Integer = 1 To UserListGridView.Columns.Count
+        '                xlWorkSheet.Cells(1, k) = UserListGridView.Columns(k - 1).HeaderText
+        '                xlWorkSheet.Cells(i + 2, j + 1) = UserListGridView(j, i).Value.ToString()
+        '            Next
+        '        Next
+        '    Next
+        '    xlWorkSheet.Columns.AutoFit()
+        '    Dim fName As String = "Bus User List"
+        '    Using sfd As New SaveFileDialog
+        '        sfd.Title = "Save As"
+        '        sfd.OverwritePrompt = True
+        '        sfd.FileName = fName
+        '        sfd.DefaultExt = ".xlsx"
+        '        sfd.Filter = "Excel Workbook(*.xlsx)|"
+        '        sfd.AddExtension = True
+        '        If sfd.ShowDialog() = DialogResult.OK Then
+        '            xlWorkSheet.SaveAs(sfd.FileName)
+        '            xlWorkBook.Close()
+        '            xlApp.Quit()
+        '            ReleaseObject(xlApp)
+        '            ReleaseObject(xlWorkBook)
+        '            ReleaseObject(xlWorkSheet)
+        '            MessageBox.Show("Export Completed!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '        End If
+        '    End Using
+        'Catch ex As Exception
+        '    conn.Close()
+        '    MessageBox.Show(ex.Message)
+        'End Try
     End Sub
 
     Private Sub EmployeeIDTbx2_TextChanged(sender As Object, e As EventArgs) Handles EmployeeIDTbx2.TextChanged
@@ -300,7 +351,7 @@ Public Class SBMS_UserGrid
             Dim reader As MySqlDataReader
             Try
                 conn.Open()
-                Dim query As String = "SELECT * FROM tbl_user2 WHERE Employee_ID = '" & employee_id & "';"
+                Dim query As String = "SELECT tbl_user2.employee_id, Name, Dept, Location, Position, email, home_address, pickup_time, user_mobile, is_approval, is_ga, bus_name, tbl_user2.bus_id FROM tbl_user2 INNER JOIN tbl_businfo ON tbl_user2.bus_id = tbl_businfo.bus_id INNER JOIN tbl_user_login ON tbl_user_login.employee_id=tbl_user2.employee_id WHERE tbl_user_login.Employee_ID = '" & employee_id & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 While reader.Read
@@ -314,6 +365,7 @@ Public Class SBMS_UserGrid
                     TitleCombox2.Text = reader("position").ToString
                     isApprove2.Text = reader("is_approval").ToString
                     GACombox2.Text = reader("is_ga").ToString
+                    PickUpTime2.Text = reader("pickup_time").ToString
                     AddrTbx2.Text = reader("home_address").ToString
                     MobileTbx2.Text = reader("user_mobile").ToString
                     BusID2.Text = reader("bus_id").ToString
@@ -383,17 +435,17 @@ Public Class SBMS_UserGrid
     Private Sub UserListGridView_KeyDown(sender As Object, e As KeyEventArgs) Handles UserListGridView.KeyDown
         If TabControl1.SelectedIndex = 1 Then
             EmployeeIDTbx2.Text = UserListGridView.CurrentRow.Cells(0).Value.ToString
-            MobileTbx2.Text = UserListGridView.CurrentRow.Cells(8).Value.ToString
-            BusNameCombox2.Text = UserListGridView.CurrentRow.Cells(11).Value.ToString
-            NameTbx2.Text = UserListGridView.CurrentRow.Cells(1).Value.ToString
-            EmailTbx2.Text = UserListGridView.CurrentRow.Cells(5).Value.ToString
-            TitleCombox2.Text = UserListGridView.CurrentRow.Cells(4).Value.ToString
-            DeptCombox2.Text = UserListGridView.CurrentRow.Cells(2).Value.ToString
-            PickUpTime2.Text = UserListGridView.CurrentRow.Cells(7).Value.ToString
-            isApprove2.Text = UserListGridView.CurrentRow.Cells(9).Value.ToString
-            LocationCombox2.Text = UserListGridView.CurrentRow.Cells(3).Value.ToString
-            GACombox2.Text = UserListGridView.CurrentRow.Cells(10).Value.ToString
-            AddrTbx2.Text = UserListGridView.CurrentRow.Cells(6).Value.ToString
+            'MobileTbx2.Text = UserListGridView.CurrentRow.Cells(8).Value.ToString
+            'BusNameCombox2.Text = UserListGridView.CurrentRow.Cells(11).Value.ToString
+            'NameTbx2.Text = UserListGridView.CurrentRow.Cells(1).Value.ToString
+            'EmailTbx2.Text = UserListGridView.CurrentRow.Cells(5).Value.ToString
+            'TitleCombox2.Text = UserListGridView.CurrentRow.Cells(4).Value.ToString
+            'DeptCombox2.Text = UserListGridView.CurrentRow.Cells(2).Value.ToString
+            'PickUpTime2.Text = UserListGridView.CurrentRow.Cells(7).Value.ToString
+            'isApprove2.Text = UserListGridView.CurrentRow.Cells(9).Value.ToString
+            'LocationCombox2.Text = UserListGridView.CurrentRow.Cells(3).Value.ToString
+            'GACombox2.Text = UserListGridView.CurrentRow.Cells(10).Value.ToString
+            'AddrTbx2.Text = UserListGridView.CurrentRow.Cells(6).Value.ToString
         End If
     End Sub
 

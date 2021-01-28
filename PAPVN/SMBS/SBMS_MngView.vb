@@ -30,7 +30,7 @@ Public Class SBMS_MngView
                 reader.Close()
                 Name = NameTbx.Text
                 userid = EmployeeIDTbx.Text
-                Dim query_mail As String = "SELECT tbl_user2.email FROM tbl_user2 INNER JOIN tbl_approval ON tbl_approval.app2 = tbl_user2.employee_id WHERE tbl_approval.employee_id ='" & userid & "';"
+                Dim query_mail As String = "SELECT tbl_user_login.email FROM tbl_user_login INNER JOIN tbl_approval ON tbl_approval.app2 = tbl_user_login.employee_id WHERE tbl_approval.employee_id ='" & userid & "';"
                 command = New MySqlCommand(query_mail, conn)
                 reader = command.ExecuteReader
                 count = 0
@@ -95,7 +95,7 @@ Public Class SBMS_MngView
             Dim reader As MySqlDataReader
             Try
                 conn.Open()
-                Dim query As String = "SELECT * FROM tbl_user2 WHERE Employee_ID = '" & employeeid & "';"
+                Dim query As String = "SELECT * FROM tbl_user_login INNER JOIN tbl_user2 ON tbl_user_login.employee_id = tbl_user2.employee_id WHERE tbl_user_login.Employee_ID = '" & employeeid & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 While reader.Read
@@ -138,7 +138,7 @@ Public Class SBMS_MngView
         Dim reader As MySqlDataReader
         Try
             conn.Open()
-            Dim query As String = "Select tbl_user2.employee_id, Name, Dept FROM tbl_user2 INNER JOIN tbl_attachment ON tbl_user2.employee_id = tbl_attachment.employee_id WHERE tbl_attachment.order_id='" & order_id & "';"
+            Dim query As String = "Select tbl_user_login.employee_id, Name, Dept FROM tbl_user_login INNER JOIN tbl_attachment ON tbl_user_login.employee_id = tbl_attachment.employee_id WHERE tbl_attachment.order_id='" & order_id & "';"
             command = New MySqlCommand(query, conn)
             reader = command.ExecuteReader
             count = 0

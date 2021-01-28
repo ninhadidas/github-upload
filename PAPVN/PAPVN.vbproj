@@ -366,12 +366,6 @@
     <Compile Include="SMBS\SBMS_WCStaffFrm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SMBS\ScheduleFrm.Designer.vb">
-      <DependentUpon>ScheduleFrm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SMBS\ScheduleFrm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="PMS\SelfAssessFrm.Designer.vb">
       <DependentUpon>SelfAssessFrm.vb</DependentUpon>
     </Compile>
@@ -511,9 +505,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SMBS\SBMS_WCStaffFrm.resx">
       <DependentUpon>SBMS_WCStaffFrm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SMBS\ScheduleFrm.resx">
-      <DependentUpon>ScheduleFrm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PMS\SelfAssessFrm.resx">
       <DependentUpon>SelfAssessFrm.vb</DependentUpon>

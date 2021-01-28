@@ -17,6 +17,7 @@ Public Class BusRequestFrm
             GoBackTbx.ReadOnly = False
             ComebackTimePicker.CustomFormat = "dd-MMM-yyyy HH:mm"
         End If
+
     End Sub
 
     Private Sub Radio_btn_No1_CheckedChanged(sender As Object, e As EventArgs) Handles Radio_btn_No1.CheckedChanged
@@ -64,7 +65,7 @@ Public Class BusRequestFrm
             Dim reader As MySqlDataReader
             Try
                 conn.Open()
-                Dim query As String = "SELECT * FROM tbl_user2 WHERE Employee_ID = '" & employeeid & "';"
+                Dim query As String = "SELECT * FROM tbl_user_login INNER JOIN tbl_user2 ON tbl_user_login.employee_id = tbl_user2.employee_id WHERE tbl_user_login.Employee_ID = '" & employeeid & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 While reader.Read
@@ -142,11 +143,11 @@ Public Class BusRequestFrm
         Dim attachment9 As String = EmployeeTbx9.Text
         Dim attachment10 As String = EmployeeTbx10.Text
         If depature = "" Or arrival = "" Or content = "" Then
-                MessageBox.Show("Please fill in all fields to continue!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            ElseIf Radio_btn_Yes3.Checked = True And GoBackTbx.Text = "" Then
-                MessageBox.Show("Please input number of person comeback with you!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Else
-                Dim result As DialogResult = MessageBox.Show("Are you sure to submit this request?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            MessageBox.Show("Please fill in all fields to continue!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        ElseIf Radio_btn_Yes3.Checked = True And GoBackTbx.Text = "" Then
+            MessageBox.Show("Please input number of person comeback with you!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        Else
+            Dim result As DialogResult = MessageBox.Show("Are you sure to submit this request?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If result = DialogResult.Yes Then
                 Try
                     conn.Open()
@@ -254,7 +255,7 @@ Public Class BusRequestFrm
                             End If
                         End If 'ket thuc check co nguoi di cung
                         If SBMS_WCStaffFrm.GroupBox2.Visible = False Then
-                            Dim query_mail As String = "SELECT tbl_user2.email FROM tbl_user2 INNER JOIN tbl_approval ON tbl_approval.app1 = tbl_user2.employee_id WHERE tbl_approval.employee_id ='" & userid & "';"
+                            Dim query_mail As String = "SELECT tbl_user_login.email FROM tbl_user_login INNER JOIN tbl_approval ON tbl_approval.app1 = tbl_user_login.employee_id WHERE tbl_approval.employee_id ='" & userid & "';"
                             command = New MySqlCommand(query_mail, conn)
                             reader = command.ExecuteReader
                             count = 0
@@ -295,7 +296,7 @@ Public Class BusRequestFrm
                                 MessageBox.Show("Mail could not be sent")
                             End If
                         Else
-                            Dim query_mail As String = "SELECT tbl_user2.email FROM tbl_user2 INNER JOIN tbl_approval ON tbl_approval.app2 = tbl_user2.employee_id WHERE tbl_approval.employee_id ='" & userid & "';"
+                            Dim query_mail As String = "SELECT tbl_user_login.email FROM tbl_user_login INNER JOIN tbl_approval ON tbl_approval.app2 = tbl_user_login.employee_id WHERE tbl_approval.employee_id ='" & userid & "';"
                             command = New MySqlCommand(query_mail, conn)
                             reader = command.ExecuteReader
                             count = 0
@@ -337,17 +338,17 @@ Public Class BusRequestFrm
                             End If
                         End If
                     End Using
-                        MessageBox.Show("Your request were submitted to your manager successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Me.Close()
-                    Catch ex As Exception
-                        MessageBox.Show(ex.Message)
-                    Finally
-                        If conn IsNot Nothing Then
-                            conn.Close()
-                        End If
-                    End Try
-                End If
+                    MessageBox.Show("Your request were submitted to your manager successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Me.Close()
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                Finally
+                    If conn IsNot Nothing Then
+                        conn.Close()
+                    End If
+                End Try
             End If
+        End If
 
     End Sub
 
@@ -361,7 +362,7 @@ Public Class BusRequestFrm
             Dim reader As MySqlDataReader
             Try
                 conn.Open()
-                Dim query As String = "SELECT Name FROM tbl_user2 WHERE Employee_ID = '" & employee_id & "';"
+                Dim query As String = "SELECT Name FROM tbl_user_login WHERE Employee_ID = '" & employee_id & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 While reader.Read
@@ -409,7 +410,7 @@ Public Class BusRequestFrm
             Dim reader As MySqlDataReader
             Try
                 conn.Open()
-                Dim query As String = "SELECT Name FROM tbl_user2 WHERE Employee_ID = '" & employee_id & "';"
+                Dim query As String = "SELECT Name FROM tbl_user_login WHERE Employee_ID = '" & employee_id & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 While reader.Read
@@ -458,7 +459,7 @@ Public Class BusRequestFrm
             Dim reader As MySqlDataReader
             Try
                 conn.Open()
-                Dim query As String = "SELECT Name FROM tbl_user2 WHERE Employee_ID = '" & employee_id & "';"
+                Dim query As String = "SELECT Name FROM tbl_user_login WHERE Employee_ID = '" & employee_id & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 While reader.Read
@@ -505,7 +506,7 @@ Public Class BusRequestFrm
             Dim reader As MySqlDataReader
             Try
                 conn.Open()
-                Dim query As String = "SELECT Name FROM tbl_user2 WHERE Employee_ID = '" & employee_id & "';"
+                Dim query As String = "SELECT Name FROM tbl_user_login WHERE Employee_ID = '" & employee_id & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 While reader.Read
@@ -553,7 +554,7 @@ Public Class BusRequestFrm
             Dim reader As MySqlDataReader
             Try
                 conn.Open()
-                Dim query As String = "SELECT Name FROM tbl_user2 WHERE Employee_ID = '" & employee_id & "';"
+                Dim query As String = "SELECT Name FROM tbl_user_login WHERE Employee_ID = '" & employee_id & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 While reader.Read
@@ -601,7 +602,7 @@ Public Class BusRequestFrm
             Dim reader As MySqlDataReader
             Try
                 conn.Open()
-                Dim query As String = "SELECT Name FROM tbl_user2 WHERE Employee_ID = '" & employee_id & "';"
+                Dim query As String = "SELECT Name FROM tbl_user_login WHERE Employee_ID = '" & employee_id & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 While reader.Read
@@ -649,7 +650,7 @@ Public Class BusRequestFrm
             Dim reader As MySqlDataReader
             Try
                 conn.Open()
-                Dim query As String = "SELECT Name FROM tbl_user2 WHERE Employee_ID = '" & employee_id & "';"
+                Dim query As String = "SELECT Name FROM tbl_user_login WHERE Employee_ID = '" & employee_id & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 While reader.Read
@@ -697,7 +698,7 @@ Public Class BusRequestFrm
             Dim reader As MySqlDataReader
             Try
                 conn.Open()
-                Dim query As String = "SELECT Name FROM tbl_user2 WHERE Employee_ID = '" & employee_id & "';"
+                Dim query As String = "SELECT Name FROM tbl_user_login WHERE Employee_ID = '" & employee_id & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 While reader.Read
@@ -745,7 +746,7 @@ Public Class BusRequestFrm
             Dim reader As MySqlDataReader
             Try
                 conn.Open()
-                Dim query As String = "SELECT Name FROM tbl_user2 WHERE Employee_ID = '" & employee_id & "';"
+                Dim query As String = "SELECT Name FROM tbl_user_login WHERE Employee_ID = '" & employee_id & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 While reader.Read
@@ -794,7 +795,7 @@ Public Class BusRequestFrm
             Dim reader As MySqlDataReader
             Try
                 conn.Open()
-                Dim query As String = "SELECT Name FROM tbl_user2 WHERE Employee_ID = '" & employee_id & "';"
+                Dim query As String = "SELECT Name FROM tbl_user_login WHERE Employee_ID = '" & employee_id & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 While reader.Read
@@ -914,7 +915,7 @@ Public Class BusRequestFrm
 
     Private Sub Id_Label_TextChanged(sender As Object, e As EventArgs) Handles Id_Label.TextChanged
         Dim gen As New QRCodeGenerator
-        Dim data = gen.CreateQrCode(Id_Label.Text, QRCodeGenerator.ECCLevel.Q)
+        Dim data = gen.CreateQrCode("http://10.92.144.15/bms_2020/secur_approval.php?search=" & Id_Label.Text, QRCodeGenerator.ECCLevel.Q)
         Dim code As New QRCode(data)
         QRCodeBox.Image = code.GetGraphic(6)
     End Sub

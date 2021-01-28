@@ -103,9 +103,9 @@ Partial Class SBMS_UserGrid
         Me.Label1.ForeColor = System.Drawing.SystemColors.HotTrack
         Me.Label1.Location = New System.Drawing.Point(10, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(476, 25)
+        Me.Label1.Size = New System.Drawing.Size(604, 25)
         Me.Label1.TabIndex = 15
-        Me.Label1.Text = "BUS MANAGEMENT SYSTEM - USER MASTER"
+        Me.Label1.Text = "BUS MANAGEMENT SYSTEM - MAINTAIN BUS USER LIST"
         '
         'GroupBox1
         '
@@ -620,7 +620,7 @@ Partial Class SBMS_UserGrid
         Me.DeptCombox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.DeptCombox2.ForeColor = System.Drawing.Color.Navy
         Me.DeptCombox2.FormattingEnabled = True
-        Me.DeptCombox2.Items.AddRange(New Object() {"Accounting1", "Accounting2", "ARBU", "AWBU", "GA1", "HR1", "IT1", "GA2", "HR2", "IT2", "Material R&D", "Product Evaluation", "R&D Control", "R&D Planning", "RF R&D", "Research", "RF PC", "RF PE", "RF Production", "RF Purchasing", "RF Quality Assurance", "RF Warehouse", "WM R&D", "WM PC", "WM PE", "WM Procurement", "WM Production", "WM Purchasing", "WM Quality Assurance"})
+        Me.DeptCombox2.Items.AddRange(New Object() {"ACC1", "ACC2", "APRF", "APWM", "CM2", "Control R&D", "FAC2", "GA1", "GA2", "HR1", "HR2", "IT", "IT1", "IT2", "Material R&D", "MKT", "PLN1", "PLN2", "PTV outsource", "R&D Engineer ", "R&D Planning", "R&D Research", "RD-COM", "RDMT", "RDRF", "RDRS", "RDWM", "RFPC", "RFPD", "RFPE", "RFPEV", "RFPUR", "RFQA", "RFWH", "WMCS", "WMPC", "WMPD", "WMPE", "WMPUR", "WMQA"})
         Me.DeptCombox2.Location = New System.Drawing.Point(751, 71)
         Me.DeptCombox2.Name = "DeptCombox2"
         Me.DeptCombox2.Size = New System.Drawing.Size(154, 21)

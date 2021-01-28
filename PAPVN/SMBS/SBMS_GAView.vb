@@ -141,7 +141,7 @@ Public Class SBMS_GAView
             Dim reader As MySqlDataReader
             Try
                 conn.Open()
-                Dim query As String = "SELECT * FROM tbl_user2 WHERE Employee_ID = '" & employeeid & "';"
+                Dim query As String = "SELECT * FROM tbl_user_login WHERE Employee_ID = '" & employeeid & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 While reader.Read
@@ -209,7 +209,7 @@ Public Class SBMS_GAView
         Dim reader As MySqlDataReader
         Try
             conn.Open()
-            Dim query As String = "Select tbl_user2.employee_id, Name, Dept FROM tbl_user2 INNER JOIN tbl_attachment ON tbl_user2.employee_id = tbl_attachment.employee_id WHERE tbl_attachment.order_id='" & order_id & "';"
+            Dim query As String = "Select tbl_user_login.employee_id, Name, Dept FROM tbl_user_login INNER JOIN tbl_attachment ON tbl_user_login.employee_id = tbl_attachment.employee_id WHERE tbl_attachment.order_id='" & order_id & "';"
             command = New MySqlCommand(query, conn)
             reader = command.ExecuteReader
             count = 0
