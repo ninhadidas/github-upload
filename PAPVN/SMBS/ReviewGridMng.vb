@@ -71,7 +71,7 @@ Public Class ReviewGridMng
         If DataGridView.CurrentRow.Cells(7).Value.ToString <> "" Then
             SBMS_MngView.Id_Label.Text = DataGridView.CurrentRow.Cells(0).Value.ToString
             SBMS_MngView.EmployeeIDTbx.Text = DataGridView.CurrentRow.Cells(9).Value.ToString
-            SBMS_MngView.NameTbx.Text = DataGridView.CurrentRow.Cells(1).Value.ToString
+            'SBMS_MngView.NameTbx.Text = DataGridView.CurrentRow.Cells(1).Value.ToString
             SBMS_MngView.DepatureTbx.Text = DataGridView.CurrentRow.Cells(2).Value.ToString
             SBMS_MngView.ArrivalTbx.Text = DataGridView.CurrentRow.Cells(3).Value.ToString
             SBMS_MngView.ContentTbx.Text = DataGridView.CurrentRow.Cells(4).Value.ToString
@@ -82,7 +82,7 @@ Public Class ReviewGridMng
         Else
             SBMS_MngView.Id_Label.Text = DataGridView.CurrentRow.Cells(0).Value.ToString
             SBMS_MngView.EmployeeIDTbx.Text = DataGridView.CurrentRow.Cells(9).Value.ToString
-            SBMS_MngView.NameTbx.Text = DataGridView.CurrentRow.Cells(1).Value.ToString
+            'SBMS_MngView.NameTbx.Text = DataGridView.CurrentRow.Cells(1).Value.ToString
             SBMS_MngView.DepatureTbx.Text = DataGridView.CurrentRow.Cells(2).Value.ToString
             SBMS_MngView.ArrivalTbx.Text = DataGridView.CurrentRow.Cells(3).Value.ToString
             SBMS_MngView.ContentTbx.Text = DataGridView.CurrentRow.Cells(4).Value.ToString
@@ -96,7 +96,7 @@ Public Class ReviewGridMng
             If DataGridView.CurrentRow.Cells(7).Value.ToString <> "" Then
                 SBMS_MngView.Id_Label.Text = DataGridView.CurrentRow.Cells(0).Value.ToString
                 SBMS_MngView.EmployeeIDTbx.Text = DataGridView.CurrentRow.Cells(9).Value.ToString
-                SBMS_MngView.NameTbx.Text = DataGridView.CurrentRow.Cells(1).Value.ToString
+                'SBMS_MngView.NameTbx.Text = DataGridView.CurrentRow.Cells(1).Value.ToString
                 SBMS_MngView.DepatureTbx.Text = DataGridView.CurrentRow.Cells(2).Value.ToString
                 SBMS_MngView.ArrivalTbx.Text = DataGridView.CurrentRow.Cells(3).Value.ToString
                 SBMS_MngView.ContentTbx.Text = DataGridView.CurrentRow.Cells(4).Value.ToString
@@ -107,7 +107,7 @@ Public Class ReviewGridMng
             Else
                 SBMS_MngView.Id_Label.Text = DataGridView.CurrentRow.Cells(0).Value.ToString
                 SBMS_MngView.EmployeeIDTbx.Text = DataGridView.CurrentRow.Cells(9).Value.ToString
-                SBMS_MngView.NameTbx.Text = DataGridView.CurrentRow.Cells(1).Value.ToString
+                'SBMS_MngView.NameTbx.Text = DataGridView.CurrentRow.Cells(1).Value.ToString
                 SBMS_MngView.DepatureTbx.Text = DataGridView.CurrentRow.Cells(2).Value.ToString
                 SBMS_MngView.ArrivalTbx.Text = DataGridView.CurrentRow.Cells(3).Value.ToString
                 SBMS_MngView.ContentTbx.Text = DataGridView.CurrentRow.Cells(4).Value.ToString

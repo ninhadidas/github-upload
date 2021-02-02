@@ -64,7 +64,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>PMS\Employee icon.ico</ApplicationIcon>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
@@ -532,6 +532,7 @@
     <None Include="PAPVN_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="favicon.ico" />
     <Content Include="PMS\Employee icon.ico" />
     <None Include="Resources\depositphotos_75121503-stock-photo-background-pier-dock.jpg" />
     <None Include="Resources\030-performance.png" />

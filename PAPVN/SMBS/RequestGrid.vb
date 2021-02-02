@@ -68,13 +68,46 @@ Public Class RequestGrid
             BusRequestFrm.Show()
             BusRequestFrm.Id_Label.Text = DataGridView.CurrentRow.Cells(0).Value.ToString
             BusRequestFrm.EmployeeIDTbx.Text = DataGridView.CurrentRow.Cells(8).Value.ToString
-            BusRequestFrm.NameTbx.Text = DataGridView.CurrentRow.Cells(1).Value.ToString
             BusRequestFrm.DepatureTbx.Text = DataGridView.CurrentRow.Cells(2).Value.ToString
             BusRequestFrm.ArrivalTbx.Text = DataGridView.CurrentRow.Cells(3).Value.ToString
             BusRequestFrm.ContentTbx.Text = DataGridView.CurrentRow.Cells(4).Value.ToString
             BusRequestFrm.PickupTimePicker.Value = DataGridView.CurrentRow.Cells(5).Value.ToString
             BusRequestFrm.ComebackTimePicker.Value = DataGridView.CurrentRow.Cells(6).Value.ToString
             BusRequestFrm.AssetTbx.Text = DataGridView.CurrentRow.Cells(7).Value.ToString
+            Dim order_id As String = BusRequestFrm.Id_Label.Text
+            Dim count As Integer
+            conn = New MySqlConnection With {
+        .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString 'server=localhost;userid=ga_admin;password=Abc123;database=ga"
+    }
+            Dim reader As MySqlDataReader
+            Try
+                conn.Open()
+                Dim query As String = "SELECT status_id FROM tbl_order WHERE order_id = '" & order_id & "';"
+                command = New MySqlCommand(query, conn)
+                reader = command.ExecuteReader
+                While reader.Read
+                    count = +1
+                End While
+                If count = 1 Then
+                    BusRequestFrm.StatusLabel.Text = reader("status_id").ToString
+                    Dim status As String = BusRequestFrm.StatusLabel.Text
+                    If status > 1 Then
+                        BusRequestFrm.GroupBox2.Enabled = False
+                        BusRequestFrm.SubmitBtn.Enabled = False
+                        BusRequestFrm.CancelBtn.Enabled = False
+                        BusRequestFrm.SaveDraftBtn.Enabled = False
+                    End If
+                Else
+                    MessageBox.Show("No Data Found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    reader.Close()
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            Finally
+                If conn IsNot Nothing Then
+                    conn.Close()
+                End If
+            End Try
             Me.Close()
         End If
     End Sub
@@ -84,13 +117,46 @@ Public Class RequestGrid
                 BusRequestFrm.Show()
                 BusRequestFrm.Id_Label.Text = DataGridView.CurrentRow.Cells(0).Value.ToString
                 BusRequestFrm.EmployeeIDTbx.Text = DataGridView.CurrentRow.Cells(8).Value.ToString
-                BusRequestFrm.NameTbx.Text = DataGridView.CurrentRow.Cells(1).Value.ToString
                 BusRequestFrm.DepatureTbx.Text = DataGridView.CurrentRow.Cells(2).Value.ToString
                 BusRequestFrm.ArrivalTbx.Text = DataGridView.CurrentRow.Cells(3).Value.ToString
                 BusRequestFrm.ContentTbx.Text = DataGridView.CurrentRow.Cells(4).Value.ToString
                 BusRequestFrm.PickupTimePicker.Value = DataGridView.CurrentRow.Cells(5).Value.ToString
                 BusRequestFrm.ComebackTimePicker.Value = DataGridView.CurrentRow.Cells(6).Value.ToString
                 BusRequestFrm.AssetTbx.Text = DataGridView.CurrentRow.Cells(7).Value.ToString
+                Dim order_id As String = BusRequestFrm.Id_Label.Text
+                Dim count As Integer
+                conn = New MySqlConnection With {
+            .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString 'server=localhost;userid=ga_admin;password=Abc123;database=ga"
+        }
+                Dim reader As MySqlDataReader
+                Try
+                    conn.Open()
+                    Dim query As String = "SELECT status_id FROM tbl_order WHERE order_id = '" & order_id & "';"
+                    command = New MySqlCommand(query, conn)
+                    reader = command.ExecuteReader
+                    While reader.Read
+                        count = +1
+                    End While
+                    If count = 1 Then
+                        BusRequestFrm.StatusLabel.Text = reader("status_id").ToString
+                        Dim status As String = BusRequestFrm.StatusLabel.Text
+                        If status > 1 Then
+                            BusRequestFrm.GroupBox2.Enabled = False
+                            BusRequestFrm.SubmitBtn.Enabled = False
+                            BusRequestFrm.CancelBtn.Enabled = False
+                            BusRequestFrm.SaveDraftBtn.Enabled = False
+                        End If
+                    Else
+                        MessageBox.Show("No Data Found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                Finally
+                    If conn IsNot Nothing Then
+                        conn.Close()
+                    End If
+                End Try
+
             End If
             Me.Close()
         End If

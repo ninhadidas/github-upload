@@ -1035,6 +1035,7 @@ Partial Class BusRequestFrm
         Me.StatusLabel.Size = New System.Drawing.Size(37, 13)
         Me.StatusLabel.TabIndex = 41
         Me.StatusLabel.Text = "Status"
+        Me.StatusLabel.Visible = False
         '
         'PictureBox1
         '

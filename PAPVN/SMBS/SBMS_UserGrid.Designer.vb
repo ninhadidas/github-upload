@@ -57,6 +57,7 @@ Partial Class SBMS_UserGrid
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label27 = New System.Windows.Forms.Label()
         Me.PickUpTime2 = New System.Windows.Forms.DateTimePicker()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.DeleteBtn = New System.Windows.Forms.Button()
@@ -272,7 +273,7 @@ Partial Class SBMS_UserGrid
         Me.DeptCombox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.DeptCombox.ForeColor = System.Drawing.Color.Navy
         Me.DeptCombox.FormattingEnabled = True
-        Me.DeptCombox.Items.AddRange(New Object() {"Accounting1", "Accounting2", "ARBU", "AWBU", "GA1", "HR1", "IT1", "GA2", "HR2", "IT2", "Material R&D", "Product Evaluation", "R&D Control", "R&D Planning", "RF R&D", "Research", "RF PC", "RF PE", "RF Production", "RF Purchasing", "RF Quality Assurance", "RF Warehouse", "WM R&D", "WM PC", "WM PE", "WM Procurement", "WM Production", "WM Purchasing", "WM Quality Assurance"})
+        Me.DeptCombox.Items.AddRange(New Object() {"PTV outsource", "IT", "Quang Trung", "RFPUR", "RFPEV", "RFPE", "WMQA", "WMPUR", "IT1", "HR1", "ACC1", "GA1", "RFPC", "RFQA", "RD-COM", "RFWH", "WMPE", "WMPD", "WMPC", "HR2", "IT2", "RFPD", "WMCS", "ACC2", "RDRF", "RDWM", "GA2", "RDMT", "PLN1", "APRF", "APWM", "PLN2", "FAC2", "CM2", "MKT", "RDRS", "R&D Planning", "R&D Engineer", "Control R&D", "Material R&D", "R&D Research", "AWBU"})
         Me.DeptCombox.Location = New System.Drawing.Point(751, 71)
         Me.DeptCombox.Name = "DeptCombox"
         Me.DeptCombox.Size = New System.Drawing.Size(154, 21)
@@ -444,6 +445,7 @@ Partial Class SBMS_UserGrid
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label27)
         Me.GroupBox2.Controls.Add(Me.PickUpTime2)
         Me.GroupBox2.Controls.Add(Me.Label25)
         Me.GroupBox2.Controls.Add(Me.DeleteBtn)
@@ -477,6 +479,16 @@ Partial Class SBMS_UserGrid
         Me.GroupBox2.Size = New System.Drawing.Size(1087, 206)
         Me.GroupBox2.TabIndex = 42
         Me.GroupBox2.TabStop = False
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(799, 157)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(68, 13)
+        Me.Label27.TabIndex = 76
+        Me.Label27.Text = "Bus ID Old"
+        Me.Label27.Visible = False
         '
         'PickUpTime2
         '
@@ -609,7 +621,7 @@ Partial Class SBMS_UserGrid
         Me.BusNameCombox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.BusNameCombox2.ForeColor = System.Drawing.Color.Navy
         Me.BusNameCombox2.FormattingEnabled = True
-        Me.BusNameCombox2.Items.AddRange(New Object() {"Bus 1-01", "Bus 1-02", "Bus 1-03", "Bus 1-04", "Bus 1-05", "Bus 1-06", "Bus 1-07", "Bus 1-08", "Bus 1-09"})
+        Me.BusNameCombox2.Items.AddRange(New Object() {"Bus 1-01", "Bus 1-02", "Bus 1-03", "Bus 1-04", "Bus 1-05", "Bus 1-06", "Bus 1-07", "Bus 1-08", "Bus 1-09", "Bus 2-01", "Bus 2-02", "Bus 2-03", "Bus 2-04", "Bus 2-05", "Bus 2-06", "Bus 2-07", "Bus 2-08", "Bus 2-09", "Bus 2-10", "Bus 2-10B", "Bus 2-11", "Bus 2-12", "Bus 2-12B", "Bus 2-14", "Bus 2-15"})
         Me.BusNameCombox2.Location = New System.Drawing.Point(101, 119)
         Me.BusNameCombox2.Name = "BusNameCombox2"
         Me.BusNameCombox2.Size = New System.Drawing.Size(124, 21)
@@ -620,7 +632,7 @@ Partial Class SBMS_UserGrid
         Me.DeptCombox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.DeptCombox2.ForeColor = System.Drawing.Color.Navy
         Me.DeptCombox2.FormattingEnabled = True
-        Me.DeptCombox2.Items.AddRange(New Object() {"ACC1", "ACC2", "APRF", "APWM", "CM2", "Control R&D", "FAC2", "GA1", "GA2", "HR1", "HR2", "IT", "IT1", "IT2", "Material R&D", "MKT", "PLN1", "PLN2", "PTV outsource", "R&D Engineer ", "R&D Planning", "R&D Research", "RD-COM", "RDMT", "RDRF", "RDRS", "RDWM", "RFPC", "RFPD", "RFPE", "RFPEV", "RFPUR", "RFQA", "RFWH", "WMCS", "WMPC", "WMPD", "WMPE", "WMPUR", "WMQA"})
+        Me.DeptCombox2.Items.AddRange(New Object() {"PTV outsource", "IT", "Quang Trung", "RFPUR", "RFPEV", "RFPE", "WMQA", "WMPUR", "IT1", "HR1", "ACC1", "GA1", "RFPC", "RFQA", "RD-COM", "RFWH", "WMPE", "WMPD", "WMPC", "HR2", "IT2", "RFPD", "WMCS", "ACC2", "RDRF", "RDWM", "GA2", "RDMT", "PLN1", "APRF", "APWM", "PLN2", "FAC2", "CM2", "MKT", "RDRS", "R&D Planning", "R&D Engineer", "Control R&D", "Material R&D", "R&D Research", "AWBU"})
         Me.DeptCombox2.Location = New System.Drawing.Point(751, 71)
         Me.DeptCombox2.Name = "DeptCombox2"
         Me.DeptCombox2.Size = New System.Drawing.Size(154, 21)
@@ -914,4 +926,5 @@ Partial Class SBMS_UserGrid
     Friend WithEvents DownloadBtn As Button
     Friend WithEvents Label26 As Label
     Friend WithEvents UserListGridView As DataGridView
+    Friend WithEvents Label27 As Label
 End Class

@@ -65,9 +65,9 @@ Public Class ReviewGridGA
                     .Columns(12).Width = 200
                 End With
                 conn.Close()
-            Else
-                MessageBox.Show("No Data Found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                Me.Close()
+                'Else
+                '    MessageBox.Show("No Data Found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                '    Me.Close()
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -83,7 +83,6 @@ Public Class ReviewGridGA
         SBMS_GAView.Show()
         SBMS_GAView.Id_Label.Text = DataGridView.CurrentRow.Cells(0).Value.ToString
         SBMS_GAView.EmployeeIDTbx.Text = DataGridView.CurrentRow.Cells(8).Value.ToString
-        SBMS_GAView.NameTbx.Text = DataGridView.CurrentRow.Cells(1).Value.ToString
         SBMS_GAView.DepatureTbx.Text = DataGridView.CurrentRow.Cells(2).Value.ToString
         SBMS_GAView.ArrivalTbx.Text = DataGridView.CurrentRow.Cells(3).Value.ToString
         SBMS_GAView.ContentTbx.Text = DataGridView.CurrentRow.Cells(4).Value.ToString
@@ -99,7 +98,6 @@ Public Class ReviewGridGA
             SBMS_GAView.Show()
             SBMS_GAView.Id_Label.Text = DataGridView.CurrentRow.Cells(0).Value.ToString
             SBMS_GAView.EmployeeIDTbx.Text = DataGridView.CurrentRow.Cells(8).Value.ToString
-            SBMS_GAView.NameTbx.Text = DataGridView.CurrentRow.Cells(1).Value.ToString
             SBMS_GAView.DepatureTbx.Text = DataGridView.CurrentRow.Cells(2).Value.ToString
             SBMS_GAView.ArrivalTbx.Text = DataGridView.CurrentRow.Cells(3).Value.ToString
             SBMS_GAView.ContentTbx.Text = DataGridView.CurrentRow.Cells(4).Value.ToString

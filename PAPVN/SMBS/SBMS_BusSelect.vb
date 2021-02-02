@@ -13,7 +13,7 @@ Public Class SBMS_BusSelect
         Dim reader As MySqlDataReader
         Try
             conn.Open()
-            Dim query As String = "SELECT bus_name, tbl_order.order_id, tbl_order.start_time, tbl_order.end_time, tbl_order.start_location, tbl_order.end_location, tbl_order.order_content, km_remain, tbl_order.order_note, bks, driver_name, driver_phone, tbl_businfo.bus_id FROM tbl_order INNER JOIN tbl_businfo ON tbl_order.bus_id = tbl_businfo.bus_id INNER JOIN tbl_bus_quota ON tbl_order.bus_id = tbl_bus_quota.bus_id WHERE DATE(tbl_order.start_time) = CURRENT_DATE;"
+            Dim query As String = "SELECT bus_name, tbl_order.order_id, tbl_order.start_time, tbl_order.end_time, tbl_order.start_location, tbl_order.end_location, tbl_order.order_content, km_remain, tbl_order.order_note, bks, driver_name, driver_phone, tbl_businfo.bus_id FROM tbl_order INNER JOIN tbl_businfo ON tbl_order.bus_id = tbl_businfo.bus_id INNER JOIN tbl_bus_quota ON tbl_order.bus_id = tbl_bus_quota.bus_id WHERE DATE(tbl_order.start_time) = CURRENT_DATE AND status_id =4;"
             command = New MySqlCommand(query, conn)
             reader = command.ExecuteReader
             count = 0

@@ -70,4 +70,36 @@ Public Class SBMS_WCStaffFrm
     Private Sub ReviewRequestBtn_Click(sender As Object, e As EventArgs) Handles ReviewRequestBtn.Click
         ReviewGridMng.Show()
     End Sub
+
+    Private Sub SBMS_WCStaffFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim count As Integer
+        Dim username As String
+        conn = New MySqlConnection With {
+            .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
+        }
+        Dim reader As MySqlDataReader
+        username = SBMSStaffLoginFrm.UserIdTb.Text
+        Try
+            conn.Open()
+            Dim query As String = "SELECT COUNT(order_id) FROM tbl_order INNER JOIN tbl_user_login ON tbl_user_login.employee_id = tbl_order.employee_id INNER JOIN tbl_approval ON tbl_user_login.employee_id = tbl_approval.employee_id WHERE tbl_approval.app1 = '" & username & "' AND status_id='1';"
+            command = New MySqlCommand(query, conn)
+            reader = command.ExecuteReader
+            count = 0
+            While reader.Read
+                count = +1
+            End While
+            If count >= 1 Then
+                Label4.Text = reader("COUNT(order_id)").ToString
+                reader.Close()
+            Else
+                Label4.Visible = False
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            If conn IsNot Nothing Then
+                conn.Close()
+            End If
+        End Try
+    End Sub
 End Class

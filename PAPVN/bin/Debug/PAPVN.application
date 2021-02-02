@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="PAPVN.exe.manifest" size="14612">
+    <dependentAssembly dependencyType="install" codebase="PAPVN.exe.manifest" size="14991">
       <assemblyIdentity name="PAPVN.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>p7v5BOE4yujkcsnkgL1cNc5+kcjlv9z9GGdMU6/CAAs=</dsig:DigestValue>
+        <dsig:DigestValue>SPlg2/hwGXxid4r4wO4M9Sd8Y7OnPYl+q0N0PXW4Dfs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

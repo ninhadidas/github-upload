@@ -51,6 +51,7 @@ Partial Class SBMS_WCStaffFrm
         Me.ToolTip4 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip5 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip6 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.OTRequestBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckRequestBtn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -224,6 +225,7 @@ Partial Class SBMS_WCStaffFrm
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.ReviewRequestBtn)
         Me.GroupBox2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -303,6 +305,18 @@ Partial Class SBMS_WCStaffFrm
         Me.PictureBox1.TabStop = False
         Me.ToolTip1.SetToolTip(Me.PictureBox1, "Change Password")
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Red
+        Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(127, 19)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(24, 16)
+        Me.Label4.TabIndex = 27
+        Me.Label4.Text = "99"
+        '
         'SBMS_WCStaffFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -377,4 +391,5 @@ Partial Class SBMS_WCStaffFrm
     Friend WithEvents ToolTip5 As ToolTip
     Friend WithEvents Label9 As Label
     Friend WithEvents ToolTip6 As ToolTip
+    Friend WithEvents Label4 As Label
 End Class

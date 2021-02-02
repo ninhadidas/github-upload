@@ -17,7 +17,6 @@ Public Class BusRequestFrm
             GoBackTbx.ReadOnly = False
             ComebackTimePicker.CustomFormat = "dd-MMM-yyyy HH:mm"
         End If
-
     End Sub
 
     Private Sub Radio_btn_No1_CheckedChanged(sender As Object, e As EventArgs) Handles Radio_btn_No1.CheckedChanged
@@ -36,6 +35,7 @@ Public Class BusRequestFrm
 
     Private Sub Radio_btn_Yes1_CheckedChanged(sender As Object, e As EventArgs) Handles Radio_btn_Yes1.CheckedChanged
         TabControl1.TabPages(1).Enabled = True
+        TabControl1.SelectedIndex = 1
     End Sub
 
     Private Sub Radio_btn_No3_CheckedChanged(sender As Object, e As EventArgs) Handles Radio_btn_No3.CheckedChanged
@@ -65,7 +65,7 @@ Public Class BusRequestFrm
             Dim reader As MySqlDataReader
             Try
                 conn.Open()
-                Dim query As String = "SELECT * FROM tbl_user_login INNER JOIN tbl_user2 ON tbl_user_login.employee_id = tbl_user2.employee_id WHERE tbl_user_login.Employee_ID = '" & employeeid & "';"
+                Dim query As String = "SELECT * FROM tbl_user_login WHERE Employee_ID = '" & employeeid & "';"
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
                 While reader.Read
@@ -182,7 +182,7 @@ Public Class BusRequestFrm
                             command.Parameters.AddWithValue("@goback_qty", goback_qty)
                             command.Parameters.AddWithValue("@asset", asset)
                             command.Parameters.AddWithValue("@submit", Now)
-                            If GroupBox2.Visible = False Then
+                            If SBMS_WCStaffFrm.GroupBox2.Visible = False Then
                                 command.Parameters.AddWithValue("@status", "1")
                             Else
                                 command.Parameters.AddWithValue("@status", "2")

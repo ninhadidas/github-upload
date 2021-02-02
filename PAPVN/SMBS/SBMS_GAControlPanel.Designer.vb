@@ -41,6 +41,7 @@ Partial Class SBMS_GAControlPanel
         Me.ToolTip3 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip4 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip5 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.ReviewBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReportBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserMasterBtn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -186,11 +187,24 @@ Partial Class SBMS_GAControlPanel
         Me.Label6.TabIndex = 28
         Me.Label6.Text = "Routing Master"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Red
+        Me.Label7.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(150, 11)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(28, 18)
+        Me.Label7.TabIndex = 29
+        Me.Label7.Text = "99"
+        '
         'SBMS_GAControlPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(541, 350)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -237,4 +251,5 @@ Partial Class SBMS_GAControlPanel
     Friend WithEvents ToolTip5 As ToolTip
     Friend WithEvents ToolTip4 As ToolTip
     Friend WithEvents ToolTip2 As ToolTip
+    Friend WithEvents Label7 As Label
 End Class
