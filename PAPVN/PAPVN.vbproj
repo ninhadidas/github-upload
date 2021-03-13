@@ -300,10 +300,10 @@
     <Compile Include="SMBS\ReviewGridMng.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SMBS\SBMSStaffLoginFrm.Designer.vb">
+    <Compile Include="SBMSStaffLoginFrm.Designer.vb">
       <DependentUpon>SBMSStaffLoginFrm.vb</DependentUpon>
     </Compile>
-    <Compile Include="SMBS\SBMSStaffLoginFrm.vb">
+    <Compile Include="SBMSStaffLoginFrm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SMBS\SBMS_ApprovalRoute.Designer.vb">
@@ -479,7 +479,7 @@
     <EmbeddedResource Include="SMBS\ReviewGridMng.resx">
       <DependentUpon>ReviewGridMng.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SMBS\SBMSStaffLoginFrm.resx">
+    <EmbeddedResource Include="SBMSStaffLoginFrm.resx">
       <DependentUpon>SBMSStaffLoginFrm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SMBS\SBMS_ApprovalRoute.resx">
