@@ -106,6 +106,7 @@ Partial Class BusRequestFrm
         Me.StatusLabel = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.QRCodeBox = New System.Windows.Forms.PictureBox()
+        Me.Label32 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -140,6 +141,7 @@ Partial Class BusRequestFrm
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Label32)
         Me.TabPage1.Controls.Add(Me.CancelBtn)
         Me.TabPage1.Controls.Add(Me.SaveDraftBtn)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
@@ -1056,6 +1058,18 @@ Partial Class BusRequestFrm
         Me.QRCodeBox.TabIndex = 42
         Me.QRCodeBox.TabStop = False
         '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Label32.Font = New System.Drawing.Font("Wingdings", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
+        Me.Label32.ForeColor = System.Drawing.Color.White
+        Me.Label32.Location = New System.Drawing.Point(314, 498)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(23, 17)
+        Me.Label32.TabIndex = 43
+        Me.Label32.Text = "<"
+        '
         'BusRequestFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1073,6 +1087,7 @@ Partial Class BusRequestFrm
         Me.Text = "Bus Request Form"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -1172,4 +1187,5 @@ Partial Class BusRequestFrm
     Friend WithEvents CancelBtn As Button
     Friend WithEvents StatusLabel As Label
     Friend WithEvents QRCodeBox As PictureBox
+    Friend WithEvents Label32 As Label
 End Class

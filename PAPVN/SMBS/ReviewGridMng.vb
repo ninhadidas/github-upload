@@ -1,7 +1,4 @@
-﻿Imports System.Configuration
-Imports MySql.Data.MySqlClient
-Imports System.Data
-Imports outlook = Microsoft.Office.Interop.Outlook
+﻿Imports MySql.Data.MySqlClient
 Public Class ReviewGridMng
     Dim conn As MySqlConnection
     Dim command As MySqlCommand

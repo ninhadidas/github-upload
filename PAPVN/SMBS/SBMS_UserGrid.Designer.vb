@@ -89,6 +89,8 @@ Partial Class SBMS_UserGrid
         Me.DownloadBtn = New System.Windows.Forms.Button()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.UserListGridView = New System.Windows.Forms.DataGridView()
+        Me.SearchTbx = New System.Windows.Forms.TextBox()
+        Me.SearchBtn = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -270,6 +272,7 @@ Partial Class SBMS_UserGrid
         '
         'DeptCombox
         '
+        Me.DeptCombox.BackColor = System.Drawing.SystemColors.Window
         Me.DeptCombox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.DeptCombox.ForeColor = System.Drawing.Color.Navy
         Me.DeptCombox.FormattingEnabled = True
@@ -493,6 +496,7 @@ Partial Class SBMS_UserGrid
         'PickUpTime2
         '
         Me.PickUpTime2.CustomFormat = "HH:mm"
+        Me.PickUpTime2.Enabled = False
         Me.PickUpTime2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.PickUpTime2.Location = New System.Drawing.Point(751, 120)
         Me.PickUpTime2.Name = "PickUpTime2"
@@ -545,6 +549,7 @@ Partial Class SBMS_UserGrid
         'LocationCombox2
         '
         Me.LocationCombox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.LocationCombox2.Enabled = False
         Me.LocationCombox2.ForeColor = System.Drawing.Color.Navy
         Me.LocationCombox2.FormattingEnabled = True
         Me.LocationCombox2.Items.AddRange(New Object() {"TL1", "TL2"})
@@ -566,6 +571,7 @@ Partial Class SBMS_UserGrid
         'GACombox2
         '
         Me.GACombox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.GACombox2.Enabled = False
         Me.GACombox2.ForeColor = System.Drawing.Color.Navy
         Me.GACombox2.FormattingEnabled = True
         Me.GACombox2.Items.AddRange(New Object() {"False", "True"})
@@ -586,17 +592,19 @@ Partial Class SBMS_UserGrid
         '
         'AddrTbx2
         '
-        Me.AddrTbx2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.AddrTbx2.BackColor = System.Drawing.Color.Gainsboro
         Me.AddrTbx2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddrTbx2.ForeColor = System.Drawing.Color.Navy
         Me.AddrTbx2.Location = New System.Drawing.Point(313, 117)
         Me.AddrTbx2.Name = "AddrTbx2"
+        Me.AddrTbx2.ReadOnly = True
         Me.AddrTbx2.Size = New System.Drawing.Size(298, 23)
         Me.AddrTbx2.TabIndex = 66
         '
         'isApprove2
         '
         Me.isApprove2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.isApprove2.Enabled = False
         Me.isApprove2.ForeColor = System.Drawing.Color.Navy
         Me.isApprove2.FormattingEnabled = True
         Me.isApprove2.Items.AddRange(New Object() {"False", "True"})
@@ -608,6 +616,7 @@ Partial Class SBMS_UserGrid
         'TitleCombox2
         '
         Me.TitleCombox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.TitleCombox2.Enabled = False
         Me.TitleCombox2.ForeColor = System.Drawing.Color.Navy
         Me.TitleCombox2.FormattingEnabled = True
         Me.TitleCombox2.Items.AddRange(New Object() {"Staff", "Senior Staff", "GM", "Supervisor", "Manager", "Assistant Manager", "Specialist", "AGM", "Principal Engineer"})
@@ -619,6 +628,7 @@ Partial Class SBMS_UserGrid
         'BusNameCombox2
         '
         Me.BusNameCombox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.BusNameCombox2.Enabled = False
         Me.BusNameCombox2.ForeColor = System.Drawing.Color.Navy
         Me.BusNameCombox2.FormattingEnabled = True
         Me.BusNameCombox2.Items.AddRange(New Object() {"Bus 1-01", "Bus 1-02", "Bus 1-03", "Bus 1-04", "Bus 1-05", "Bus 1-06", "Bus 1-07", "Bus 1-08", "Bus 1-09", "Bus 2-01", "Bus 2-02", "Bus 2-03", "Bus 2-04", "Bus 2-05", "Bus 2-06", "Bus 2-07", "Bus 2-08", "Bus 2-09", "Bus 2-10", "Bus 2-10B", "Bus 2-11", "Bus 2-12", "Bus 2-12B", "Bus 2-14", "Bus 2-15"})
@@ -630,6 +640,7 @@ Partial Class SBMS_UserGrid
         'DeptCombox2
         '
         Me.DeptCombox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.DeptCombox2.Enabled = False
         Me.DeptCombox2.ForeColor = System.Drawing.Color.Navy
         Me.DeptCombox2.FormattingEnabled = True
         Me.DeptCombox2.Items.AddRange(New Object() {"PTV outsource", "IT", "Quang Trung", "RFPUR", "RFPEV", "RFPE", "WMQA", "WMPUR", "IT1", "HR1", "ACC1", "GA1", "RFPC", "RFQA", "RD-COM", "RFWH", "WMPE", "WMPD", "WMPC", "HR2", "IT2", "RFPD", "WMCS", "ACC2", "RDRF", "RDWM", "GA2", "RDMT", "PLN1", "APRF", "APWM", "PLN2", "FAC2", "CM2", "MKT", "RDRS", "R&D Planning", "R&D Engineer", "Control R&D", "Material R&D", "R&D Research", "AWBU"})
@@ -680,7 +691,8 @@ Partial Class SBMS_UserGrid
         '
         'EmployeeIDTbx2
         '
-        Me.EmployeeIDTbx2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.EmployeeIDTbx2.BackColor = System.Drawing.Color.Gainsboro
+        Me.EmployeeIDTbx2.Enabled = False
         Me.EmployeeIDTbx2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EmployeeIDTbx2.ForeColor = System.Drawing.Color.Navy
         Me.EmployeeIDTbx2.Location = New System.Drawing.Point(101, 31)
@@ -701,7 +713,8 @@ Partial Class SBMS_UserGrid
         '
         'MobileTbx2
         '
-        Me.MobileTbx2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.MobileTbx2.BackColor = System.Drawing.Color.Gainsboro
+        Me.MobileTbx2.Enabled = False
         Me.MobileTbx2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MobileTbx2.ForeColor = System.Drawing.Color.Navy
         Me.MobileTbx2.Location = New System.Drawing.Point(101, 75)
@@ -712,11 +725,12 @@ Partial Class SBMS_UserGrid
         '
         'NameTbx2
         '
-        Me.NameTbx2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.NameTbx2.BackColor = System.Drawing.Color.Gainsboro
         Me.NameTbx2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NameTbx2.ForeColor = System.Drawing.Color.Navy
         Me.NameTbx2.Location = New System.Drawing.Point(313, 31)
         Me.NameTbx2.Name = "NameTbx2"
+        Me.NameTbx2.ReadOnly = True
         Me.NameTbx2.Size = New System.Drawing.Size(298, 23)
         Me.NameTbx2.TabIndex = 34
         '
@@ -742,11 +756,12 @@ Partial Class SBMS_UserGrid
         '
         'EmailTbx2
         '
-        Me.EmailTbx2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.EmailTbx2.BackColor = System.Drawing.Color.Gainsboro
         Me.EmailTbx2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EmailTbx2.ForeColor = System.Drawing.Color.Navy
         Me.EmailTbx2.Location = New System.Drawing.Point(313, 74)
         Me.EmailTbx2.Name = "EmailTbx2"
+        Me.EmailTbx2.ReadOnly = True
         Me.EmailTbx2.Size = New System.Drawing.Size(298, 23)
         Me.EmailTbx2.TabIndex = 28
         '
@@ -779,7 +794,7 @@ Partial Class SBMS_UserGrid
         Me.ShowListBtn.Name = "ShowListBtn"
         Me.ShowListBtn.Size = New System.Drawing.Size(152, 34)
         Me.ShowListBtn.TabIndex = 79
-        Me.ShowListBtn.Text = "Show List"
+        Me.ShowListBtn.Text = "Show All List"
         Me.ShowListBtn.UseVisualStyleBackColor = False
         '
         'DownloadBtn
@@ -834,11 +849,34 @@ Partial Class SBMS_UserGrid
         Me.UserListGridView.Size = New System.Drawing.Size(1104, 282)
         Me.UserListGridView.TabIndex = 77
         '
+        'SearchTbx
+        '
+        Me.SearchTbx.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SearchTbx.Location = New System.Drawing.Point(469, 330)
+        Me.SearchTbx.MaxLength = 7
+        Me.SearchTbx.Name = "SearchTbx"
+        Me.SearchTbx.Size = New System.Drawing.Size(115, 23)
+        Me.SearchTbx.TabIndex = 80
+        '
+        'SearchBtn
+        '
+        Me.SearchBtn.BackColor = System.Drawing.Color.Blue
+        Me.SearchBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SearchBtn.ForeColor = System.Drawing.Color.White
+        Me.SearchBtn.Location = New System.Drawing.Point(620, 324)
+        Me.SearchBtn.Name = "SearchBtn"
+        Me.SearchBtn.Size = New System.Drawing.Size(113, 34)
+        Me.SearchBtn.TabIndex = 81
+        Me.SearchBtn.Text = "Search"
+        Me.SearchBtn.UseVisualStyleBackColor = False
+        '
         'SBMS_UserGrid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1134, 661)
+        Me.Controls.Add(Me.SearchBtn)
+        Me.Controls.Add(Me.SearchTbx)
         Me.Controls.Add(Me.ShowListBtn)
         Me.Controls.Add(Me.DownloadBtn)
         Me.Controls.Add(Me.Label26)
@@ -927,4 +965,6 @@ Partial Class SBMS_UserGrid
     Friend WithEvents Label26 As Label
     Friend WithEvents UserListGridView As DataGridView
     Friend WithEvents Label27 As Label
+    Friend WithEvents SearchTbx As TextBox
+    Friend WithEvents SearchBtn As Button
 End Class

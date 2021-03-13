@@ -36,7 +36,6 @@ Partial Class WelcomeStaffFrm
         Me.DeptLabel = New System.Windows.Forms.Label()
         Me.DivLabel = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.QuitBtn = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PeriodCombox = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
@@ -176,18 +175,6 @@ Partial Class WelcomeStaffFrm
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Select Functions"
         '
-        'QuitBtn
-        '
-        Me.QuitBtn.BackColor = System.Drawing.Color.Red
-        Me.QuitBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.QuitBtn.ForeColor = System.Drawing.Color.White
-        Me.QuitBtn.Location = New System.Drawing.Point(443, 3)
-        Me.QuitBtn.Name = "QuitBtn"
-        Me.QuitBtn.Size = New System.Drawing.Size(23, 25)
-        Me.QuitBtn.TabIndex = 16
-        Me.QuitBtn.Text = "X"
-        Me.QuitBtn.UseVisualStyleBackColor = False
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -212,10 +199,8 @@ Partial Class WelcomeStaffFrm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(477, 393)
-        Me.ControlBox = False
         Me.Controls.Add(Me.PeriodCombox)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.QuitBtn)
         Me.Controls.Add(Me.DivLabel)
         Me.Controls.Add(Me.DeptLabel)
         Me.Controls.Add(Me.EmployeeIdLabel)
@@ -265,11 +250,9 @@ Partial Class WelcomeStaffFrm
             InputTargetFrm.NameLabel.Text = NameLabel.Text
             InputTargetFrm.EmployeeLabel.Text = EmployeeIdLabel.Text
             InputTargetFrm.DeptLabel.Text = DeptLabel.Text
-            MessageBox.Show("To avoid system error, please DO NOT input single quote letter ' into any fields!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Please DO NOT input single quote letter ' into any fields!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
-
-    Friend WithEvents QuitBtn As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents PeriodCombox As ComboBox
 End Class

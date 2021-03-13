@@ -22,7 +22,7 @@ Public Class SBMS_GAControlPanel
     Private Sub RoutingBtn_Click(sender As Object, e As EventArgs) Handles RoutingBtn.Click
         SBMS_ApprovalRoute.Show()
     End Sub
-    Private Sub SBMS_GAControlPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Sub SBMS_GAControlPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim count As Integer
         Dim username As String
         Dim conn As MySqlConnection
@@ -43,9 +43,10 @@ Public Class SBMS_GAControlPanel
             End While
             If count >= 1 Then
                 Label7.Text = reader("COUNT(order_id)").ToString
+                If Label7.Text = 0 Then
+                    Label7.Visible = False
+                End If
                 reader.Close()
-            Else
-                Label7.Visible = False
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)

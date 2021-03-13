@@ -199,4 +199,32 @@ Public Class InputTargetFrm
             End If
         End Try
     End Sub
+
+    Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
+        Dim answer As Integer
+        answer = MessageBox.Show("Are you sure to clear target No2? Target No3 (if available will replace No2)", "Please confirm!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If answer = vbYes Then
+            TitleTbx2.Text = Nothing
+            ContentTbx2.Text = Nothing
+            WeightTbx2.Text = "0"
+            DiffTbx2.Text = Nothing
+            If TitleTxb3.Text <> Nothing Or ContentTbx3.Text <> Nothing Then
+                TitleTbx2.Text = TitleTxb3.Text
+                ContentTbx2.Text = ContentTbx3.Text
+                WeightTbx2.Text = WeightTbx3.Text
+                DiffTbx2.Text = DiffTbx3.Text
+                TitleTxb3.Text = Nothing
+                ContentTbx3.Text = Nothing
+                WeightTbx3.Text = "0"
+                DiffTbx3.Text = Nothing
+            End If
+        End If
+    End Sub
+
+    Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles PictureBox9.Click
+        TitleTxb3.Text = Nothing
+        ContentTbx3.Text = Nothing
+        WeightTbx3.Text = "0"
+        DiffTbx3.Text = Nothing
+    End Sub
 End Class

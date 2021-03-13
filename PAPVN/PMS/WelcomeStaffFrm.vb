@@ -4,14 +4,6 @@ Public Class WelcomeStaffFrm
         SelfAssessFrm.Show()
         MessageBox.Show("To avoid system error, please DO NOT input single quote letter ' into any fields!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
     End Sub
-
-    Private Sub QuitBtn_Click(sender As Object, e As EventArgs) Handles QuitBtn.Click
-        Dim result As DialogResult = MessageBox.Show("Are you sure to quit the application?", "Quit the application", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If result = DialogResult.Yes Then
-            Application.Exit()
-        End If
-    End Sub
-
     Private Sub ChangePwBtn_Click(sender As Object, e As EventArgs) Handles ChangePwBtn.Click
         ChangeStaffPw.Show()
     End Sub

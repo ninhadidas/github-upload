@@ -58,12 +58,12 @@ Public Class SBMS_BusQuotaMaster
             OLEcon.Open()
             With OLEcmd
                 .Connection = OLEcon
-                .CommandText = "select * from [Sheet1$A1:E40]"
+                .CommandText = "select * from [Sheet1$B1:H40]"
             End With
             OLEda.SelectCommand = OLEcmd
             OLEda.Fill(OLEdt)
             For Each r As DataRow In OLEdt.Rows
-                sql = "INSERT INTO tbl_bus_quota (bus_id, date, quota, fixed_km, km_remain) VALUES ('" & r(0).ToString & "', '" & ConvertToDateSQL(r(1).ToString) & "', '" & r(2).ToString & "', '" & r(3).ToString & "', '" & r(4).ToString & "')"
+                sql = "INSERT INTO tbl_bus_quota (bus_id, date, quota, fixed_km, km_remain, fixed_km_day, working_day) VALUES ('" & r(0).ToString & "', '" & ConvertToDateSQL(r(1).ToString) & "', '" & r(2).ToString & "', '" & r(3).ToString & "', '" & r(4).ToString & "', '" & r(5).ToString & "', '" & r(6).ToString & "')"
                 resul = saveData(sql)
                 If resul Then
                     Timer1.Start()
@@ -167,6 +167,14 @@ Public Class SBMS_BusQuotaMaster
                     .Columns(5).HeaderCell.Value = "Km Remaining"
                     .Columns(5).Width = 120
                 End With
+
+                'For i As Integer = 0 To QuotaGridView.Rows.Count - 10
+                '    Chart1.Series(0).Points.AddXY(QuotaGridView.Item(0, i).Value, QuotaGridView.Item(5, i).Value)
+                '    Chart1.ChartAreas("ChartArea1").AxisX.IsLabelAutoFit = False
+                '    Chart1.ChartAreas("ChartArea1").AxisX.LabelStyle.Angle = -70
+                '    Chart1.ChartAreas(0).AxisX.Interval = 1
+                'Next
+
                 conn.Close()
             Else
                 MessageBox.Show("No Data Found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)

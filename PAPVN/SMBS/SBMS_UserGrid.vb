@@ -200,6 +200,21 @@ Public Class SBMS_UserGrid
             LocationCombox2.Text = UserListGridView.CurrentRow.Cells(3).Value.ToString
             GACombox2.Text = UserListGridView.CurrentRow.Cells(12).Value.ToString
             AddrTbx2.Text = UserListGridView.CurrentRow.Cells(6).Value.ToString
+            MobileTbx2.Enabled = True
+            MobileTbx2.BackColor = System.Drawing.Color.LemonChiffon
+            BusNameCombox2.Enabled = True
+            NameTbx2.ReadOnly = False
+            NameTbx2.BackColor = System.Drawing.Color.LemonChiffon
+            EmailTbx2.ReadOnly = False
+            EmailTbx2.BackColor = System.Drawing.Color.LemonChiffon
+            TitleCombox2.Enabled = True
+            DeptCombox2.Enabled = True
+            PickUpTime2.Enabled = True
+            isApprove2.Enabled = True
+            LocationCombox2.Enabled = True
+            GACombox2.Enabled = True
+            AddrTbx2.ReadOnly = False
+            AddrTbx2.BackColor = System.Drawing.Color.LemonChiffon
         End If
     End Sub
     Private Sub DownloadBtn_Click(sender As Object, e As EventArgs) Handles DownloadBtn.Click
@@ -228,7 +243,7 @@ Public Class SBMS_UserGrid
             Try
                 xlsApp = New Microsoft.Office.Interop.Excel.Application
                 conn.Open()
-                Dim query As String = "SELECT tbl_user2.employee_id, Name, Dept, Location, Position, email, home_address, pickup_time, user_mobile, is_approval, is_ga, bus_name, tbl_user2.bus_id FROM tbl_user2 INNER JOIN tbl_businfo ON tbl_user2.bus_id = tbl_businfo.bus_id INNER JOIN tbl_user_login ON tbl_user_login.employee_id=tbl_user2.employee_id ORDER BY Dept, employee_id;"
+                Dim query As String = "SELECT tbl_user2.employee_id, Name, Dept, Location, Position, email, home_address, pickup_time, user_mobile, bus_name, tbl_user2.bus_id, is_approval, is_ga FROM tbl_user2 INNER JOIN tbl_businfo ON tbl_user2.bus_id = tbl_businfo.bus_id INNER JOIN tbl_user_login ON tbl_user_login.employee_id=tbl_user2.employee_id ORDER BY Dept, employee_id;"
                 Dim dscmd As New MySqlDataAdapter(query, conn)
                 Dim ds As New DataSet
                 dscmd.Fill(ds)
@@ -423,7 +438,7 @@ Public Class SBMS_UserGrid
 
     Private Sub EmployeeIDTbx2_Validated(sender As Object, e As EventArgs) Handles EmployeeIDTbx2.Validated
         If EmployeeIDTbx2.Text.Trim().Length() <> 7 Then
-            MessageBox.Show("Could not find this employee, please try again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Please input valid ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Me.Controls.Clear() 'removes all the controls on the form
             Me.InitializeComponent() 'load all the controls again
             Me.SBMS_UserGrid_Load(e, e) 'Load everything in your form, load event again
@@ -452,6 +467,21 @@ Public Class SBMS_UserGrid
             LocationCombox2.Text = UserListGridView.CurrentRow.Cells(3).Value.ToString
             GACombox2.Text = UserListGridView.CurrentRow.Cells(10).Value.ToString
             AddrTbx2.Text = UserListGridView.CurrentRow.Cells(6).Value.ToString
+            MobileTbx2.Enabled = True
+            MobileTbx2.BackColor = System.Drawing.Color.LemonChiffon
+            BusNameCombox2.Enabled = True
+            NameTbx2.ReadOnly = False
+            NameTbx2.BackColor = System.Drawing.Color.LemonChiffon
+            EmailTbx2.ReadOnly = False
+            EmailTbx2.BackColor = System.Drawing.Color.LemonChiffon
+            TitleCombox2.Enabled = True
+            DeptCombox2.Enabled = True
+            PickUpTime2.Enabled = True
+            isApprove2.Enabled = True
+            LocationCombox2.Enabled = True
+            GACombox2.Enabled = True
+            AddrTbx2.ReadOnly = False
+            AddrTbx2.BackColor = System.Drawing.Color.LemonChiffon
         End If
     End Sub
 
@@ -505,6 +535,7 @@ Public Class SBMS_UserGrid
             Me.Controls.Clear() 'removes all the controls on the form
             Me.InitializeComponent() 'load all the controls again
             Me.SBMS_UserGrid_Load(e, e) 'Load everything in your form, load event again
+            TabControl1.SelectedIndex = 1
         End If
     End Sub
 
@@ -534,6 +565,7 @@ Public Class SBMS_UserGrid
             Me.Controls.Clear() 'removes all the controls on the form
             Me.InitializeComponent() 'load all the controls again
             Me.SBMS_UserGrid_Load(e, e) 'Load everything in your form, load event again
+            TabControl1.SelectedIndex = 1
         End If
     End Sub
 
@@ -569,6 +601,85 @@ Public Class SBMS_UserGrid
                     conn.Close()
                 End If
             End Try
+        End If
+    End Sub
+
+    Private Sub SearchBtn_Click(sender As Object, e As EventArgs) Handles SearchBtn.Click
+        Dim SDA As New MySqlDataAdapter
+        Dim employee_id As String = SearchTbx.Text
+        Dim dbDataSet As New DataTable
+        Dim count As Integer
+        conn = New MySqlConnection With {
+            .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
+        }
+        Dim reader As MySqlDataReader
+        If employee_id <> "" Then
+            Try
+                conn.Open()
+                Dim query2 As String = "SELECT tbl_user2.employee_id, Name, Dept, Location, Position, email, home_address, pickup_time, user_mobile, bus_name, tbl_user2.bus_id, is_approval, is_ga FROM tbl_user2 INNER JOIN tbl_businfo ON tbl_user2.bus_id = tbl_businfo.bus_id INNER JOIN tbl_user_login ON tbl_user_login.employee_id=tbl_user2.employee_id WHERE tbl_user2.employee_id=" & employee_id & ";"
+                command = New MySqlCommand(query2, conn)
+                reader = command.ExecuteReader
+                count = 0
+                While reader.Read
+                    count = +1
+                End While
+                reader.Close()
+                If count >= 1 Then
+                    SDA.SelectCommand = command
+                    SDA.Fill(dbDataSet)
+                    UserListGridView.DataSource = dbDataSet
+                    SDA.Update(dbDataSet)
+                    With UserListGridView
+                        .RowHeadersVisible = False
+                        .Columns(0).HeaderCell.Value = "Employee ID"
+                        .Columns(0).Width = 110
+                        .Columns(1).HeaderCell.Value = "Full Name"
+                        .Columns(1).Width = 180
+                        .Columns(2).HeaderCell.Value = "Department"
+                        .Columns(2).Width = 130
+                        .Columns(3).HeaderCell.Value = "Location"
+                        .Columns(3).Width = 70
+                        .Columns(4).HeaderCell.Value = "Position"
+                        .Columns(4).Width = 150
+                        .Columns(5).HeaderCell.Value = "Email"
+                        .Columns(5).Width = 250
+                        .Columns(6).HeaderCell.Value = "Home Address"
+                        .Columns(6).Width = 250
+                        .Columns(7).HeaderCell.Value = "Pickup Time"
+                        .Columns(7).Width = 100
+                        .Columns(8).HeaderCell.Value = "Mobile Phone"
+                        .Columns(8).Width = 100
+                        .Columns(9).HeaderCell.Value = "Bus Name"
+                        .Columns(9).Width = 100
+                        .Columns(10).HeaderCell.Value = "Bus ID"
+                        .Columns(10).Width = 60
+                        .Columns(11).HeaderCell.Value = "Is Approver"
+                        .Columns(11).Width = 100
+                        .Columns(12).HeaderCell.Value = "Is GA"
+                        .Columns(12).Width = 80
+                    End With
+                    'conn.Close()
+                Else
+                    MessageBox.Show("No Data Found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    '    Me.Close()
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            Finally
+                If conn IsNot Nothing Then
+                    conn.Close()
+                End If
+            End Try
+        Else
+            MessageBox.Show("No ID to Search! Pls check ID again", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
+
+    Private Sub SearchTbx_Validated(sender As Object, e As EventArgs) Handles SearchTbx.Validated
+        If Not Regex.Match(SearchTbx.Text, "^\d+$", RegexOptions.IgnoreCase).Success Then
+            MessageBox.Show("Please enter number only.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            SearchTbx.Focus()
+            SearchTbx.Clear()
         End If
     End Sub
 End Class

@@ -21,7 +21,7 @@ Partial Class SBMS_GAControlPanel
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
-    Private Sub InitializeComponent()
+    Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SBMS_GAControlPanel))
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)

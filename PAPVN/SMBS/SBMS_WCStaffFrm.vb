@@ -71,7 +71,7 @@ Public Class SBMS_WCStaffFrm
         ReviewGridMng.Show()
     End Sub
 
-    Private Sub SBMS_WCStaffFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Sub SBMS_WCStaffFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim count As Integer
         Dim username As String
         conn = New MySqlConnection With {
@@ -90,9 +90,10 @@ Public Class SBMS_WCStaffFrm
             End While
             If count >= 1 Then
                 Label4.Text = reader("COUNT(order_id)").ToString
+                If Label4.Text = 0 Then
+                    Label4.Visible = False
+                End If
                 reader.Close()
-            Else
-                Label4.Visible = False
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -101,5 +102,13 @@ Public Class SBMS_WCStaffFrm
                 conn.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Me.Close()
+        SBMSStaffLoginFrm.Show()
+    End Sub
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        System.Diagnostics.Process.Start("http://10.92.144.15/it_tools/files/Bus%20Management%20System%20Manual.pdf")
     End Sub
 End Class

@@ -1,12 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class WelcomeMngFrm
-    Private Sub QuitBtn_Click(sender As Object, e As EventArgs) Handles QuitBtn.Click
-        Dim result As DialogResult = MessageBox.Show("Are you sure to quit the application?", "Quit the application", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If result = DialogResult.Yes Then
-            Application.Exit()
-        End If
-    End Sub
-
     Private Sub ChangePwBtn_Click(sender As Object, e As EventArgs) Handles ChangePwBtn.Click
         ChangePwMng.Show()
     End Sub

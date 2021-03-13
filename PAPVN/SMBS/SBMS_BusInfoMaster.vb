@@ -18,7 +18,7 @@ Public Class SBMS_BusInfoMaster
         conn = New MySqlConnection With {
                 .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
             }
-        Dim result As DialogResult = MessageBox.Show("Are you sure to add new employee?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim result As DialogResult = MessageBox.Show("Are you sure to add new bus?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If result = DialogResult.Yes Then
             If busmodel <> "" And busyear <> "" And buscompany <> "" And triproute <> "" And plateno <> "" And location <> "" And drivername <> "" And driverphone <> "" Then
                 Try

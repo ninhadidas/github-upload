@@ -37,6 +37,7 @@ Partial Class SBMS_ApprovalRoute
         Me.BusID = New System.Windows.Forms.Label()
         Me.FileLocation = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Is_GA = New System.Windows.Forms.Label()
@@ -121,7 +122,7 @@ Partial Class SBMS_ApprovalRoute
         Me.BrowseBtn.Name = "BrowseBtn"
         Me.BrowseBtn.Size = New System.Drawing.Size(152, 30)
         Me.BrowseBtn.TabIndex = 77
-        Me.BrowseBtn.Text = "Browse"
+        Me.BrowseBtn.Text = "Select Upload File"
         Me.BrowseBtn.UseVisualStyleBackColor = False
         '
         'UploadBtn
@@ -164,7 +165,7 @@ Partial Class SBMS_ApprovalRoute
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.GroupBox2)
+        Me.TabPage2.Controls.Add(Me.Label2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -172,6 +173,16 @@ Partial Class SBMS_ApprovalRoute
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Delete/Update Approval Route"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(108, 67)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(543, 25)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Contact IT Dept for Update/Delete Approval Route"
         '
         'GroupBox2
         '
@@ -193,7 +204,7 @@ Partial Class SBMS_ApprovalRoute
         Me.GroupBox2.Controls.Add(Me.EmailTbx)
         Me.GroupBox2.Controls.Add(Me.Label23)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 5)
+        Me.GroupBox2.Location = New System.Drawing.Point(33, 304)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(714, 193)
         Me.GroupBox2.TabIndex = 42
@@ -428,6 +439,7 @@ Partial Class SBMS_ApprovalRoute
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(776, 547)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.ApprovalRouteView)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Label1)
@@ -442,6 +454,7 @@ Partial Class SBMS_ApprovalRoute
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.ApprovalRouteView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -480,4 +493,5 @@ Partial Class SBMS_ApprovalRoute
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Is_GA As Label
     Friend WithEvents ApprovalRouteView As DataGridView
+    Friend WithEvents Label2 As Label
 End Class

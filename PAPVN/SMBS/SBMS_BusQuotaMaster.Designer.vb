@@ -39,12 +39,12 @@ Partial Class SBMS_BusQuotaMaster
         Me.FileLocation = New System.Windows.Forms.TextBox()
         Me.UploadBtn = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.ExportBtn = New System.Windows.Forms.Button()
+        Me.SearchBtn = New System.Windows.Forms.Button()
         Me.ToDate = New System.Windows.Forms.DateTimePicker()
         Me.FromDate = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.SearchBtn = New System.Windows.Forms.Button()
-        Me.ExportBtn = New System.Windows.Forms.Button()
         CType(Me.QuotaGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -158,7 +158,7 @@ Partial Class SBMS_BusQuotaMaster
         Me.BrowseBtn.Name = "BrowseBtn"
         Me.BrowseBtn.Size = New System.Drawing.Size(152, 30)
         Me.BrowseBtn.TabIndex = 43
-        Me.BrowseBtn.Text = "Browse"
+        Me.BrowseBtn.Text = "Select Upload File"
         Me.BrowseBtn.UseVisualStyleBackColor = False
         '
         'FileLocation
@@ -197,10 +197,35 @@ Partial Class SBMS_BusQuotaMaster
         Me.TabPage2.Text = "Show Bus Quota List"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'ExportBtn
+        '
+        Me.ExportBtn.BackColor = System.Drawing.Color.Green
+        Me.ExportBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ExportBtn.ForeColor = System.Drawing.Color.White
+        Me.ExportBtn.Location = New System.Drawing.Point(309, 54)
+        Me.ExportBtn.Name = "ExportBtn"
+        Me.ExportBtn.Size = New System.Drawing.Size(117, 30)
+        Me.ExportBtn.TabIndex = 25
+        Me.ExportBtn.Text = "Export"
+        Me.ExportBtn.UseVisualStyleBackColor = False
+        '
+        'SearchBtn
+        '
+        Me.SearchBtn.BackColor = System.Drawing.Color.Teal
+        Me.SearchBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SearchBtn.ForeColor = System.Drawing.Color.White
+        Me.SearchBtn.Location = New System.Drawing.Point(309, 12)
+        Me.SearchBtn.Name = "SearchBtn"
+        Me.SearchBtn.Size = New System.Drawing.Size(117, 30)
+        Me.SearchBtn.TabIndex = 24
+        Me.SearchBtn.Text = "Search"
+        Me.SearchBtn.UseVisualStyleBackColor = False
+        '
         'ToDate
         '
         Me.ToDate.CalendarFont = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.ToDate.CustomFormat = "MMM-yy"
+        Me.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.ToDate.Location = New System.Drawing.Point(150, 57)
         Me.ToDate.MinDate = New Date(2021, 1, 1, 0, 0, 0, 0)
         Me.ToDate.Name = "ToDate"
@@ -210,7 +235,8 @@ Partial Class SBMS_BusQuotaMaster
         'FromDate
         '
         Me.FromDate.CalendarFont = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.FromDate.CustomFormat = "MMM-yy"
+        Me.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.FromDate.Location = New System.Drawing.Point(150, 16)
         Me.FromDate.MinDate = New Date(2021, 1, 1, 0, 0, 0, 0)
         Me.FromDate.Name = "FromDate"
@@ -237,35 +263,11 @@ Partial Class SBMS_BusQuotaMaster
         Me.Label4.TabIndex = 20
         Me.Label4.Text = "From Month"
         '
-        'SearchBtn
-        '
-        Me.SearchBtn.BackColor = System.Drawing.Color.Teal
-        Me.SearchBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SearchBtn.ForeColor = System.Drawing.Color.White
-        Me.SearchBtn.Location = New System.Drawing.Point(309, 12)
-        Me.SearchBtn.Name = "SearchBtn"
-        Me.SearchBtn.Size = New System.Drawing.Size(117, 30)
-        Me.SearchBtn.TabIndex = 24
-        Me.SearchBtn.Text = "Search"
-        Me.SearchBtn.UseVisualStyleBackColor = False
-        '
-        'ExportBtn
-        '
-        Me.ExportBtn.BackColor = System.Drawing.Color.Green
-        Me.ExportBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ExportBtn.ForeColor = System.Drawing.Color.White
-        Me.ExportBtn.Location = New System.Drawing.Point(309, 54)
-        Me.ExportBtn.Name = "ExportBtn"
-        Me.ExportBtn.Size = New System.Drawing.Size(117, 30)
-        Me.ExportBtn.TabIndex = 25
-        Me.ExportBtn.Text = "Export"
-        Me.ExportBtn.UseVisualStyleBackColor = False
-        '
         'SBMS_BusQuotaMaster
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(670, 661)
+        Me.ClientSize = New System.Drawing.Size(664, 661)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.QuotaGridView)

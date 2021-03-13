@@ -45,6 +45,10 @@ Partial Class InputTargetFrm
         Me.Statuslb = New System.Windows.Forms.LinkLabel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.ContentTbx2 = New System.Windows.Forms.TextBox()
         Me.WeightTbx3 = New System.Windows.Forms.TextBox()
         Me.WeightTbx2 = New System.Windows.Forms.TextBox()
@@ -76,6 +80,8 @@ Partial Class InputTargetFrm
         Me.TitleTbx1 = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
         Me.App2Lbl = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.App1Lbl = New System.Windows.Forms.Label()
@@ -104,11 +110,11 @@ Partial Class InputTargetFrm
         Me.Status5 = New System.Windows.Forms.RadioButton()
         Me.Status4 = New System.Windows.Forms.RadioButton()
         Me.Status3 = New System.Windows.Forms.RadioButton()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -314,6 +320,10 @@ Partial Class InputTargetFrm
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Label33)
+        Me.TabPage1.Controls.Add(Me.Label32)
+        Me.TabPage1.Controls.Add(Me.PictureBox9)
+        Me.TabPage1.Controls.Add(Me.PictureBox8)
         Me.TabPage1.Controls.Add(Me.ContentTbx2)
         Me.TabPage1.Controls.Add(Me.WeightTbx3)
         Me.TabPage1.Controls.Add(Me.WeightTbx2)
@@ -350,6 +360,50 @@ Partial Class InputTargetFrm
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Management by Ojective"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.ForeColor = System.Drawing.Color.Black
+        Me.Label33.Location = New System.Drawing.Point(12, 474)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(31, 13)
+        Me.Label33.TabIndex = 83
+        Me.Label33.Text = "Clear"
+        Me.Label33.Visible = False
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.ForeColor = System.Drawing.Color.Black
+        Me.Label32.Location = New System.Drawing.Point(12, 333)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(31, 13)
+        Me.Label32.TabIndex = 82
+        Me.Label32.Text = "Clear"
+        Me.Label32.Visible = False
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
+        Me.PictureBox9.Location = New System.Drawing.Point(10, 438)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(33, 33)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 81
+        Me.PictureBox9.TabStop = False
+        Me.PictureBox9.Visible = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
+        Me.PictureBox8.Location = New System.Drawing.Point(10, 297)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(33, 33)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 80
+        Me.PictureBox8.TabStop = False
+        Me.PictureBox8.Visible = False
         '
         'ContentTbx2
         '
@@ -734,6 +788,32 @@ Partial Class InputTargetFrm
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Approval Level"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.ForeColor = System.Drawing.Color.Blue
+        Me.Label29.Location = New System.Drawing.Point(609, 98)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(88, 16)
+        Me.Label29.TabIndex = 44
+        Me.Label29.Text = "Approval 2: "
+        Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label29.Visible = False
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.ForeColor = System.Drawing.Color.Blue
+        Me.Label30.Location = New System.Drawing.Point(609, 50)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(88, 16)
+        Me.Label30.TabIndex = 43
+        Me.Label30.Text = "Approval 1: "
+        Me.Label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label30.Visible = False
         '
         'App2Lbl
         '
@@ -1124,32 +1204,6 @@ Partial Class InputTargetFrm
         Me.Status3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Status3.UseVisualStyleBackColor = False
         '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.ForeColor = System.Drawing.Color.Blue
-        Me.Label29.Location = New System.Drawing.Point(609, 98)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(88, 16)
-        Me.Label29.TabIndex = 44
-        Me.Label29.Text = "Approval 2: "
-        Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label29.Visible = False
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.ForeColor = System.Drawing.Color.Blue
-        Me.Label30.Location = New System.Drawing.Point(609, 50)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(88, 16)
-        Me.Label30.TabIndex = 43
-        Me.Label30.Text = "Approval 1: "
-        Me.Label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label30.Visible = False
-        '
         'InputTargetFrm
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -1183,6 +1237,8 @@ Partial Class InputTargetFrm
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
@@ -1238,7 +1294,7 @@ Partial Class InputTargetFrm
         Dim username As String
         Dim period As String
         Dim count As Integer
-        Dim status As String
+        Dim status As Integer
         conn = New MySqlConnection
         conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("mboConnectionString").ConnectionString
         Dim reader As MySqlDataReader
@@ -1272,6 +1328,10 @@ Partial Class InputTargetFrm
                     DevPlanTbx.ReadOnly = False
                     SaveBtn.Visible = True
                     SubmitBtn.Visible = True
+                    PictureBox8.Visible = True
+                    PictureBox9.Visible = True
+                    Label32.Visible = True
+                    Label33.Visible = True
                 End If
                 TitleTbx1.Text = reader("title").ToString
                 TitleTbx2.Text = reader("title2").ToString
@@ -1618,4 +1678,8 @@ Partial Class InputTargetFrm
     Friend WithEvents Label28 As Label
     Friend WithEvents Label29 As Label
     Friend WithEvents Label30 As Label
+    Friend WithEvents Label33 As Label
+    Friend WithEvents Label32 As Label
+    Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents PictureBox8 As PictureBox
 End Class

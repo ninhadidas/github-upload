@@ -95,7 +95,7 @@ Public Class ManagerViewFrm
             MessageBox.Show("Targets were submitted!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
             conn.Close()
         End If
-        DataGridUser.Controls.Clear() 'removes all the controls on the form
+            DataGridUser.Controls.Clear() 'removes all the controls on the form
         DataGridUser.InitializeComponent() 'load all the controls again
         DataGridUser.DataGridUser_Load(e, e) 'Load everything in your form, load event again
     End Sub
@@ -668,11 +668,15 @@ Public Class ManagerViewFrm
                     End If
                 End Try
             End If
-            MessageBox.Show("Targets result were evaluate successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If SupAchCbox1.Enabled = False Then
+                MessageBox.Show("Targets result were evaluate successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Targets result were evaluate successfully! Comments and Result were updated successfully", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
             conn.Close()
-            Me.Close()
-        End If
-        DataGridUser.Controls.Clear() 'removes all the controls on the form
+                Me.Close()
+            End If
+            DataGridUser.Controls.Clear() 'removes all the controls on the form
         DataGridUser.InitializeComponent() 'load all the controls again
         DataGridUser.DataGridUser_Load(e, e) 'Load everything in your form, load event again
     End Sub
@@ -694,16 +698,23 @@ Public Class ManagerViewFrm
 
         Dim result As DialogResult = MessageBox.Show("Are you sure to reject the result?", "Reject Result", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If result = DialogResult.Yes Then
-
             employeeid = EmployeeLabel.Text
             period = PeriodLabel.Text
             conn.Open()
-            status = 5
-            Dim query As String = "UPDATE targetdata SET status= '" & status & "' WHERE employeeid = '" & employeeid & "' AND period =  '" & period & "' ;"
-            command = New MySqlCommand(query, conn)
-            reader = command.ExecuteReader
-            reader.Close()
-            conn.Close()
+            status = Statuslb.Text
+            If status = 5 Then
+                Dim query As String = "UPDATE targetdata SET status= '4' WHERE employeeid = '" & employeeid & "' AND period =  '" & period & "' ;"
+                command = New MySqlCommand(query, conn)
+                reader = command.ExecuteReader
+                reader.Close()
+                conn.Close()
+            Else
+                Dim query As String = "UPDATE targetdata SET status= '5' WHERE employeeid = '" & employeeid & "' AND period =  '" & period & "' ;"
+                command = New MySqlCommand(query, conn)
+                reader = command.ExecuteReader
+                reader.Close()
+                conn.Close()
+            End If
             MessageBox.Show("Results were rejected!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
         Me.Close()
@@ -1187,5 +1198,19 @@ Public Class ManagerViewFrm
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         TabControl1.SelectedIndex = 2
+    End Sub
+
+    Private Sub EditBtn_Click(sender As Object, e As EventArgs) Handles EditBtn.Click
+        SupAchCbox1.Enabled = True
+        SupAchCbox2.Enabled = True
+        SupAchCbox3.Enabled = True
+        SupComTbx1.ReadOnly = False
+        SupComTbx2.ReadOnly = False
+        SupComTbx3.ReadOnly = False
+        NotableTbx.ReadOnly = False
+        SupEvaCbx1.Enabled = True
+        SupEvaCbx2.Enabled = True
+        SupEvaCbx3.Enabled = True
+        OvrSupCmTbx.ReadOnly = False
     End Sub
 End Class

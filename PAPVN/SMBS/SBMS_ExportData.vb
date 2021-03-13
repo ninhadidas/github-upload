@@ -18,7 +18,7 @@ Public Class SBMS_ExportData
         Dim reader As MySqlDataReader
         Try
             conn.Open()
-            Dim query As String = "SELECT order_id, tbl_user_login.name, start_location, end_location, order_content, start_time, end_time, asset_bringout, tbl_order.employee_id, tbl_user_login.Dept, submit_time, mng_comment, is_taxi FROM tbl_order INNER JOIN tbl_user_login ON tbl_user_login.employee_id = tbl_order.employee_id WHERE start_time >= '" & ConvertToDateSQL(from_date) & "' AND start_time <= '" & ConvertToDateSQL(to_date) & "';"
+            Dim query As String = "SELECT order_id, tbl_user_login.name, start_location, end_location, order_content, start_time, end_time, asset_bringout, tbl_order.employee_id, tbl_user_login.Dept, submit_time, mng_comment, tbl_businfo.bus_name, distance, is_taxi FROM tbl_order INNER JOIN tbl_user_login ON tbl_user_login.employee_id = tbl_order.employee_id INNER JOIN tbl_businfo ON tbl_businfo.bus_id = tbl_order.bus_id WHERE start_time >= '" & ConvertToDateSQL(from_date) & "' AND start_time <= '" & ConvertToDateSQL(to_date) & "' AND status_id =4;"
             command = New MySqlCommand(query, conn)
             reader = command.ExecuteReader
             count = 0
@@ -60,8 +60,12 @@ Public Class SBMS_ExportData
                     .Columns(10).Width = 150
                     .Columns(11).HeaderCell.Value = "Manager Comment"
                     .Columns(11).Width = 150
-                    .Columns(12).HeaderCell.Value = "Taxi"
+                    .Columns(12).HeaderCell.Value = "Bus Name"
                     .Columns(12).Width = 150
+                    .Columns(13).HeaderCell.Value = "Distance"
+                    .Columns(13).Width = 150
+                    .Columns(14).HeaderCell.Value = "Taxi"
+                    .Columns(14).Width = 150
                 End With
                 conn.Close()
             Else

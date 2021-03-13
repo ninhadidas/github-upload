@@ -276,6 +276,12 @@
     <Compile Include="PMS\ReleaseStatusFrm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SMBS\OTBusRequestFrm.Designer.vb">
+      <DependentUpon>OTBusRequestFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SMBS\OTBusRequestFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SMBS\RequestGrid.Designer.vb">
       <DependentUpon>RequestGrid.vb</DependentUpon>
     </Compile>
@@ -460,6 +466,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PMS\ReleaseStatusFrm.resx">
       <DependentUpon>ReleaseStatusFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMBS\OTBusRequestFrm.resx">
+      <DependentUpon>OTBusRequestFrm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SMBS\RequestGrid.resx">
       <DependentUpon>RequestGrid.vb</DependentUpon>

@@ -10,6 +10,7 @@ Public Class SBMS_GAView
         Dim reader As MySqlDataReader
         Dim bus As String = busID.Text
         Dim bus_name As String = BusNameTbx.Text
+        Dim plate_no As String = PlateNoTbx.Text
         Dim distance As String = DistanceTbx.Text
         Dim driver_name As String = DriverNameTbx.Text
         Dim driver_phone As String = DriverMobileTbx.Text
@@ -61,7 +62,7 @@ Public Class SBMS_GAView
                     sendmail.To.Add(email)
                     sendmail.IsBodyHtml = True
                     sendmail.Subject = "Your Bus Request was Approved - Bus Management System."
-                    sendmail.Body = "Dear Mr/Ms " & Name & " (Employee ID: " & userid & "), <br><br> Please check details your Bus Request as below.<br><br> Order Number: " & order_id & "<br><br> Bus Name: " & bus_name & "<br><br> Driver's Name: " & driver_name & "<br><br> Driver's Phone Number: " & driver_phone & "<br><br> Pickup Time: " & newpicktime & "<br><br> Please note the Order Number and Inform to Security Staff <br><br>*To save the environment,  DO NOT print this email. This message is automatically sent from system. (c) 2021 by IT Department"
+                    sendmail.Body = "Dear Mr/Ms " & Name & " (Employee ID: " & userid & "), <br><br> Please check details your Bus Request as below.<br><br> Order Number: " & order_id & "<br><br> Bus Name: " & bus_name & "<br><br> Bus Plate: " & plate_no & "<br><br> Driver's Name: " & driver_name & "<br><br> Driver's Phone Number: " & driver_phone & "<br><br> Pickup Time: " & newpicktime & "<br><br> Please note the Order Number and Inform to Security Staff <br><br>*To save the environment,  DO NOT print this email. This message is automatically sent from system. (c) 2021 by IT Department"
                     SmtpServer.Send(sendmail)
                 Catch ex As Exception
                     MessageBox.Show(ex.Message)
@@ -128,6 +129,9 @@ Public Class SBMS_GAView
         ReviewGridGA.Controls.Clear() 'removes all the controls on the form
         ReviewGridGA.InitializeComponent() 'load all the controls again
         ReviewGridGA.ReviewGridGA_Load(e, e) 'Load everything in your form, load event again
+        SBMS_GAControlPanel.Controls.Clear()
+        SBMS_GAControlPanel.InitializeComponent()
+        SBMS_GAControlPanel.SBMS_GAControlPanel_Load(e, e)
     End Sub
 
     Private Sub EmployeeIDTbx_TextChanged(sender As Object, e As EventArgs) Handles EmployeeIDTbx.TextChanged
@@ -304,6 +308,9 @@ Public Class SBMS_GAView
         ReviewGridGA.Controls.Clear() 'removes all the controls on the form
         ReviewGridGA.InitializeComponent() 'load all the controls again
         ReviewGridGA.ReviewGridGA_Load(e, e) 'Load everything in your form, load event again
+        SBMS_GAControlPanel.Controls.Clear()
+        SBMS_GAControlPanel.InitializeComponent()
+        SBMS_GAControlPanel.SBMS_GAControlPanel_Load(e, e)
     End Sub
 
     Private Sub RejectBtn_Click(sender As Object, e As EventArgs) Handles RejectBtn.Click
@@ -368,6 +375,9 @@ Public Class SBMS_GAView
         ReviewGridGA.Controls.Clear() 'removes all the controls on the form
         ReviewGridGA.InitializeComponent() 'load all the controls again
         ReviewGridGA.ReviewGridGA_Load(e, e) 'Load everything in your form, load event again
+        SBMS_GAControlPanel.Controls.Clear()
+        SBMS_GAControlPanel.InitializeComponent()
+        SBMS_GAControlPanel.SBMS_GAControlPanel_Load(e, e)
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click

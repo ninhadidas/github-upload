@@ -141,3 +141,4 @@ C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_
 C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_ExportData.resources
 C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_UserGrid.resources
 C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_ForgotPassword.resources
+C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.OTBusRequestFrm.resources

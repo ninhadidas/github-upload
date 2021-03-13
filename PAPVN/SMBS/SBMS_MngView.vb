@@ -82,6 +82,10 @@ Public Class SBMS_MngView
         ReviewGridMng.Controls.Clear() 'removes all the controls on the form
         ReviewGridMng.InitializeComponent() 'load all the controls again
         ReviewGridMng.ReviewGridMng_Load(e, e) 'Load everything in your form, load event again
+        SBMS_WCStaffFrm.Controls.Clear()
+        SBMS_WCStaffFrm.InitializeComponent()
+        SBMS_WCStaffFrm.SBMS_WCStaffFrm_Load(e, e)
+
     End Sub
 
     Private Sub EmployeeIDTbx_TextChanged(sender As Object, e As EventArgs) Handles EmployeeIDTbx.TextChanged
@@ -233,6 +237,9 @@ Public Class SBMS_MngView
         ReviewGridMng.Controls.Clear() 'removes all the controls on the form
         ReviewGridMng.InitializeComponent() 'load all the controls again
         ReviewGridMng.ReviewGridMng_Load(e, e) 'Load everything in your form, load event again
+        SBMS_WCStaffFrm.Controls.Clear()
+        SBMS_WCStaffFrm.InitializeComponent()
+        SBMS_WCStaffFrm.SBMS_WCStaffFrm_Load(e, e)
     End Sub
 
     Private Sub DeleteBtn_Click(sender As Object, e As EventArgs) Handles DeleteBtn.Click
@@ -297,6 +304,9 @@ Public Class SBMS_MngView
         ReviewGridMng.Controls.Clear() 'removes all the controls on the form
         ReviewGridMng.InitializeComponent() 'load all the controls again
         ReviewGridMng.ReviewGridMng_Load(e, e) 'Load everything in your form, load event again
+        SBMS_WCStaffFrm.Controls.Clear()
+        SBMS_WCStaffFrm.InitializeComponent()
+        SBMS_WCStaffFrm.SBMS_WCStaffFrm_Load(e, e)
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click

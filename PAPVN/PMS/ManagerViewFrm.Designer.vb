@@ -45,6 +45,7 @@ Partial Class ManagerViewFrm
         Me.Statuslb = New System.Windows.Forms.LinkLabel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.EditBtn = New System.Windows.Forms.Button()
         Me.Diff3ValueLb = New System.Windows.Forms.Label()
         Me.Diff2ValueLb = New System.Windows.Forms.Label()
         Me.Diff1ValueLb = New System.Windows.Forms.Label()
@@ -399,6 +400,7 @@ Partial Class ManagerViewFrm
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.EditBtn)
         Me.TabPage1.Controls.Add(Me.Diff3ValueLb)
         Me.TabPage1.Controls.Add(Me.Diff2ValueLb)
         Me.TabPage1.Controls.Add(Me.Diff1ValueLb)
@@ -461,6 +463,21 @@ Partial Class ManagerViewFrm
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Management By Objective"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'EditBtn
+        '
+        Me.EditBtn.BackColor = System.Drawing.Color.Orange
+        Me.EditBtn.FlatAppearance.BorderSize = 0
+        Me.EditBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EditBtn.ForeColor = System.Drawing.Color.White
+        Me.EditBtn.Location = New System.Drawing.Point(776, 3)
+        Me.EditBtn.Margin = New System.Windows.Forms.Padding(0)
+        Me.EditBtn.Name = "EditBtn"
+        Me.EditBtn.Size = New System.Drawing.Size(132, 25)
+        Me.EditBtn.TabIndex = 129
+        Me.EditBtn.Text = "Edit Assessments"
+        Me.EditBtn.UseVisualStyleBackColor = False
+        Me.EditBtn.Visible = False
         '
         'Diff3ValueLb
         '
@@ -1701,7 +1718,7 @@ Partial Class ManagerViewFrm
         Me.ApproveRstBtn.Name = "ApproveRstBtn"
         Me.ApproveRstBtn.Size = New System.Drawing.Size(134, 28)
         Me.ApproveRstBtn.TabIndex = 159
-        Me.ApproveRstBtn.Text = "Approve Result"
+        Me.ApproveRstBtn.Text = "Submit Result"
         Me.ApproveRstBtn.UseVisualStyleBackColor = False
         Me.ApproveRstBtn.Visible = False
         '
@@ -2704,6 +2721,7 @@ Partial Class ManagerViewFrm
                 If count >= 1 Then
                     ApproveRstBtn.Visible = True
                     SaveBtn.Visible = True
+                    RejectRstBtn.Visible = True
                     SupAchCbox1.Enabled = True
                     SupComTbx1.ReadOnly = False
                     SupComTbx2.ReadOnly = False
@@ -2744,17 +2762,18 @@ Partial Class ManagerViewFrm
                     ApproveRstBtn.Visible = True
                     RejectRstBtn.Visible = True
                     SaveBtn.Visible = True
-                    SupAchCbox1.Enabled = True
-                    SupAchCbox2.Enabled = True
-                    SupAchCbox3.Enabled = True
-                    SupComTbx1.ReadOnly = False
-                    SupComTbx2.ReadOnly = False
-                    SupComTbx3.ReadOnly = False
-                    NotableTbx.ReadOnly = False
-                    SupEvaCbx1.Enabled = True
-                    SupEvaCbx2.Enabled = True
-                    SupEvaCbx3.Enabled = True
-                    OvrSupCmTbx.ReadOnly = False
+                    'SupAchCbox1.Enabled = True
+                    'SupAchCbox2.Enabled = True
+                    'SupAchCbox3.Enabled = True
+                    'SupComTbx1.ReadOnly = False
+                    'SupComTbx2.ReadOnly = False
+                    'SupComTbx3.ReadOnly = False
+                    'NotableTbx.ReadOnly = False
+                    'SupEvaCbx1.Enabled = True
+                    'SupEvaCbx2.Enabled = True
+                    'SupEvaCbx3.Enabled = True
+                    'OvrSupCmTbx.ReadOnly = False
+                    EditBtn.Visible = True
                 End If
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
@@ -3075,4 +3094,5 @@ Partial Class ManagerViewFrm
     Friend WithEvents CompetencyBtn As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents EditBtn As Button
 End Class
