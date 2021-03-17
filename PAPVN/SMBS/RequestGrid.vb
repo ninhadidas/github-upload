@@ -13,7 +13,7 @@ Public Class RequestGrid
             .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
         }
         Dim reader As MySqlDataReader
-        username = SBMSStaffLoginFrm.UserIdTb.Text
+        username = LoginFrm.UserIdTb.Text
         Try
             conn.Open()
             Dim query As String = "SELECT order_id, tbl_user_login.name, start_location, end_location, order_content, start_time, end_time, asset_bringout, tbl_order.employee_id, submit_time, status_name FROM tbl_order INNER JOIN tbl_user_login ON tbl_user_login.employee_id = tbl_order.employee_id INNER JOIN tbl_status ON tbl_order.status_id=tbl_status.status_id WHERE tbl_order.employee_id = '" & username & "' ORDER BY order_id DESC;"

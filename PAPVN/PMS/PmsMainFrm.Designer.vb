@@ -50,6 +50,7 @@ Partial Class PmsMainFrm
         Me.BtnMngView.TabIndex = 1
         Me.BtnMngView.Text = "Manager's View"
         Me.BtnMngView.UseVisualStyleBackColor = False
+        Me.BtnMngView.Visible = False
         '
         'BtnHrFunc
         '
@@ -61,6 +62,7 @@ Partial Class PmsMainFrm
         Me.BtnHrFunc.TabIndex = 2
         Me.BtnHrFunc.Text = "HR'S Functions"
         Me.BtnHrFunc.UseVisualStyleBackColor = False
+        Me.BtnHrFunc.Visible = False
         '
         'Label1
         '

@@ -18,7 +18,7 @@ Public Class ReviewGridGA
         }
         Dim reader As MySqlDataReader
         dept = SBMS_WCStaffFrm.DeptLabel.Text
-        username = SBMSStaffLoginFrm.UserIdTb.Text
+        username = LoginFrm.UserIdTb.Text
         Try
             conn.Open()
             Dim query As String = "SELECT order_id, tbl_user_login.name, start_location, end_location, order_content, start_time, end_time, asset_bringout, tbl_order.employee_id, Dept, Position, submit_time, mng_comment FROM tbl_order INNER JOIN tbl_user_login ON tbl_user_login.employee_id = tbl_order.employee_id INNER JOIN tbl_approval ON tbl_user_login.employee_id = tbl_approval.employee_id WHERE tbl_approval.app2 = '" & username & "' AND status_id='2';"

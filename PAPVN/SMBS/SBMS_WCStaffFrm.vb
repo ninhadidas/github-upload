@@ -78,7 +78,7 @@ Public Class SBMS_WCStaffFrm
             .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
         }
         Dim reader As MySqlDataReader
-        username = SBMSStaffLoginFrm.UserIdTb.Text
+        username = LoginFrm.UserIdTb.Text
         Try
             conn.Open()
             Dim query As String = "SELECT COUNT(order_id) FROM tbl_order INNER JOIN tbl_user_login ON tbl_user_login.employee_id = tbl_order.employee_id INNER JOIN tbl_approval ON tbl_user_login.employee_id = tbl_approval.employee_id WHERE tbl_approval.app1 = '" & username & "' AND status_id='1';"
@@ -106,7 +106,7 @@ Public Class SBMS_WCStaffFrm
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Me.Close()
-        SBMSStaffLoginFrm.Show()
+        LoginFrm.Show()
     End Sub
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         System.Diagnostics.Process.Start("http://10.92.144.15/it_tools/files/Bus%20Management%20System%20Manual.pdf")

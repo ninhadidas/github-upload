@@ -127,14 +127,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PAPVN.exe" size="5246424">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PAPVN.exe" size="5033944">
       <assemblyIdentity name="PAPVN" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8dxEzOGi3A6WIZPxyjuN0Y7+19SI576F0rqp/loesqE=</dsig:DigestValue>
+        <dsig:DigestValue>0b92ofshgyk5iW2GnIAAsBbbvI7po37Jd5v3aMaAQGo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -231,13 +231,13 @@
       <dsig:DigestValue>4azGp55nliBehql1Zw1zJgJy2gNDHp9w9PeRLaV3UrY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PAPVN.exe.config" size="992">
+  <file name="PAPVN.exe.config" size="1205">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>27itO8GVUTRYZ9GQUAsMulBui0XK6+hQIziZoiY9yaY=</dsig:DigestValue>
+      <dsig:DigestValue>CfwDTPemREKvp0Rf8UerOXltTSsbiY8jvRqZex9BJxc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PMS\Employee icon.ico" size="90504">

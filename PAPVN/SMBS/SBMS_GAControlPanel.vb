@@ -31,7 +31,7 @@ Public Class SBMS_GAControlPanel
             .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
         }
         Dim reader As MySqlDataReader
-        username = SBMSStaffLoginFrm.UserIdTb.Text
+        username = LoginFrm.UserIdTb.Text
         Try
             conn.Open()
             Dim query As String = "SELECT COUNT(order_id) FROM tbl_order INNER JOIN tbl_user_login ON tbl_user_login.employee_id = tbl_order.employee_id INNER JOIN tbl_approval ON tbl_user_login.employee_id = tbl_approval.employee_id WHERE tbl_approval.app2 = '" & username & "' AND status_id='2';"

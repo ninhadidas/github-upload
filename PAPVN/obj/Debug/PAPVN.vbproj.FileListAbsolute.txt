@@ -103,7 +103,6 @@ C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.Expor
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.ForgotPwFrm.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.HRApproveResultFrm.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.HRFunctionsFrm.resources
-C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.HrMainFrm.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.InputTargetFrm.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.ManagerViewFrm.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.Resources.resources
@@ -116,7 +115,6 @@ C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.Relea
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.RequestGrid.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.ReviewGridGA.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.ReviewGridMng.resources
-C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMSStaffLoginFrm.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_BusSelect.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_GAControlPanel.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_GAView.resources
@@ -142,3 +140,6 @@ C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_
 C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_UserGrid.resources
 C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_ForgotPassword.resources
 C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.OTBusRequestFrm.resources
+C:\Users\Admin\Source\Repos\ninhadidas\github-upload\PAPVN\bin\Debug\MySql.Data.dll
+C:\Users\Admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.MainFrm.resources
+C:\Users\Admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.LoginFrm.resources

@@ -13,7 +13,7 @@ Public Class ReviewGridMng
             .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
         }
         Dim reader As MySqlDataReader
-        username = SBMSStaffLoginFrm.UserIdTb.Text
+        username = LoginFrm.UserIdTb.Text
         Try
             conn.Open()
             Dim query As String = "SELECT order_id, tbl_user_login.name, start_location, end_location, order_content, start_time, end_time, goback_qty, asset_bringout, tbl_order.employee_id, submit_time FROM tbl_order INNER JOIN tbl_user_login ON tbl_user_login.employee_id = tbl_order.employee_id INNER JOIN tbl_approval ON tbl_user_login.employee_id = tbl_approval.employee_id WHERE tbl_approval.app1 = '" & username & "' AND status_id='1';"
