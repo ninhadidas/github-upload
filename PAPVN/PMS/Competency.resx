@@ -117,44 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Label38.Text" xml:space="preserve">
-    <value>-Forecast mid-term/long-term future and take necessary actions proactively
--Lead changes of the company promptly and be a model as an early adopter
--Make decisions timely even under uncertain and changing circumstances</value>
-  </data>
-  <data name="Label40.Text" xml:space="preserve">
-    <value>-Create business plan or functional strategy for continuous growth and secure necessary resources to achieve them
--Develop operating processes &amp; systems which enable the company to proceed with minimum support
--Develop employees beyond own organization and foster self-reliant culture within company</value>
-  </data>
-  <data name="Label48.Text" xml:space="preserve">
-    <value>-Overcome difficulties and make it opportunity to grow
--Maximize output even with limited resources
--Streamline related information/factors and make decision for long-sighted future
--Identify successors of the organization and develop them in time</value>
-  </data>
-  <data name="Label52.Text" xml:space="preserve">
-    <value>-Collaborate to achieve company vision/ mission
--Can maintain and strengthen effective partnerships with stakeholders
--Exert inspiration and influence on others to commit to achieve common goals
--Strong power to involve and work with others to achieve business success
--Effectively promote team morale &amp; productivity</value>
-  </data>
-  <data name="Label54.Text" xml:space="preserve">
-    <value>-Lead changes of the team
--Figure out underlying customer needs
--Forecast trends and give new perspectives for the company
--Anticipate prior opportunities/ threats/ risks to have timely actions to promote or prevent
--Quick and effective decision-making 
--Provide feedback and take action timely to improve performance of both organization and individuals</value>
-  </data>
-  <data name="Label56.Text" xml:space="preserve">
-    <value>-Persistently striving to achieve goals and business success
--Empower and deligate responsibility to each individual within team
--Self-thinking exhaustively and forecast about potential opportunities/ threats/ risks to seize or prevent
--Self-decide what necessary to do
--Coach team members so that they can achieve their goals</value>
-  </data>
   <data name="Label7.Text" xml:space="preserve">
     <value>-Can work with others who has either shared or opposite interests
 -Recognize impact and context of own function within company
@@ -201,6 +163,44 @@
 -Be performance- and result-oriented
 -Show curiosity and continuous learning spirit
 -Self-equipped with necessary knowledge/ skills</value>
+  </data>
+  <data name="Label38.Text" xml:space="preserve">
+    <value>-Forecast mid-term/long-term future and take necessary actions proactively
+-Lead changes of the company promptly and be a model as an early adopter
+-Make decisions timely even under uncertain and changing circumstances</value>
+  </data>
+  <data name="Label40.Text" xml:space="preserve">
+    <value>-Create business plan or functional strategy for continuous growth and secure necessary resources to achieve them
+-Develop operating processes &amp; systems which enable the company to proceed with minimum support
+-Develop employees beyond own organization and foster self-reliant culture within company</value>
+  </data>
+  <data name="Label48.Text" xml:space="preserve">
+    <value>-Overcome difficulties and make it opportunity to grow
+-Maximize output even with limited resources
+-Streamline related information/factors and make decision for long-sighted future
+-Identify successors of the organization and develop them in time</value>
+  </data>
+  <data name="Label52.Text" xml:space="preserve">
+    <value>-Collaborate to achieve company vision/ mission
+-Can maintain and strengthen effective partnerships with stakeholders
+-Exert inspiration and influence on others to commit to achieve common goals
+-Strong power to involve and work with others to achieve business success
+-Effectively promote team morale &amp; productivity</value>
+  </data>
+  <data name="Label54.Text" xml:space="preserve">
+    <value>-Lead changes of the team
+-Figure out underlying customer needs
+-Forecast trends and give new perspectives for the company
+-Anticipate prior opportunities/ threats/ risks to have timely actions to promote or prevent
+-Quick and effective decision-making 
+-Provide feedback and take action timely to improve performance of both organization and individuals</value>
+  </data>
+  <data name="Label56.Text" xml:space="preserve">
+    <value>-Persistently striving to achieve goals and business success
+-Empower and deligate responsibility to each individual within team
+-Self-thinking exhaustively and forecast about potential opportunities/ threats/ risks to seize or prevent
+-Self-decide what necessary to do
+-Coach team members so that they can achieve their goals</value>
   </data>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
