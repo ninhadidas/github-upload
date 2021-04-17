@@ -121,7 +121,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="App_Connect.vb" />
     <Compile Include="cdt7688.vb" />
+    <Compile Include="PMS\ChangePwMng.Designer.vb">
+      <DependentUpon>ChangePwMng.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PMS\ChangePwMng.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PMS\Competency.Designer.vb">
       <DependentUpon>Competency.vb</DependentUpon>
     </Compile>
@@ -140,22 +147,34 @@
     <Compile Include="PMS\HRMasterViewFrm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PMS\LoginStoreProcedure.Designer.vb">
+      <DependentUpon>LoginStoreProcedure.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PMS\LoginStoreProcedure.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PMS\MasterGridUser.Designer.vb">
       <DependentUpon>MasterGridUser.vb</DependentUpon>
     </Compile>
     <Compile Include="PMS\MasterGridUser.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PMS\PmsMngLoginFrm.Designer.vb">
+      <DependentUpon>PmsMngLoginFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PMS\PmsMngLoginFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PMS\PMS_UserMaster.Designer.vb">
+      <DependentUpon>PMS_UserMaster.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PMS\PMS_UserMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SMBS\BusRequestFrm.Designer.vb">
       <DependentUpon>BusRequestFrm.vb</DependentUpon>
     </Compile>
     <Compile Include="SMBS\BusRequestFrm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PMS\ChangePwMng.Designer.vb">
-      <DependentUpon>ChangePwMng.vb</DependentUpon>
-    </Compile>
-    <Compile Include="PMS\ChangePwMng.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PMS\ChangePwStaff.Designer.vb">
@@ -170,22 +189,10 @@
     <Compile Include="PMS\DataGridUser.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PMS\EmployeeMasterForm.Designer.vb">
-      <DependentUpon>EmployeeMasterForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="PMS\EmployeeMasterForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="PMS\ExportDataFrm.Designer.vb">
       <DependentUpon>ExportDataFrm.vb</DependentUpon>
     </Compile>
     <Compile Include="PMS\ExportDataFrm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PMS\Forgot Password Mng.Designer.vb">
-      <DependentUpon>Forgot Password Mng.vb</DependentUpon>
-    </Compile>
-    <Compile Include="PMS\Forgot Password Mng.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PMS\Forgot Password.Designer.vb">
@@ -256,12 +263,6 @@
       <DependentUpon>PmsMainFrm.vb</DependentUpon>
     </Compile>
     <Compile Include="PMS\PmsMainFrm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PMS\PmsMngLoginFrm.Designer.vb">
-      <DependentUpon>PmsMngLoginFrm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="PMS\PmsMngLoginFrm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PMS\PmsStaffLoginFrm.Designer.vb">
@@ -392,35 +393,38 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="PMS\ChangePwMng.resx">
+      <DependentUpon>ChangePwMng.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PMS\Competency.resx">
       <DependentUpon>Competency.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PMS\Forgot Password Mng.resx">
-      <DependentUpon>Forgot Password Mng.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PMS\HRMasterViewFrm.resx">
       <DependentUpon>HRMasterViewFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PMS\LoginStoreProcedure.resx">
+      <DependentUpon>LoginStoreProcedure.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PMS\MasterGridUser.resx">
       <DependentUpon>MasterGridUser.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PMS\PmsMngLoginFrm.resx">
+      <DependentUpon>PmsMngLoginFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PMS\PMS_UserMaster.resx">
+      <DependentUpon>PMS_UserMaster.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SMBS\BusRequestFrm.resx">
       <DependentUpon>BusRequestFrm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PMS\ChangePwMng.resx">
-      <DependentUpon>ChangePwMng.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PMS\ChangePwStaff.resx">
       <DependentUpon>ChangePwStaff.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PMS\DataGridUser.resx">
       <DependentUpon>DataGridUser.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PMS\EmployeeMasterForm.resx">
-      <DependentUpon>EmployeeMasterForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PMS\ExportDataFrm.resx">
       <DependentUpon>ExportDataFrm.vb</DependentUpon>
@@ -457,9 +461,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PMS\PmsMainFrm.resx">
       <DependentUpon>PmsMainFrm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PMS\PmsMngLoginFrm.resx">
-      <DependentUpon>PmsMngLoginFrm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PMS\PmsStaffLoginFrm.resx">
       <DependentUpon>PmsStaffLoginFrm.vb</DependentUpon>

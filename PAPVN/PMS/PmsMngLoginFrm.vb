@@ -16,7 +16,7 @@ Public Class PmsMngLoginFrm
         password = PwTb.Text
         Try
             conn.Open()
-            Dim query As String = "SELECT * FROM manager where employeeid = '" & username & "' and password = '" & password & "';"
+            Dim query As String = "SELECT * FROM employee WHERE employeeid = '" & username & "' AND password = '" & password & "' AND Approval=1;"
             command = New MySqlCommand(query, conn)
             reader = command.ExecuteReader
             count = 0
@@ -53,6 +53,6 @@ Public Class PmsMngLoginFrm
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        ForgotPwMngFrm.Show()
+        ForgotPwFrm.Show()
     End Sub
 End Class

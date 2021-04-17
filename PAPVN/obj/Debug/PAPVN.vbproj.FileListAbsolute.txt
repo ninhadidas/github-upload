@@ -91,14 +91,11 @@ C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.exe.c
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.vbproj.ResolveComReference.cache
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.Competency.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.Form2.resources
-C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.ForgotPwMngFrm.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.HRMasterViewFrm.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.MasterGridUser.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.BusRequestFrm.resources
-C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.ChangePwMng.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.ChangeStaffPw.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.DataGridUser.resources
-C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.EmployeeMasterForm.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.ExportDataFrm.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.ForgotPwFrm.resources
 C:\Users\admin\Source\Repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.HRApproveResultFrm.resources
@@ -142,3 +139,6 @@ C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_
 C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_UserGrid.resources
 C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.SBMS_ForgotPassword.resources
 C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.OTBusRequestFrm.resources
+C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.LoginStoreProcedure.resources
+C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.PMS_UserMaster.resources
+C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.ChangePwMng.resources

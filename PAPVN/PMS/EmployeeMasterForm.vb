@@ -733,4 +733,12 @@ Public Class EmployeeMasterForm
             End If
         End Try
     End Sub
+
+    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
+
+    End Sub
+
+    Private Sub EmployeeGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles EmployeeGrid.CellContentClick
+
+    End Sub
 End Class

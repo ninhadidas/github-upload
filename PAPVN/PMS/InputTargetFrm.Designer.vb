@@ -26,6 +26,7 @@ Partial Class InputTargetFrm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InputTargetFrm))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CloseBtn = New System.Windows.Forms.Button()
@@ -110,6 +111,7 @@ Partial Class InputTargetFrm
         Me.Status5 = New System.Windows.Forms.RadioButton()
         Me.Status4 = New System.Windows.Forms.RadioButton()
         Me.Status3 = New System.Windows.Forms.RadioButton()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -392,6 +394,7 @@ Partial Class InputTargetFrm
         Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox9.TabIndex = 81
         Me.PictureBox9.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox9, "Click here to delete this target")
         Me.PictureBox9.Visible = False
         '
         'PictureBox8
@@ -403,6 +406,7 @@ Partial Class InputTargetFrm
         Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox8.TabIndex = 80
         Me.PictureBox8.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox8, "Click here to delete this target")
         Me.PictureBox8.Visible = False
         '
         'ContentTbx2
@@ -427,6 +431,7 @@ Partial Class InputTargetFrm
         Me.WeightTbx3.ReadOnly = True
         Me.WeightTbx3.Size = New System.Drawing.Size(70, 121)
         Me.WeightTbx3.TabIndex = 78
+        Me.WeightTbx3.Text = "0"
         Me.WeightTbx3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'WeightTbx2
@@ -440,6 +445,7 @@ Partial Class InputTargetFrm
         Me.WeightTbx2.ReadOnly = True
         Me.WeightTbx2.Size = New System.Drawing.Size(70, 125)
         Me.WeightTbx2.TabIndex = 77
+        Me.WeightTbx2.Text = "0"
         Me.WeightTbx2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'WeightTbx1
@@ -453,6 +459,7 @@ Partial Class InputTargetFrm
         Me.WeightTbx1.ReadOnly = True
         Me.WeightTbx1.Size = New System.Drawing.Size(70, 125)
         Me.WeightTbx1.TabIndex = 76
+        Me.WeightTbx1.Text = "0"
         Me.WeightTbx1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'DiffTbx3
@@ -1448,7 +1455,7 @@ Partial Class InputTargetFrm
                 reader = command.ExecuteReader
                 reader.Close()
             Else
-                Dim query_insert As String = "INSERT INTO targetdata (id, period, EmployeeID, Name, Dept, title, detail, Difficulty, Weight, title2, detail2, difficulty2, weight2, title3, detail3, difficulty3, weight3, devplan) VALUES (@id, @period, @EmployeeID, @Name, @Dept, @title, @detail, @Difficulty, @Weight, @title2, @detail2, @difficulty2, @weight2, @title3, @detail3, @difficulty3, @weight3, @devplan);"
+                Dim query_insert As String = "INSERT INTO targetdata (id, period, EmployeeID, Name, Dept, title, detail, Difficulty, Weight, title2, detail2, difficulty2, weight2, title3, detail3, difficulty3, weight3, devplan, time) VALUES (@id, @period, @EmployeeID, @Name, @Dept, @title, @detail, @Difficulty, @Weight, @title2, @detail2, @difficulty2, @weight2, @title3, @detail3, @difficulty3, @weight3, @devplan, @time);"
                 Using conn
                     command = New MySqlCommand(query_insert, conn)
                     command.Parameters.AddWithValue("@id", "")
@@ -1469,6 +1476,7 @@ Partial Class InputTargetFrm
                     command.Parameters.AddWithValue("@weight2", weight2)
                     command.Parameters.AddWithValue("@weight3", weight3)
                     command.Parameters.AddWithValue("@devplan", devplan)
+                    command.Parameters.AddWithValue("@time", Now())
                     command.ExecuteNonQuery()
                 End Using
             End If
@@ -1504,6 +1512,8 @@ Partial Class InputTargetFrm
         Dim status As Integer = 2
         Dim answer As Integer
         Dim sum As Integer
+        Dim dept As String
+        dept = DeptLabel.Text
         conn = New MySqlConnection
         conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("mboConnectionString").ConnectionString
         Dim reader As MySqlDataReader
@@ -1536,54 +1546,87 @@ Partial Class InputTargetFrm
                 Else
                     Try
                         conn.Open()
-                        Dim query As String = "UPDATE targetdata SET devplan= '" & devplan & "', title= '" & title1 & "', detail= '" & detail1 & "', weight = '" & weight1 & "', difficulty = '" & diff1 & "', status ='" & status & "' , title2= '" & title2 & "', detail2= '" & detail2 & "', weight2 = '" & weight2 & "', difficulty2 = '" & diff2 & "', title3= '" & title3 & "', detail3= '" & detail3 & "', weight3 = '" & weight3 & "', difficulty3 = '" & diff3 & "', time=now() WHERE employeeid = '" & username & "' AND period ='" & period & "'"
-                        command = New MySqlCommand(query, conn)
-                        reader = command.ExecuteReader
-                        reader.Close()
-                        Dim query_mail As String = "SELECT manager.email FROM manager INNER JOIN employee ON manager.employeeid = employee.app1 WHERE employee.employeeid ='" & username & "';"
-                        command = New MySqlCommand(query_mail, conn)
-                        reader = command.ExecuteReader
-                        count = 0
-                        While reader.Read
-                            count = count + 1
-                        End While
-                        If count = 1 Then
-                            Try
-                                'OutlookMessage = AppOutlook.CreateItem(outlook.OlItemType.olMailItem)
-                                'Dim Recipents As outlook.Recipients = OutlookMessage.Recipients
-                                Dim email As String
-                                email = reader("email").ToString
-                                'Recipents.Add(address)
-                                'OutlookMessage.Subject = "Target Submitted - Performance Management System."
-                                'OutlookMessage.Body = "Dear Manager, " & vbNewLine & " " & vbNewLine & "Your team member, " & name & " (Employee ID: " & username & ") submitted target on Performance Management System." & vbNewLine & "Please open the system, check it and have discussion with him/her." & vbNewLine & "" & vbNewLine & "*This message is automatically sent from system."
-                                'OutlookMessage.BodyFormat = outlook.OlBodyFormat.olFormatHTML
-                                'OutlookMessage.Send()
-                                Dim SmtpServer As New SmtpClient()
-                                Dim sendmail As New MailMessage()
-                                SmtpServer.Credentials = New _
-                                Net.NetworkCredential("japan\70H9536", "Papvn17")
-                                SmtpServer.Port = 25
-                                SmtpServer.Host = "157.8.1.154"
-                                sendmail = New MailMessage With {
-                                    .From = New MailAddress("helpdesk.papvn@vn.panasonic.com")
-                                }
-                                sendmail.To.Add(email)
-                                sendmail.IsBodyHtml = True
-                                sendmail.Subject = "Target Submitted - Performance Management System."
-                                sendmail.Body = "Dear Manager, <br> <br> Your team member, " & name & " (Employee ID: " & username & ") submitted target on Performance Management System.<br> Please open the system, check it and have discussion with him/her.<br><br>*This message is automatically sent from system."
-                                SmtpServer.Send(sendmail)
-                            Catch ex As Exception
-                                MessageBox.Show(ex.Message)
-                            Finally
-                                OutlookMessage = Nothing
-                                AppOutlook = Nothing
-                            End Try
-                        Else
-                            MessageBox.Show("Mail could not be sent") 'if you dont want this message, simply delete this line 
-                        End If
-                        MessageBox.Show("Your targets were submitted to your manager successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Using conn
+                            Dim query As String = "SELECT * FROM targetdata WHERE employeeid ='" & username & "' AND period ='" & period & "';"
+                            command = New MySqlCommand(query, conn)
+                            reader = command.ExecuteReader
+                            count = 0
+                            While reader.Read
+                                count = count + 1
+                            End While
+                            reader.Close()
+                            If count = 1 Then
+                                Dim query_update As String = "UPDATE targetdata SET devplan= '" & devplan & "', title= '" & title1 & "', detail= '" & detail1 & "', weight = '" & weight1 & "', difficulty = '" & diff1 & "', title2= '" & title2 & "', detail2= '" & detail2 & "', weight2 = '" & weight2 & "', difficulty2 = '" & diff2 & "', title3= '" & title3 & "', detail3= '" & detail3 & "', weight3 = '" & weight3 & "', difficulty3 = '" & diff3 & "', status= '" & status & "',time=now() WHERE employeeid = '" & username & "' AND period ='" & period & "';"
+                                command = New MySqlCommand(query_update, conn)
+                                reader = command.ExecuteReader
+                                reader.Close()
+                            Else
+                                Dim query_insert As String = "INSERT INTO targetdata (id, period, EmployeeID, Name, Dept, title, detail, Difficulty, Weight, title2, detail2, difficulty2, weight2, title3, detail3, difficulty3, weight3, devplan, status, time) VALUES (@id, @period, @EmployeeID, @Name, @Dept, @title, @detail, @Difficulty, @Weight, @title2, @detail2, @difficulty2, @weight2, @title3, @detail3, @difficulty3, @weight3, @devplan, @status, @time);"
+                                command = New MySqlCommand(query_insert, conn)
+                                command.Parameters.AddWithValue("@id", "")
+                                command.Parameters.AddWithValue("@EmployeeID", username)
+                                command.Parameters.AddWithValue("@period", period)
+                                command.Parameters.AddWithValue("@title", title1)
+                                command.Parameters.AddWithValue("@title2", title2)
+                                command.Parameters.AddWithValue("@title3", title3)
+                                command.Parameters.AddWithValue("@Name", name)
+                                command.Parameters.AddWithValue("@Dept", dept)
+                                command.Parameters.AddWithValue("@detail", detail1)
+                                command.Parameters.AddWithValue("@detail2", detail2)
+                                command.Parameters.AddWithValue("@detail3", detail3)
+                                command.Parameters.AddWithValue("@difficulty", diff1)
+                                command.Parameters.AddWithValue("@difficulty2", diff2)
+                                command.Parameters.AddWithValue("@difficulty3", diff3)
+                                command.Parameters.AddWithValue("@weight", weight1)
+                                command.Parameters.AddWithValue("@weight2", weight2)
+                                command.Parameters.AddWithValue("@weight3", weight3)
+                                command.Parameters.AddWithValue("@devplan", devplan)
+                                command.Parameters.AddWithValue("@status", status)
+                                command.Parameters.AddWithValue("@time", Now())
+                                command.ExecuteNonQuery()
+                                Dim query_insert2 As String = "INSERT INTO result (employeeid, period) VALUES ('" & username & "','" & period & "')"
+                                command = New MySqlCommand(query_insert2, conn)
+                                command.ExecuteNonQuery()
+                            End If
+                            Dim query_mail As String = "SELECT manager.email FROM manager INNER JOIN employee ON manager.employeeid = employee.app1 WHERE employee.employeeid ='" & username & "';"
+                            command = New MySqlCommand(query_mail, conn)
+                            reader = command.ExecuteReader
+                            count = 0
+                            While reader.Read
+                                count = count + 1
+                            End While
+                            If count = 1 Then
+                                Try
+                                    Dim email As String
+                                    email = reader("email").ToString
+                                    Dim SmtpServer As New SmtpClient()
+                                    Dim sendmail As New MailMessage()
+                                    SmtpServer.Credentials = New _
+                                    Net.NetworkCredential("japan\70H9536", "Papvn17")
+                                    SmtpServer.Port = 25
+                                    SmtpServer.Host = "157.8.1.154"
+                                    sendmail = New MailMessage With {
+                                        .From = New MailAddress("helpdesk.papvn@vn.panasonic.com")
+                                    }
+                                    sendmail.To.Add(email)
+                                    sendmail.IsBodyHtml = True
+                                    sendmail.Subject = "Target Submitted - Performance Management System."
+                                    sendmail.Body = "Dear Manager, <br> <br> Your team member, " & name & " (Employee ID: " & username & ") submitted target on Performance Management System.<br> Please open the system, check it and have discussion with him/her.<br><br>*This message is automatically sent from system."
+                                    SmtpServer.Send(sendmail)
+
+                                Catch ex As Exception
+                                    MessageBox.Show(ex.Message)
+                                Finally
+                                    OutlookMessage = Nothing
+                                    AppOutlook = Nothing
+                                End Try
+                            Else
+                                MessageBox.Show("Mail could not be sent") 'if you dont want this message, simply delete this line 
+                            End If
+                            MessageBox.Show("Your targets were submitted to your manager successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        End Using
                         Me.Close()
-                        reader.Close()
+                            reader.Close()
                     Catch ex As Exception
                         MessageBox.Show(ex.Message)
                     Finally
@@ -1592,28 +1635,47 @@ Partial Class InputTargetFrm
                         End If
                     End Try
                 End If
-
             End If
-
         End If
         conn.Close()
     End Sub
 
     Private Sub WeightTbx1_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles WeightTbx1.Leave
-        If Not Regex.Match(WeightTbx1.Text, "^\d+$", RegexOptions.IgnoreCase).Success Then
-            MessageBox.Show("Please enter number only.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            WeightTbx1.Focus()
-            WeightTbx1.Clear()
-        End If
+        Try
+            If Not Regex.Match(WeightTbx1.Text, "^\d+$", RegexOptions.IgnoreCase).Success Or WeightTbx1.Text Mod 10 <> 0 Then
+                MessageBox.Show("Please enter number 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 only.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                WeightTbx1.Focus()
+                WeightTbx1.Text = 0
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
     Private Sub WeightTbx2_Leave(sender As Object, e As EventArgs) Handles WeightTbx2.Leave
-        If Not Regex.Match(WeightTbx2.Text, "^\d+$", RegexOptions.IgnoreCase).Success Then
-            MessageBox.Show("Please enter number only.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            WeightTbx2.Focus()
-            WeightTbx2.Clear()
-        End If
+        Try
+            If Not Regex.Match(WeightTbx2.Text, "^\d+$", RegexOptions.IgnoreCase).Success Or WeightTbx2.Text Mod 10 <> 0 Then
+                MessageBox.Show("Please enter number 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 only.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                WeightTbx2.Focus()
+                WeightTbx2.Text = 0
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
+
+    Private Sub WeightTbx3_Leave(sender As Object, e As EventArgs) Handles WeightTbx3.Leave
+        Try
+            If Not Regex.Match(WeightTbx3.Text, "^\d+$", RegexOptions.IgnoreCase).Success Or WeightTbx3.Text Mod 10 <> 0 Then
+                MessageBox.Show("Please enter number 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 only.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                WeightTbx3.Focus()
+                WeightTbx3.Text = 0
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
     Friend WithEvents Statuslb As LinkLabel
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
@@ -1682,4 +1744,5 @@ Partial Class InputTargetFrm
     Friend WithEvents Label32 As Label
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

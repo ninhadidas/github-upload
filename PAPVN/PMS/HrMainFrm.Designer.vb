@@ -104,12 +104,13 @@ Partial Class HrMainFrm
         '
         Me.OTRS.Enabled = False
         Me.OTRS.Image = CType(resources.GetObject("OTRS.Image"), System.Drawing.Image)
-        Me.OTRS.Location = New System.Drawing.Point(60, 145)
+        Me.OTRS.Location = New System.Drawing.Point(339, 278)
         Me.OTRS.Name = "OTRS"
         Me.OTRS.Size = New System.Drawing.Size(96, 96)
         Me.OTRS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.OTRS.TabIndex = 8
         Me.OTRS.TabStop = False
+        Me.OTRS.Visible = False
         '
         'UMS
         '
@@ -142,11 +143,12 @@ Partial Class HrMainFrm
         Me.Label4.Enabled = False
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(47, 244)
+        Me.Label4.Location = New System.Drawing.Point(326, 377)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(118, 13)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "OT Request System"
+        Me.Label4.Visible = False
         '
         'Label5
         '
@@ -168,7 +170,7 @@ Partial Class HrMainFrm
         Me.Label6.Enabled = False
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(291, 377)
+        Me.Label6.Location = New System.Drawing.Point(12, 244)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(191, 13)
         Me.Label6.TabIndex = 13
@@ -178,7 +180,7 @@ Partial Class HrMainFrm
         '
         Me.SMS.Enabled = False
         Me.SMS.Image = CType(resources.GetObject("SMS.Image"), System.Drawing.Image)
-        Me.SMS.Location = New System.Drawing.Point(339, 278)
+        Me.SMS.Location = New System.Drawing.Point(60, 145)
         Me.SMS.Name = "SMS"
         Me.SMS.Size = New System.Drawing.Size(96, 96)
         Me.SMS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

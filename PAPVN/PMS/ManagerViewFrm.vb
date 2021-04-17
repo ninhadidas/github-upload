@@ -801,6 +801,15 @@ Public Class ManagerViewFrm
         Dim w As Integer
         Dim status As Integer
         status = Statuslb.Text
+        If SupEvaTbx1.Text = Nothing Or SupEvaTbx2.Text = Nothing Or SupEvaTbx3.Text = Nothing Then
+            MessageBox.Show("Please Evaluate Competency Before Calculate the Result!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            TabControl1.SelectedIndex = 1
+        End If
+        If (EmpAchTbx2.Text <> Nothing And SupAchTbx2.Text = Nothing) Or (EmpAchTbx3.Text <> Nothing And SupAchTbx3.Text = Nothing) Then
+            MessageBox.Show("Please Select Achivement Score Before Calculate the Result!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            TabControl1.SelectedIndex = 0
+        End If
+
         If status >= 5 Then
 
             If SupAchTbx3.Text = "" Then
@@ -1213,4 +1222,5 @@ Public Class ManagerViewFrm
         SupEvaCbx3.Enabled = True
         OvrSupCmTbx.ReadOnly = False
     End Sub
+
 End Class

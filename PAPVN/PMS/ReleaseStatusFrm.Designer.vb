@@ -22,7 +22,6 @@ Partial Class ReleaseStatusFrm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.PeriodLabel = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.EmployeeGrid = New System.Windows.Forms.DataGridView()
         Me.EmployeeIDTbx = New System.Windows.Forms.TextBox()
@@ -35,19 +34,9 @@ Partial Class ReleaseStatusFrm
         Me.Label5 = New System.Windows.Forms.Label()
         Me.StatusLabel = New System.Windows.Forms.Label()
         Me.StatusId = New System.Windows.Forms.Label()
+        Me.PeriodCombox = New System.Windows.Forms.ComboBox()
         CType(Me.EmployeeGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PeriodLabel
-        '
-        Me.PeriodLabel.AutoSize = True
-        Me.PeriodLabel.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PeriodLabel.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.PeriodLabel.Location = New System.Drawing.Point(78, 23)
-        Me.PeriodLabel.Name = "PeriodLabel"
-        Me.PeriodLabel.Size = New System.Drawing.Size(60, 16)
-        Me.PeriodLabel.TabIndex = 32
-        Me.PeriodLabel.Text = "PERIOD:"
         '
         'Label2
         '
@@ -178,11 +167,21 @@ Partial Class ReleaseStatusFrm
         Me.StatusId.Text = "statusid"
         Me.StatusId.Visible = False
         '
+        'PeriodCombox
+        '
+        Me.PeriodCombox.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PeriodCombox.FormattingEnabled = True
+        Me.PeriodCombox.Location = New System.Drawing.Point(88, 18)
+        Me.PeriodCombox.Name = "PeriodCombox"
+        Me.PeriodCombox.Size = New System.Drawing.Size(150, 24)
+        Me.PeriodCombox.TabIndex = 45
+        '
         'ReleaseStatusFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(770, 312)
+        Me.Controls.Add(Me.PeriodCombox)
         Me.Controls.Add(Me.StatusId)
         Me.Controls.Add(Me.StatusLabel)
         Me.Controls.Add(Me.Label5)
@@ -194,7 +193,6 @@ Partial Class ReleaseStatusFrm
         Me.Controls.Add(Me.SearchBtn)
         Me.Controls.Add(Me.EmployeeIDTbx)
         Me.Controls.Add(Me.EmployeeGrid)
-        Me.Controls.Add(Me.PeriodLabel)
         Me.Controls.Add(Me.Label2)
         Me.Name = "ReleaseStatusFrm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -204,7 +202,6 @@ Partial Class ReleaseStatusFrm
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents PeriodLabel As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents EmployeeGrid As DataGridView
     Friend WithEvents EmployeeIDTbx As TextBox
@@ -217,4 +214,5 @@ Partial Class ReleaseStatusFrm
     Friend WithEvents Label5 As Label
     Friend WithEvents StatusLabel As Label
     Friend WithEvents StatusId As Label
+    Friend WithEvents PeriodCombox As ComboBox
 End Class

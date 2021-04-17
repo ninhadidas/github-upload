@@ -32,25 +32,10 @@ Public Class ForgotPwFrm
                 If count = 1 Then
                     name = reader("Name").ToString
                     reader.Close()
-                    Dim query2 As String = "SELECT * FROM manager where email = '" & email & "';"
-                    command = New MySqlCommand(query2, conn)
-                    reader = command.ExecuteReader
-                    count = 0
-                    While reader.Read
-                        count = +1
-                    End While
+                    Dim query_update As String = "UPDATE employee SET password= '" & temppw & "' WHERE email = '" & email & "';"
+                    command = New MySqlCommand(query_update, conn)
+                        reader = command.ExecuteReader
                     reader.Close()
-                    If count = 1 Then
-                        Dim query_update As String = "UPDATE employee, manager SET employee.password= '" & temppw & "', manager.password= '" & temppw & "' WHERE employee.email = '" & email & "' AND manager.email = '" & email & "';"
-                        command = New MySqlCommand(query_update, conn)
-                        reader = command.ExecuteReader
-                        reader.Close()
-                    Else
-                        Dim query_update As String = "UPDATE employee SET password= '" & temppw & "' WHERE email = '" & email & "';"
-                        command = New MySqlCommand(query_update, conn)
-                        reader = command.ExecuteReader
-                        reader.Close()
-                    End If
                     Dim SmtpServer As New SmtpClient()
                     Dim sendmail As New MailMessage()
                     SmtpServer.Credentials = New _

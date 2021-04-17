@@ -201,6 +201,7 @@ Partial Class ManagerViewFrm
         Me.Status4 = New System.Windows.Forms.RadioButton()
         Me.Status3 = New System.Windows.Forms.RadioButton()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -476,6 +477,7 @@ Partial Class ManagerViewFrm
         Me.EditBtn.Size = New System.Drawing.Size(132, 25)
         Me.EditBtn.TabIndex = 129
         Me.EditBtn.Text = "Edit Assessments"
+        Me.ToolTip2.SetToolTip(Me.EditBtn, "Click here if you want to add more comment or override the assessment")
         Me.EditBtn.UseVisualStyleBackColor = False
         Me.EditBtn.Visible = False
         '
@@ -2643,7 +2645,7 @@ Partial Class ManagerViewFrm
                 NotableTbx.Text = reader("notable").ToString
 
             Else
-                MessageBox.Show("No Data Found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show("No no Data Found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 'Me.Close()
             End If
         Catch ex As Exception
@@ -3095,4 +3097,5 @@ Partial Class ManagerViewFrm
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents EditBtn As Button
+    Friend WithEvents ToolTip2 As ToolTip
 End Class

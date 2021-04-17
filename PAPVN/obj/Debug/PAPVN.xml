@@ -32,5 +32,12 @@ PAPVN
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="M:PAPVN.App_Connect.UpdateDataSet(System.String,System.Data.DataSet,System.String)">
+ <summary>UpdateDataSet  
+ dùng để Update Dataset - kết hợp với Update trực tiếp trên DataGridView
+ &lt; Đối với Access thì dùng Query - Đối với SQL Server thì dùng đước cả Query và StoredProcedure &gt;
+ &lt; Nghĩa là dùng StoreProcedure SQL server thì chạy - Access báo lỗi &gt;
+ </summary>
+</member>
 </members>
 </doc>

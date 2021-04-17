@@ -19,7 +19,8 @@
     End Sub
 
     Private Sub EmployeeMasterBtn_Click(sender As Object, e As EventArgs) Handles EmployeeMasterBtn.Click
-        EmployeeMasterForm.Show()
+        'EmployeeMasterForm.Show()
+        PMS_UserMaster.Show()
     End Sub
 
     Private Sub ReviewResultBtn_Click(sender As Object, e As EventArgs) Handles ReviewResultBtn.Click

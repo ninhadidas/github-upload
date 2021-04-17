@@ -11,7 +11,7 @@ Public Class ReleaseStatusFrm
         conn = New MySqlConnection
         conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("mboConnectionString").ConnectionString
         Dim reader As MySqlDataReader
-        period = PeriodLabel.Text
+        period = PeriodCombox.Text
         username = EmployeeIDTbx.Text
         If username = "" Then
             MessageBox.Show("Please input employee ID!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -65,15 +65,29 @@ Public Class ReleaseStatusFrm
     Private Sub ReleaseStatusFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         EmployeeGrid.RowsDefaultCellStyle.WrapMode = DataGridViewTriState.True
         EmployeeGrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-        If DateValue("May 1, 2020") <= Now And Now <= DateValue("October 31, 2020") Then
-            PeriodLabel.Text = "1 st Half / FY20"
-        ElseIf DateValue("November 1, 2020") <= Now And Now <= DateValue("April 30, 2021") Then
-            PeriodLabel.Text = "2 nd Half / FY20"
-        ElseIf DateValue("May 1, 2021") <= Now And Now <= DateValue("October 31, 2021") Then
-            PeriodLabel.Text = "1 st Half / FY21"
-        ElseIf DateValue("November 1, 2021") <= Now And Now <= DateValue("April 30, 2022") Then
-            PeriodLabel.Text = "2 nd Half / FY21"
-        End If
+        Dim conn As MySqlConnection
+        Dim command As MySqlCommand
+        conn = New MySqlConnection With {
+            .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("mboConnectionString").ConnectionString
+        }
+        Dim reader As MySqlDataReader
+        Try
+            conn.Open()
+            Dim query As String = "SELECT name FROM period;"
+            command = New MySqlCommand(query, conn)
+            reader = command.ExecuteReader
+            While reader.Read
+                PeriodCombox.Items.Add(reader("name").ToString)
+            End While
+            ' PeriodCombox.SelectedIndex = 0
+            reader.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            If conn IsNot Nothing Then
+                conn.Close()
+            End If
+        End Try
     End Sub
 
     Private Sub EmployeeGrid_SelectionChanged(sender As Object, e As EventArgs) Handles EmployeeGrid.SelectionChanged
@@ -121,7 +135,7 @@ Public Class ReleaseStatusFrm
         Dim answer As Integer
         conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("mboConnectionString").ConnectionString
         username = EmployeeIDTbx.Text
-        period = PeriodLabel.Text
+        period = PeriodCombox.Text
         statusname = NewStatusCombx.Text
         If NewStatusCombx.Text = "" Then
             MessageBox.Show("Please select new status to reset", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -176,7 +190,7 @@ Public Class ReleaseStatusFrm
         conn = New MySqlConnection
         conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("mboConnectionString").ConnectionString
         Dim reader As MySqlDataReader
-        period = PeriodLabel.Text
+        period = PeriodCombox.Text
         username = EmployeeIDTbx.Text
         If EmployeeIDTbx.Text.Trim().Length() = 7 Then
             Try
