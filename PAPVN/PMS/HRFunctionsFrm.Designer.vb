@@ -30,10 +30,10 @@ Partial Class HRFunctionsFrm
         Me.NameLabel = New System.Windows.Forms.Label()
         Me.DeptLabel = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ResignedEmployeeBtn = New System.Windows.Forms.Button()
         Me.ReleaseTargetBtn = New System.Windows.Forms.Button()
         Me.QuitBtn = New System.Windows.Forms.Button()
         Me.IdLabel = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -98,7 +98,7 @@ Partial Class HRFunctionsFrm
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.ResignedEmployeeBtn)
         Me.GroupBox1.Controls.Add(Me.EmployeeMasterBtn)
         Me.GroupBox1.Controls.Add(Me.ExportDataBtn)
         Me.GroupBox1.Controls.Add(Me.ReviewResultBtn)
@@ -110,6 +110,16 @@ Partial Class HRFunctionsFrm
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Select Functions"
+        '
+        'ResignedEmployeeBtn
+        '
+        Me.ResignedEmployeeBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ResignedEmployeeBtn.Location = New System.Drawing.Point(16, 184)
+        Me.ResignedEmployeeBtn.Name = "ResignedEmployeeBtn"
+        Me.ResignedEmployeeBtn.Size = New System.Drawing.Size(193, 55)
+        Me.ResignedEmployeeBtn.TabIndex = 9
+        Me.ResignedEmployeeBtn.Text = "Resigned Employee"
+        Me.ResignedEmployeeBtn.UseVisualStyleBackColor = True
         '
         'ReleaseTargetBtn
         '
@@ -143,16 +153,6 @@ Partial Class HRFunctionsFrm
         Me.IdLabel.TabIndex = 16
         Me.IdLabel.Text = "Name"
         Me.IdLabel.Visible = False
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(16, 184)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(193, 55)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "Check Data"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'HRFunctionsFrm
         '
@@ -190,5 +190,5 @@ Partial Class HRFunctionsFrm
     Friend WithEvents QuitBtn As Button
     Friend WithEvents ReleaseTargetBtn As Button
     Friend WithEvents IdLabel As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents ResignedEmployeeBtn As Button
 End Class

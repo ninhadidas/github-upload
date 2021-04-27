@@ -26,4 +26,8 @@
     Private Sub ReviewResultBtn_Click(sender As Object, e As EventArgs) Handles ReviewResultBtn.Click
         HRApproveResultFrm.Show()
     End Sub
+
+    Private Sub ResignedEmployeeBtn_Click(sender As Object, e As EventArgs) Handles ResignedEmployeeBtn.Click
+        PMS_ResignedEmployee.Show()
+    End Sub
 End Class

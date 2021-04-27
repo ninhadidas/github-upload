@@ -307,7 +307,8 @@ Public Class PMS_UserMaster
         }
             Try
                 conn.Open()
-                Dim query As String = "DELETE FROM employee, targetdata, result USING employee INNER JOIN targetdata INNER JOIN result WHERE employee.EmployeeID =  '" & userid & "' AND targetdata.employeeid = employee.EmployeeID AND result.employeeid=Employee.EmployeeID;"
+                'Dim query As String = "DELETE FROM employee, targetdata, result USING employee INNER JOIN targetdata INNER JOIN result WHERE employee.EmployeeID =  '" & userid & "' AND targetdata.employeeid = employee.EmployeeID AND result.employeeid=Employee.EmployeeID;"
+                Dim query As String = "UPDATE employee SET App1 =0, App2=0, email = 'Resigned' WHERE employeeid = '" & userid & "'"
                 MessageBox.Show("Employee " & userid & " is deleted successfully!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 command = New MySqlCommand(query, conn)
                 reader = command.ExecuteReader
