@@ -1450,12 +1450,12 @@ Partial Class InputTargetFrm
             End While
             reader.Close()
             If count = 1 Then
-                Dim query_update As String = "UPDATE targetdata SET devplan= '" & devplan & "', title= '" & title1 & "', detail= '" & detail1 & "', weight = '" & weight1 & "', difficulty = '" & diff1 & "', title2= '" & title2 & "', detail2= '" & detail2 & "', weight2 = '" & weight2 & "', difficulty2 = '" & diff2 & "', title3= '" & title3 & "', detail3= '" & detail3 & "', weight3 = '" & weight3 & "', difficulty3 = '" & diff3 & "', time=now() WHERE employeeid = '" & username & "' AND period ='" & period & "';"
+                Dim query_update As String = "UPDATE targetdata SET devplan= '" & devplan & "', title= '" & title1 & "', detail= '" & detail1 & "', weight = '" & weight1 & "', difficulty = '" & diff1 & "', title2= '" & title2 & "', detail2= '" & detail2 & "', weight2 = '" & weight2 & "', difficulty2 = '" & diff2 & "', title3= '" & title3 & "', detail3= '" & detail3 & "', weight3 = '" & weight3 & "', difficulty3 = '" & diff3 & "', status = 1, time=now() WHERE employeeid = '" & username & "' AND period ='" & period & "';"
                 command = New MySqlCommand(query_update, conn)
                 reader = command.ExecuteReader
                 reader.Close()
             Else
-                Dim query_insert As String = "INSERT INTO targetdata (id, period, EmployeeID, Name, Dept, title, detail, Difficulty, Weight, title2, detail2, difficulty2, weight2, title3, detail3, difficulty3, weight3, devplan, time) VALUES (@id, @period, @EmployeeID, @Name, @Dept, @title, @detail, @Difficulty, @Weight, @title2, @detail2, @difficulty2, @weight2, @title3, @detail3, @difficulty3, @weight3, @devplan, @time);"
+                Dim query_insert As String = "INSERT INTO targetdata (id, period, EmployeeID, Name, Dept, title, detail, Difficulty, Weight, title2, detail2, difficulty2, weight2, title3, detail3, difficulty3, weight3, devplan, time, status) VALUES (@id, @period, @EmployeeID, @Name, @Dept, @title, @detail, @Difficulty, @Weight, @title2, @detail2, @difficulty2, @weight2, @title3, @detail3, @difficulty3, @weight3, @devplan, @time, @status);"
                 Using conn
                     command = New MySqlCommand(query_insert, conn)
                     command.Parameters.AddWithValue("@id", "")
@@ -1477,6 +1477,10 @@ Partial Class InputTargetFrm
                     command.Parameters.AddWithValue("@weight3", weight3)
                     command.Parameters.AddWithValue("@devplan", devplan)
                     command.Parameters.AddWithValue("@time", Now())
+                    command.Parameters.AddWithValue("@status", 1)
+                    command.ExecuteNonQuery()
+                    Dim query_insert2 As String = "INSERT INTO result (employeeid, period) VALUES ('" & username & "','" & period & "')"
+                    command = New MySqlCommand(query_insert2, conn)
                     command.ExecuteNonQuery()
                 End Using
             End If

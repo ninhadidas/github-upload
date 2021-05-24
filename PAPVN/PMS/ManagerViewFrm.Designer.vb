@@ -2645,7 +2645,7 @@ Partial Class ManagerViewFrm
                 NotableTbx.Text = reader("notable").ToString
 
             Else
-                MessageBox.Show("No no Data Found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show("No Data Found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 'Me.Close()
             End If
         Catch ex As Exception

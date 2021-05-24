@@ -12,8 +12,11 @@ Public Class ChangeStaffPw
         Dim reader As MySqlDataReader
         conn = New MySqlConnection
         conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("mboConnectionString").ConnectionString
-        username = WelcomeStaffFrm.EmployeeIdLabel.Text
-
+        If WelcomeStaffFrm.Visible = True Then
+            username = WelcomeStaffFrm.EmployeeIdLabel.Text
+        Else
+            username = EmployeeIdLabel.Text
+        End If
         currentpw = CurrentPwTbx.Text
         newpw1 = NewPwTbx1.Text
         newpw2 = NewPwTbx2.Text

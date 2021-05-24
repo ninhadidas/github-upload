@@ -29,6 +29,7 @@ Public Class PmsStaffLoginFrm
                 If password = "" Then
                     MessageBox.Show("For security reason, you need to change your password immediately!", "Please change password!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     ChangeStaffPw.Show()
+                    ChangeStaffPw.EmployeeIdLabel.Text = reader("employeeid").ToString
                 Else
                     Me.Hide()
                     WelcomeStaffFrm.Show()

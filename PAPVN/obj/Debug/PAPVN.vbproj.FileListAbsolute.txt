@@ -143,5 +143,4 @@ C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.Login
 C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.PMS_UserMaster.resources
 C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.ChangePwMng.resources
 C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.PMS_ResignedEmployee.resources
-C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.EmployeeMasterForm.resources
 C:\Users\admin\source\repos\ninhadidas\github-upload\PAPVN\obj\Debug\PAPVN.PMS_RehireEmployee.resources

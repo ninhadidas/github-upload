@@ -165,7 +165,7 @@ Public Class InputTargetFrm
         app2 = App2Lbl.Text
         Try
             conn.Open()
-            Dim query As String = "SELECT Name FROM manager WHERE EmployeeID = '" & app1 & "';"
+            Dim query As String = "SELECT Name FROM employee WHERE EmployeeID = '" & app1 & "';"
             command = New MySqlCommand(query, conn)
             reader = command.ExecuteReader
             count = 0
@@ -177,7 +177,7 @@ Public Class InputTargetFrm
                 reader.Close()
             End If
 
-            Dim query2 As String = "SELECT Name FROM manager WHERE EmployeeID = '" & app2 & "';"
+            Dim query2 As String = "SELECT Name FROM employee WHERE EmployeeID = '" & app2 & "';"
             command = New MySqlCommand(query2, conn)
             reader = command.ExecuteReader
             count = 0

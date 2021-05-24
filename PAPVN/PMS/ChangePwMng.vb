@@ -12,8 +12,11 @@ Public Class ChangePwMng
         Dim reader As MySqlDataReader
         conn = New MySqlConnection
         conn.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("mboConnectionString").ConnectionString
-        username = WelcomeMngFrm.EmployeeIdLabel.Text
-
+        If WelcomeMngFrm.Visible = True Then
+            username = WelcomeMngFrm.EmployeeIdLabel.Text
+        Else
+            username = EmployeeIdLabel.Text
+        End If
         currentpw = CurrentPwTbx.Text
         newpw1 = NewPwTbx1.Text
         newpw2 = NewPwTbx2.Text

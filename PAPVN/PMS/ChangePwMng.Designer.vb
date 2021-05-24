@@ -29,6 +29,7 @@ Partial Class ChangePwMng
         Me.NewPwTbx1 = New System.Windows.Forms.TextBox()
         Me.NewPwTbx2 = New System.Windows.Forms.TextBox()
         Me.ChangePwBtn = New System.Windows.Forms.Button()
+        Me.EmployeeIdLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -98,11 +99,22 @@ Partial Class ChangePwMng
         Me.ChangePwBtn.Text = "Change password"
         Me.ChangePwBtn.UseVisualStyleBackColor = True
         '
+        'EmployeeIdLabel
+        '
+        Me.EmployeeIdLabel.AutoSize = True
+        Me.EmployeeIdLabel.Location = New System.Drawing.Point(371, 179)
+        Me.EmployeeIdLabel.Name = "EmployeeIdLabel"
+        Me.EmployeeIdLabel.Size = New System.Drawing.Size(39, 13)
+        Me.EmployeeIdLabel.TabIndex = 8
+        Me.EmployeeIdLabel.Text = "Label4"
+        Me.EmployeeIdLabel.Visible = False
+        '
         'ChangePwMng
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(433, 222)
+        Me.Controls.Add(Me.EmployeeIdLabel)
         Me.Controls.Add(Me.ChangePwBtn)
         Me.Controls.Add(Me.NewPwTbx2)
         Me.Controls.Add(Me.NewPwTbx1)
@@ -127,4 +139,5 @@ Partial Class ChangePwMng
     Friend WithEvents NewPwTbx1 As TextBox
     Friend WithEvents NewPwTbx2 As TextBox
     Friend WithEvents ChangePwBtn As Button
+    Friend WithEvents EmployeeIdLabel As Label
 End Class

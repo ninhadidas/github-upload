@@ -48,7 +48,10 @@ Partial Class PMS_UserMaster
         Me.DelBtn = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.DelEmployeeTbx = New System.Windows.Forms.TextBox()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.ProgressBar3 = New System.Windows.Forms.ProgressBar()
         Me.ExportBtn = New System.Windows.Forms.Button()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.QuotaGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -56,6 +59,7 @@ Partial Class PMS_UserMaster
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.EmployeeGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -119,6 +123,7 @@ Partial Class PMS_UserMaster
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Location = New System.Drawing.Point(17, 50)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -302,25 +307,45 @@ Partial Class PMS_UserMaster
         Me.DelEmployeeTbx.Size = New System.Drawing.Size(91, 23)
         Me.DelEmployeeTbx.TabIndex = 42
         '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.ProgressBar3)
+        Me.TabPage4.Controls.Add(Me.ExportBtn)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(631, 150)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Export User List"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'ProgressBar3
+        '
+        Me.ProgressBar3.Location = New System.Drawing.Point(36, 62)
+        Me.ProgressBar3.Name = "ProgressBar3"
+        Me.ProgressBar3.Size = New System.Drawing.Size(424, 28)
+        Me.ProgressBar3.TabIndex = 45
+        '
         'ExportBtn
         '
         Me.ExportBtn.BackColor = System.Drawing.Color.Green
         Me.ExportBtn.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ExportBtn.ForeColor = System.Drawing.Color.White
-        Me.ExportBtn.Location = New System.Drawing.Point(532, 29)
+        Me.ExportBtn.Location = New System.Drawing.Point(480, 60)
         Me.ExportBtn.Name = "ExportBtn"
         Me.ExportBtn.Size = New System.Drawing.Size(117, 30)
         Me.ExportBtn.TabIndex = 25
         Me.ExportBtn.Text = "Export"
         Me.ExportBtn.UseVisualStyleBackColor = False
-        Me.ExportBtn.Visible = False
+        '
+        'Timer2
+        '
         '
         'PMS_UserMaster
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(664, 490)
-        Me.Controls.Add(Me.ExportBtn)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.QuotaGridView)
@@ -341,6 +366,7 @@ Partial Class PMS_UserMaster
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         CType(Me.EmployeeGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage4.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -368,4 +394,7 @@ Partial Class PMS_UserMaster
     Friend WithEvents DelBtn As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents DelEmployeeTbx As TextBox
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents ProgressBar3 As ProgressBar
+    Friend WithEvents Timer2 As Timer
 End Class

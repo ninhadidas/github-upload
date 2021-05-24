@@ -135,12 +135,10 @@ Public Class PMS_UserMaster
 
 
     Private Sub ExportBtn_Click(sender As Object, e As EventArgs) Handles ExportBtn.Click
-        conn = New MySqlConnection With {
-               .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("busConnectionString").ConnectionString
-           }
-        Try
-            Dim xlApp As Microsoft.Office.Interop.Excel.Application
-            Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
+
+        Timer2.Start()
+        Dim xlApp As Microsoft.Office.Interop.Excel.Application
+        Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
             Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
             Dim misValue As Object = System.Reflection.Missing.Value
             Dim i As Integer
@@ -148,7 +146,8 @@ Public Class PMS_UserMaster
             xlApp = New Microsoft.Office.Interop.Excel.Application
             xlWorkBook = xlApp.Workbooks.Add(misValue)
             xlWorkSheet = xlWorkBook.Sheets("sheet1")
-            xlWorkSheet.Columns.AutoFit()
+        xlWorkSheet.Columns.AutoFit()
+        Try
             For i = 0 To QuotaGridView.RowCount - 1
                 For j = 0 To QuotaGridView.ColumnCount - 1
                     For k As Integer = 1 To QuotaGridView.Columns.Count
@@ -158,7 +157,7 @@ Public Class PMS_UserMaster
                 Next
             Next
             xlWorkSheet.Columns.AutoFit()
-            Dim fName As String = "Bus Quota List"
+            Dim fName As String = "Employee List"
             Using sfd As New SaveFileDialog
                 sfd.Title = "Save As"
                 sfd.OverwritePrompt = True
@@ -179,6 +178,10 @@ Public Class PMS_UserMaster
         Catch ex As Exception
             conn.Close()
             MessageBox.Show(ex.Message)
+        Finally
+            If conn IsNot Nothing Then
+                conn.Close()
+            End If
         End Try
     End Sub
     Private Sub ReleaseObject(ByVal obj As Object)
@@ -387,6 +390,76 @@ Public Class PMS_UserMaster
             End If
         Else
             EmployeeGrid.DataSource = Nothing
+        End If
+    End Sub
+    Private Sub TabPage4_Enter(sender As Object, e As EventArgs) Handles TabPage4.Enter
+        Dim SDA As New MySqlDataAdapter
+        Dim dbDataSet As New DataTable
+        Dim count As Integer
+        conn = New MySqlConnection With {
+            .ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings("mboConnectionString").ConnectionString
+        }
+        Dim reader As MySqlDataReader
+        Try
+            conn.Open()
+            Dim query As String = "SELECT EmployeeID, Name, App1, App2, Dept, Division, Location, Position, Approval, email FROM employee ORDER BY ID DESC;"
+            command = New MySqlCommand(query, conn)
+            reader = command.ExecuteReader
+            count = 0
+            While reader.Read
+                count = +1
+            End While
+            reader.Close()
+            If count >= 1 Then
+                SDA.SelectCommand = command
+                SDA.Fill(dbDataSet)
+                QuotaGridView.DataSource = dbDataSet
+                SDA.Update(dbDataSet)
+                With QuotaGridView
+                    .RowHeadersVisible = False
+                    .Columns(0).HeaderCell.Value = "Employee ID"
+                    .Columns(0).Width = 70
+                    .Columns(1).HeaderCell.Value = "Full Name"
+                    .Columns(1).Width = 120
+                    .Columns(2).HeaderCell.Value = "Approver 1 ID"
+                    .Columns(2).Width = 70
+                    .Columns(3).HeaderCell.Value = "Approver 2 ID"
+                    .Columns(3).Width = 70
+                    .Columns(4).HeaderCell.Value = "Department"
+                    .Columns(4).Width = 120
+                    .Columns(5).HeaderCell.Value = "Division"
+                    .Columns(5).Width = 80
+                    .Columns(6).HeaderCell.Value = "Location"
+                    .Columns(6).Width = 40
+                    .Columns(7).HeaderCell.Value = "Position"
+                    .Columns(7).Width = 100
+                    .Columns(8).HeaderCell.Value = "Approval?"
+                    .Columns(8).Width = 40
+                    .Columns(9).HeaderCell.Value = "Email"
+                    .Columns(9).Width = 180
+                End With
+                conn.Close()
+                'Else
+                '    MessageBox.Show("No Data Found!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                '    Me.Close()
+            End If
+        Catch ex As Exception
+            conn.Close()
+            MessageBox.Show(ex.Message)
+        Finally
+            If conn IsNot Nothing Then
+                conn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        If ProgressBar3.Value = 100 Then
+            Timer2.Stop()
+            'MessageBox.Show("File Export successfully!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ProgressBar3.Value = 0
+        Else
+            ProgressBar3.Value += 1
         End If
     End Sub
 End Class

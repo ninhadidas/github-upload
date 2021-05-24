@@ -141,12 +141,6 @@
     <Compile Include="Form2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PMS\EmployeeMasterForm.Designer.vb">
-      <DependentUpon>EmployeeMasterForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="PMS\EmployeeMasterForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="PMS\HRMasterViewFrm.Designer.vb">
       <DependentUpon>HRMasterViewFrm.vb</DependentUpon>
     </Compile>
@@ -419,9 +413,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PMS\EmployeeMasterForm.resx">
-      <DependentUpon>EmployeeMasterForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PMS\HRMasterViewFrm.resx">
       <DependentUpon>HRMasterViewFrm.vb</DependentUpon>

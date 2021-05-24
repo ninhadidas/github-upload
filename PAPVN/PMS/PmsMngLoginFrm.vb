@@ -24,12 +24,18 @@ Public Class PmsMngLoginFrm
                 count = +1
             End While
             If count = 1 Then
-                Me.Hide()
-                WelcomeMngFrm.Show()
-                WelcomeMngFrm.NameLabel.Text = reader("name").ToString
-                WelcomeMngFrm.EmployeeIdLabel.Text = reader("employeeid").ToString
-                WelcomeMngFrm.DeptLabel.Text = reader("dept").ToString
-                WelcomeMngFrm.DivLabel.Text = reader("division").ToString
+                If password = "" Then
+                    MessageBox.Show("For security reason, you need to change your password immediately!", "Please change password!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    ChangePwMng.Show()
+                    ChangePwMng.EmployeeIdLabel.Text = reader("employeeid").ToString
+                Else
+                    Me.Hide()
+                    WelcomeMngFrm.Show()
+                    WelcomeMngFrm.NameLabel.Text = reader("name").ToString
+                    WelcomeMngFrm.EmployeeIdLabel.Text = reader("employeeid").ToString
+                    WelcomeMngFrm.DeptLabel.Text = reader("dept").ToString
+                    WelcomeMngFrm.DivLabel.Text = reader("division").ToString
+                End If
             Else
                 MessageBox.Show("Password incorrect, please try again!", "Wrong username or password!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
